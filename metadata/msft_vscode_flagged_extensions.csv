@@ -381,3 +381,7 @@ removed_list,2025-10-15,sunamo-cz.specstory-autosave,Typo-squatting,yes
 removed_list,2025-10-15,498-00.cppplayground,Malware,yes
 malicious_list,2025-10-15,vkteam.com,Malicious,yes
 malicious_list,2025-10-15,guozebin.api-generator-plugin,Malicious,yes
+removed_list,2025-10-20,PriyanshuMallick.clipboard-history-manager,Malware,no
+removed_list,2025-10-20,WEB3Foundation.cxzczxcxz,Malware,yes
+removed_list,2025-10-20,cline-ai-main.cline-ai-agent,Malware,yes
+removed_list,2025-10-20,labfile.labfile,Malware,no
