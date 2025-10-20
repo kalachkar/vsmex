@@ -8,7 +8,13 @@ from datetime import datetime, timezone
 import requests
 from azure.storage.blob import BlobServiceClient, ContentSettings
 from azure.core.exceptions import ResourceNotFoundError
-import config  # local config file
+
+try:
+    import config
+except ModuleNotFoundError:
+    raise RuntimeError(
+        "Missing config.py. Copy config_template.py → config.py and fill in your credentials."
+    )
 
 # ========= time helpers =========
 def _now():

@@ -20,7 +20,12 @@ import requests
 from azure.storage.blob import BlobServiceClient
 from azure.core.exceptions import ResourceNotFoundError
 
-import config
+try:
+    import config
+except ModuleNotFoundError:
+    raise RuntimeError(
+        "Missing config.py. Copy config_template.py → config.py and fill in your credentials."
+    )
 
 GH_API = "https://api.github.com"
 
