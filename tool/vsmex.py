@@ -135,14 +135,23 @@ def load_csv_from_github(path: str) -> Tuple[list[dict], Optional[str], list[str
     return rows, sha, header
 
 def write_csv_to_github(path: str, rows: list[dict], header: list[str], message: str):
-    # Re-fetch sha to avoid races
-    _, sha = gh_get_content(path)
+    # Get current content & sha
+    old_raw, old_sha = gh_get_content(path)
+
+    # Build new content in memory (LF endings)
     buf = io.StringIO()
     w = csv.DictWriter(buf, fieldnames=header, lineterminator="\n")
     w.writeheader()
     for r in rows:
         w.writerow({k: r.get(k, "") for k in header})
-    gh_put_content(path, buf.getvalue().encode("utf-8"), message, sha=sha)
+    new_bytes = buf.getvalue().encode("utf-8")
+
+    # If identical, skip commit
+    if old_raw is not None and old_raw == new_bytes:
+        print(f"No changes for {path} — skipping commit.")
+        return
+
+    gh_put_content(path, new_bytes, message, sha=old_sha)
 
 # ---------- small helpers ----------
 def str_bool(v) -> str:
@@ -218,8 +227,7 @@ def main():
     if not flagged_hdr:
         flagged_hdr = FLAG_HEADER
     else:
-        # normalize order to exactly FLAG_HEADER (ignore extra columns if any)
-        flagged_hdr = FLAG_HEADER
+        flagged_hdr = FLAG_HEADER  # normalize to exact order
 
     # Ensure vsmex_metadata header with new 'flags' column AFTER repository_url and BEFORE exists_in_dataset
     BASE_BEFORE = ["captured_date","source","msft_classification_type","extension_identifier","publisher_name",
@@ -230,18 +238,15 @@ def main():
     if not meta_hdr:
         meta_hdr = META_HEADER
     else:
-        # rebuild to required order; include missing columns if needed
+        # Force exact order; add missing columns if needed
         existing = {c: True for c in meta_hdr}
-        meta_hdr = [c for c in BASE_BEFORE if c in existing] + (["repository_url"] if "repository_url" in existing and "repository_url" not in BASE_BEFORE else [])
-        # Ensure repository_url is present exactly once
+        meta_hdr = [c for c in BASE_BEFORE if c in existing]
         if "repository_url" not in meta_hdr:
             meta_hdr.append("repository_url")
-        # Ensure 'flags' present in correct slot, then exists_in_dataset
         if "flags" not in meta_hdr:
             meta_hdr.append("flags")
         if "exists_in_dataset" not in meta_hdr:
             meta_hdr.append("exists_in_dataset")
-        # Finally force the exact order we want
         meta_hdr = META_HEADER
 
     existing_ids = {r.get("extension_identifier","") for r in flagged_rows if r.get("extension_identifier")}
@@ -362,7 +367,12 @@ def main():
 
         print(f"[add] {eid}@{version}: exists=yes | upload_vsix={'YES' if need_upload else 'no'} | meta_row={'YES' if (eid, version) in meta_keys else 'no'}")
 
-    # 5) Write back CSVs (applies changes)
+    # 5) If nothing changed, bail out (prevents “0 updates” commits)
+    if appended_flagged == 0 and new_meta_rows == 0 and uploaded_vsix == 0:
+        print("No changes detected — nothing to commit.")
+        return
+
+    # 6) Write back CSVs (applies changes; idempotent writes inside)
     write_csv_to_github(
         config.CSV_FLAGGED,
         flagged_rows,
@@ -372,7 +382,7 @@ def main():
     write_csv_to_github(
         config.CSV_DATASET,
         meta_rows,
-        meta_hdr,  # this includes 'flags' in the correct position
+        meta_hdr,  # includes 'flags' in the correct position
         message=f"Incremental vsmex_metadata (+{new_meta_rows} rows, {uploaded_vsix} vsix uploads)"
     )
 
