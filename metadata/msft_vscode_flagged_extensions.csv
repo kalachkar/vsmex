@@ -386,3 +386,6 @@ removed_list,2025-10-20,WEB3Foundation.cxzczxcxz,Malware,yes
 removed_list,2025-10-20,cline-ai-main.cline-ai-agent,Malware,yes
 removed_list,2025-10-20,labfile.labfile,Malware,no
 removed_list,2025-10-21,BenjaminFriedl.lexica-img-fix,Malware,yes
+removed_list,2025-10-25,EricWrite.dsafsadas,Malware,yes
+removed_list,2025-10-25,plugin-manager.vscode-notes-manager,Typo-squatting,yes
+removed_list,2025-10-25,thesashkin.krnl-execute-thesashkin,Malware,no
