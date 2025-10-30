@@ -393,3 +393,7 @@ removed_list,2025-10-28,StackspotPlatform.StackSpot,Typo-squatting,yes
 removed_list,2025-10-29,AshleyHornja.prettierformattingplus,Malware,no
 removed_list,2025-10-29,Utilities.wowlanguage,Malware,no
 removed_list,2025-10-29,me80758262.piiithon-linter,Malware,yes
+removed_list,2025-10-30,Extensions-A.wow1language,Malware,yes
+removed_list,2025-10-30,JuanrBlanco.wow11language,Malware,no
+removed_list,2025-10-30,esbenpp.pretier-vscodee,Typo-squatting,yes
+removed_list,2025-10-30,jinyang.copilot-mcp-zh-cn,Typo-squatting,yes
