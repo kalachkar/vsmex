@@ -400,8 +400,8 @@ removed_list,2025-10-30,jinyang.copilot-mcp-zh-cn,Typo-squatting,yes
 removed_list,2025-10-31,DavidAsh.dcbox-vs,Malware,yes
 removed_list,2025-10-31,DavidAsh.gruvbox-vs,Malware,yes
 removed_list,2025-10-31,DavidAsh.tr-lang-pack,Malware,yes
-removed_list,2025-10-31,DevelopmentInc.cfx-lua-vs,"Typo-squatting, Malware",yes
-removed_list,2025-10-31,DevelopmentInc.kombai-vs,"Typo-squatting, Malware",yes
-removed_list,2025-10-31,DevelopmentInc.minecraftsnippets,"Typo-squatting, Malware",yes
-removed_list,2025-10-31,DevelopmentInc.pokemon,"Typo-squatting, Malware",yes
-removed_list,2025-10-31,DevelopmentInc.torizon-vs,"Typo-squatting, Malware",yes
+removed_list,2025-10-31,DevelopmentInc.cfx-lua-vs,Typo-squatting;Malware,yes
+removed_list,2025-10-31,DevelopmentInc.kombai-vs,Typo-squatting;Malware,yes
+removed_list,2025-10-31,DevelopmentInc.minecraftsnippets,Typo-squatting;Malware,yes
+removed_list,2025-10-31,DevelopmentInc.pokemon,Typo-squatting;Malware,yes
+removed_list,2025-10-31,DevelopmentInc.torizon-vs,Typo-squatting;Malware,yes
