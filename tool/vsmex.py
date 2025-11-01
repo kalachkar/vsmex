@@ -135,22 +135,16 @@ def load_csv_from_github(path: str) -> Tuple[list[dict], Optional[str], list[str
     return rows, sha, header
 
 def write_csv_to_github(path: str, rows: list[dict], header: list[str], message: str):
-    # Get current content & sha
     old_raw, old_sha = gh_get_content(path)
-
-    # Build new content in memory (LF endings)
     buf = io.StringIO()
     w = csv.DictWriter(buf, fieldnames=header, lineterminator="\n")
     w.writeheader()
     for r in rows:
         w.writerow({k: r.get(k, "") for k in header})
     new_bytes = buf.getvalue().encode("utf-8")
-
-    # If identical, skip commit
     if old_raw is not None and old_raw == new_bytes:
         print(f"No changes for {path} — skipping commit.")
         return
-
     gh_put_content(path, new_bytes, message, sha=old_sha)
 
 # ---------- small helpers ----------
@@ -177,16 +171,10 @@ def norm_date(val) -> str:
     return s[:10] if len(s) >= 10 else s
 
 def normalize_flags_field(value) -> str:
-    """
-    metadata_master.jsonl 'flags' often looks like 'validated, public'.
-    Convert to a semicolon-separated 'validated;public'. If it's already a list,
-    join by ';'. Fallback to empty string.
-    """
     if not value:
         return ""
     if isinstance(value, list):
         return ";".join([str(x).strip() for x in value if str(x).strip()])
-    # split by comma or semicolon, strip, dedupe order-preserving
     parts = [p.strip() for chunk in str(value).split(";") for p in chunk.split(",")]
     seen = []
     for p in parts:
@@ -194,9 +182,27 @@ def normalize_flags_field(value) -> str:
             seen.append(p)
     return ";".join(seen)
 
+def normalize_msft_classification(s: str) -> str:
+    """
+    Normalize Microsoft classification to semicolon-separated.
+    Examples:
+      "Typo-squatting, Malware" → "Typo-squatting;Malware"
+      "Typos; Malware"          → "Typos;Malware"
+    Dedupe while preserving order.
+    """
+    if not s:
+        return s
+    raw = s.replace(";", ",")
+    parts = [p.strip() for p in raw.split(",") if p.strip()]
+    seen, out = set(), []
+    for p in parts:
+        if p not in seen:
+            seen.add(p)
+            out.append(p)
+    return ";".join(out)
+
 # ---------- main ----------
 def main():
-    # guard
     if not getattr(config, "GITHUB_PAT", "") or "yourTokenHere" in config.GITHUB_PAT:
         raise SystemExit("[FATAL] Set a valid GITHUB_PAT in config.py")
 
@@ -220,49 +226,33 @@ def main():
 
     # 3) Load current CSVs
     flagged_rows, _, flagged_hdr = load_csv_from_github(config.CSV_FLAGGED)
-    meta_rows, _, meta_hdr = load_csv_from_github(config.CSV_DATASET)
+    meta_rows,    _, meta_hdr    = load_csv_from_github(config.CSV_DATASET)
 
     # Ensure flagged CSV header (unchanged)
     FLAG_HEADER = ["source","checked_date","extension_identifier","msft_classification_type","exists_in_dataset"]
-    if not flagged_hdr:
-        flagged_hdr = FLAG_HEADER
-    else:
-        flagged_hdr = FLAG_HEADER  # normalize to exact order
+    flagged_hdr = FLAG_HEADER or flagged_hdr
 
-    # Ensure vsmex_metadata header with new 'flags' column AFTER repository_url and BEFORE exists_in_dataset
+    # Ensure vsmex_metadata header with 'flags' before 'exists_in_dataset'
     BASE_BEFORE = ["captured_date","source","msft_classification_type","extension_identifier","publisher_name",
                    "version","artifact","sha256","size_mb","published_date","last_updated_date","verified_publisher",
                    "installation_count","average_rating","rating_count","categories","repository_url"]
     META_HEADER = BASE_BEFORE + ["flags","exists_in_dataset"]
-
-    if not meta_hdr:
-        meta_hdr = META_HEADER
-    else:
-        # Force exact order; add missing columns if needed
-        existing = {c: True for c in meta_hdr}
-        meta_hdr = [c for c in BASE_BEFORE if c in existing]
-        if "repository_url" not in meta_hdr:
-            meta_hdr.append("repository_url")
-        if "flags" not in meta_hdr:
-            meta_hdr.append("flags")
-        if "exists_in_dataset" not in meta_hdr:
-            meta_hdr.append("exists_in_dataset")
-        meta_hdr = META_HEADER
+    meta_hdr = META_HEADER
 
     existing_ids = {r.get("extension_identifier","") for r in flagged_rows if r.get("extension_identifier")}
     meta_keys = {(r.get("extension_identifier",""), r.get("version","")) for r in meta_rows}
 
     # 4) Compute *new* identifiers only
-    removed_new = {eid for eid in removed_map.keys() if eid not in existing_ids}
+    removed_new   = {eid for eid in removed_map.keys() if eid not in existing_ids}
     malicious_new = {eid for eid in malicious_set if eid not in existing_ids}
 
     print(f"Existing flagged identifiers: {len(existing_ids)}")
     print(f"New removed_list ids: {len(removed_new)}")
     print(f"New malicious_list ids: {len(malicious_new)}")
 
-    # Worklist with classification
-    worklist = [("removed_list", eid, removed_map.get(eid, "Malware")) for eid in sorted(removed_new)]
-    worklist += [("malicious_list", eid, "Malicious") for eid in sorted(malicious_new)]
+    # Worklist with (normalized) classification
+    worklist = [("removed_list", eid, normalize_msft_classification(removed_map.get(eid, "Malware"))) for eid in sorted(removed_new)]
+    worklist += [("malicious_list", eid, normalize_msft_classification("Malicious")) for eid in sorted(malicious_new)]
 
     uploaded_vsix = 0
     new_meta_rows = 0
@@ -271,7 +261,7 @@ def main():
     for source, eid, classification in worklist:
         rec = latest_by_id.get(eid)
         if not rec:
-            # Not in metadata → exists=no
+            # Not in metadata → exists=no (flagged CSV)
             flagged_rows.append({
                 "source": source,
                 "checked_date": today,
@@ -300,6 +290,7 @@ def main():
         blob_path = f"{config.VSIX_PREFIX}/{vsix_name}"
         in_azure = blob_exists(cc, blob_path)
 
+        # flagged CSV keeps yes/no
         flagged_rows.append({
             "source": source,
             "checked_date": today,
@@ -344,7 +335,7 @@ def main():
             meta_rows.append({
                 "captured_date": today,
                 "source": source,
-                "msft_classification_type": classification,
+                "msft_classification_type": classification,          # normalized
                 "extension_identifier": eid,
                 "publisher_name": pub.get("publisherName", "") or "",
                 "version": version,
@@ -360,19 +351,19 @@ def main():
                 "categories": join_cats(rec.get("categories", [])),
                 "repository_url": rec.get("repository", "") or "none",
                 "flags": normalize_flags_field(rec.get("flags", "")),
-                "exists_in_dataset": "yes",
+                "exists_in_dataset": "vsmex",                        # ← write dataset name, not 'yes'
             })
             meta_keys.add((eid, version))
             new_meta_rows += 1
 
-        print(f"[add] {eid}@{version}: exists=yes | upload_vsix={'YES' if need_upload else 'no'} | meta_row={'YES' if (eid, version) in meta_keys else 'no'}")
+        print(f"[add] {eid}@{version}: exists={'yes' if in_azure else 'no'} | upload_vsix={'YES' if need_upload else 'no'} | meta_row={'YES' if (eid, version) in meta_keys else 'no'}")
 
-    # 5) If nothing changed, bail out (prevents “0 updates” commits)
+    # 5) No-op guard
     if appended_flagged == 0 and new_meta_rows == 0 and uploaded_vsix == 0:
         print("No changes detected — nothing to commit.")
         return
 
-    # 6) Write back CSVs (applies changes; idempotent writes inside)
+    # 6) Write back CSVs
     write_csv_to_github(
         config.CSV_FLAGGED,
         flagged_rows,
@@ -382,7 +373,7 @@ def main():
     write_csv_to_github(
         config.CSV_DATASET,
         meta_rows,
-        meta_hdr,  # includes 'flags' in the correct position
+        meta_hdr,
         message=f"Incremental vsmex_metadata (+{new_meta_rows} rows, {uploaded_vsix} vsix uploads)"
     )
 
