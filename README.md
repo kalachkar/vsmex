@@ -7,9 +7,9 @@
 ## Structure
 
 vsmex/
-├── tool/ # Collection scripts
-├── metadata/ # Incremental metadata
-└── dataset/ # Malicious VSIX packages
+--- tool/ # Collection scripts
+--- metadata/ # Incremental metadata
+--- dataset/ # Malicious VSIX packages
 
 ---
 
