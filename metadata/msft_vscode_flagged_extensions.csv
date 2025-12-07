@@ -458,3 +458,15 @@ removed_list,2025-12-04,solblanco.svetle-vsce,Malware,no
 removed_list,2025-12-04,vims-vsce.vscode-vim,Malware,yes
 removed_list,2025-12-04,vsceue.volar-vscode,Malware,no
 removed_list,2025-12-04,yamlcode.yaml-vscode-extension,Malware,yes
+removed_list,2025-12-07,BigBlack.bitcoin-black,Malware,yes
+removed_list,2025-12-07,DevCatppuccinpro.catppuccin-pro-vsc,Typo-squatting,yes
+removed_list,2025-12-07,MahendrakarPrateek.prettyxml-pro,Typo-squatting,yes
+removed_list,2025-12-07,RooIncVeterinaryDev.roo-cline-pro,Typo-squatting,yes; large file
+removed_list,2025-12-07,SpecStoryInc.specstory-vscode-pro,Typo-squatting,yes
+removed_list,2025-12-07,TheMysteryPanda.discodemulti,Typo-squatting,yes
+removed_list,2025-12-07,devCHOUZZ.vscode-better-align-pro,Typo-squatting,yes
+removed_list,2025-12-07,fyzhu.git-pretty-graph,Typo-squatting,yes
+removed_list,2025-12-07,lyywemhan.code-formatter-and-minifier-vscode,Typo-squatting,yes
+removed_list,2025-12-07,piithon.piiithon-linter,Malware,yes
+removed_list,2025-12-07,senseDevpro.profiler-php-pro,Typo-squatting,yes
+removed_list,2025-12-07,sqlmtxredev.quarto-pro,Typo-squatting,yes
