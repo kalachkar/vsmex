@@ -20,6 +20,9 @@ import requests
 from azure.storage.blob import BlobServiceClient
 from azure.core.exceptions import ResourceNotFoundError
 
+# VSIX files larger than this (in MB) are treated as "large" and not auto-uploaded to GitHub.
+LARGE_FILE_THRESHOLD_MB = 70.0
+
 try:
     import config
 except ModuleNotFoundError:
@@ -47,7 +50,11 @@ def gh_get_content(path: str) -> Tuple[Optional[bytes], Optional[str]]:
 
 def gh_put_content(path: str, content_bytes: bytes, message: str, sha: Optional[str]):
     url = f"{GH_API}/repos/{config.GITHUB_USERNAME}/{config.GITHUB_REPO}/contents/{path}"
-    payload = {"message": message, "content": base64.b64encode(content_bytes).decode("ascii"), "branch": config.GIT_BRANCH}
+    payload = {
+        "message": message,
+        "content": base64.b64encode(content_bytes).decode("ascii"),
+        "branch": config.GIT_BRANCH,
+    }
     if sha:
         payload["sha"] = sha
     r = requests.put(url, headers=gh_headers(), json=payload, timeout=180)
@@ -290,26 +297,20 @@ def main():
         blob_path = f"{config.VSIX_PREFIX}/{vsix_name}"
         in_azure = blob_exists(cc, blob_path)
 
-        # flagged CSV keeps yes/no
-        flagged_rows.append({
-            "source": source,
-            "checked_date": today,
-            "extension_identifier": eid,
-            "msft_classification_type": classification,
-            "exists_in_dataset": "yes" if in_azure else "no",
-        })
-        appended_flagged += 1
-
         if not in_azure:
+            # No VSIX in Azure → just flag as exists=no
+            flagged_rows.append({
+                "source": source,
+                "checked_date": today,
+                "extension_identifier": eid,
+                "msft_classification_type": classification,
+                "exists_in_dataset": "no",
+            })
+            appended_flagged += 1
             print(f"[add] {eid}@{version}: VSIX not in Azure → exists=no")
             continue
 
-        # VSIX exists → upload to dataset if not already there; add metadata row if new
-        dataset_path = f"{config.DATASET_ROOT}/{eid}/{version}/{vsix_name}"
-        _, existing_sha = gh_get_content(dataset_path)
-        need_upload = existing_sha is None
-
-        # Download once for hash/size (+ upload if needed)
+        # VSIX exists in Azure → download once for hash/size (+ optional upload)
         vsix_bytes = download_blob_bytes(cc, blob_path)
         sha256_hex = hashlib.sha256(vsix_bytes).hexdigest()
 
@@ -317,6 +318,27 @@ def main():
         if size_val < 0.01 and len(vsix_bytes) > 0:
             size_val = 0.01
         size_mb = f"{size_val:.2f}".rstrip("0").rstrip(".")
+
+        # Large file logic (70 MB threshold)
+        is_large = size_val > LARGE_FILE_THRESHOLD_MB
+
+        # flagged CSV: mark large files as "yes; large file"
+        exists_str = "yes; large file" if is_large else "yes"
+        flagged_rows.append({
+            "source": source,
+            "checked_date": today,
+            "extension_identifier": eid,
+            "msft_classification_type": classification,
+            "exists_in_dataset": exists_str,
+        })
+        appended_flagged += 1
+
+        # VSIX exists → upload to dataset if not already there (unless large)
+        dataset_path = f"{config.DATASET_ROOT}/{eid}/{version}/{vsix_name}"
+        _, existing_sha = gh_get_content(dataset_path)
+
+        # Only auto-upload to GitHub for non-large files that are missing there
+        need_upload = (existing_sha is None) and (not is_large)
 
         if need_upload:
             gh_put_content(
@@ -332,6 +354,9 @@ def main():
             pub = rec.get("publisher") or {}
             stats = rec.get("statistics") or {}
 
+            # Keep the artifact name, just annotate if large
+            artifact_value = f"{vsix_name} [Large]" if is_large else vsix_name
+
             meta_rows.append({
                 "captured_date": today,
                 "source": source,
@@ -339,7 +364,7 @@ def main():
                 "extension_identifier": eid,
                 "publisher_name": pub.get("publisherName", "") or "",
                 "version": version,
-                "artifact": vsix_name,
+                "artifact": artifact_value,
                 "sha256": sha256_hex,
                 "size_mb": size_mb,
                 "published_date": norm_date(rec.get("publishedDate")),
@@ -356,7 +381,12 @@ def main():
             meta_keys.add((eid, version))
             new_meta_rows += 1
 
-        print(f"[add] {eid}@{version}: exists={'yes' if in_azure else 'no'} | upload_vsix={'YES' if need_upload else 'no'} | meta_row={'YES' if (eid, version) in meta_keys else 'no'}")
+        exists_log = "yes (large)" if is_large else ("yes" if in_azure else "no")
+        print(
+            f"[add] {eid}@{version}: exists={exists_log} | "
+            f"upload_vsix={'YES' if need_upload else 'no'} | "
+            f"meta_row={'YES' if (eid, version) in meta_keys else 'no'}"
+        )
 
     # 5) No-op guard
     if appended_flagged == 0 and new_meta_rows == 0 and uploaded_vsix == 0:
