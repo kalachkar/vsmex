@@ -250,6 +250,7 @@ def main():
     meta_keys = {(r.get("extension_identifier",""), r.get("version","")) for r in meta_rows}
 
     # 4) Compute *new* identifiers only
+    # 4) Compute *new* identifiers only
     removed_new   = {eid for eid in removed_map.keys() if eid not in existing_ids}
     malicious_new = {eid for eid in malicious_set if eid not in existing_ids}
 
@@ -257,9 +258,18 @@ def main():
     print(f"New removed_list ids: {len(removed_new)}")
     print(f"New malicious_list ids: {len(malicious_new)}")
 
-    # Worklist with (normalized) classification
-    worklist = [("removed_list", eid, normalize_msft_classification(removed_map.get(eid, "Malware"))) for eid in sorted(removed_new)]
-    worklist += [("malicious_list", eid, normalize_msft_classification("Malicious")) for eid in sorted(malicious_new)]
+    # Prefer removed_list when an ID is present in both
+    worklist = []
+    for eid in sorted(removed_new | malicious_new):
+        if eid in removed_new:
+            # If in both, we choose removed_list and ignore malicious_list
+            source = "removed_list"
+            classification = normalize_msft_classification(removed_map.get(eid, "Malware"))
+        else:
+            source = "malicious_list"
+            classification = "Malicious"
+
+        worklist.append((source, eid, classification))
 
     uploaded_vsix = 0
     new_meta_rows = 0

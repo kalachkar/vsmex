@@ -440,8 +440,6 @@ removed_list,2025-12-03,Malkolm.Theme-azure-remake,Malware,yes
 removed_list,2025-12-03,Malkolm.Theme-bashling-remake,Malware,yes
 removed_list,2025-12-03,Med-H.git-graph-revamped,Typo-squatting,yes
 removed_list,2025-12-03,heartacker.git-graph-ai,Typo-squatting,yes
-malicious_list,2025-12-03,Med-H.git-graph-revamped,Malicious,yes
-malicious_list,2025-12-03,heartacker.git-graph-ai,Malicious,yes
 removed_list,2025-12-04,77qingliu.sas-syntax,Typo-squatting,yes
 removed_list,2025-12-04,Dart-vsc.code-dart,Malware,yes
 removed_list,2025-12-04,bphpburnsus.iconesvscode,Malware,no
