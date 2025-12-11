@@ -250,7 +250,6 @@ def main():
     meta_keys = {(r.get("extension_identifier",""), r.get("version","")) for r in meta_rows}
 
     # 4) Compute *new* identifiers only
-    # 4) Compute *new* identifiers only
     removed_new   = {eid for eid in removed_map.keys() if eid not in existing_ids}
     malicious_new = {eid for eid in malicious_set if eid not in existing_ids}
 
