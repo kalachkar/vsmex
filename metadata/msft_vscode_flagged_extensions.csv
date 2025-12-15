@@ -526,7 +526,7 @@ removed_list,2025-12-13,zero-pzp.turbo-console-log-pzp,Typo-squatting,yes
 removed_list,2025-12-13,zigbook.pilot-repl,Potentially malicious,yes
 removed_list,2025-12-15,AARCarti.darkai-ai-pro,Malware,yes
 removed_list,2025-12-15,AARCarti.fortex-ai-pro,Malware,yes
-removed_list,2025-12-15,DonJayamne.DonJayamne,Impersonation,yes; large file
+removed_list,2025-12-15,DonJayamne.DonJayamne,Impersonation,yes
 removed_list,2025-12-15,DotRush.dotrushV2-0,Malware,no
 removed_list,2025-12-15,ethers.ethersfoundry,Malware,no
 removed_list,2025-12-15,juanblancodevelopment.ether-solid,Malware,no
