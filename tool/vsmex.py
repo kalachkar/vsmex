@@ -57,7 +57,10 @@ def gh_put_content(path: str, content_bytes: bytes, message: str, sha: Optional[
     }
     if sha:
         payload["sha"] = sha
+
     r = requests.put(url, headers=gh_headers(), json=payload, timeout=180)
+    if r.status_code >= 400:
+        print(f"[github] PUT failed path={path} status={r.status_code} body={r.text}")
     r.raise_for_status()
     return r.json()
 
@@ -350,13 +353,16 @@ def main():
         need_upload = (existing_sha is None) and (not is_large)
 
         if need_upload:
-            gh_put_content(
-                dataset_path,
-                vsix_bytes,
-                message=f"Add VSIX {eid}@{version}",
-                sha=None,
-            )
-            uploaded_vsix += 1
+            try:
+                gh_put_content(
+                    dataset_path,
+                    vsix_bytes,
+                    message=f"Add VSIX {eid}@{version}",
+                    sha=None,
+                )
+                uploaded_vsix += 1
+            except requests.exceptions.HTTPError as e:
+                print(f"[warn] VSIX upload failed for {eid}@{version} (continuing): {e}")
 
         # Append metadata row if not already present
         if (eid, version) not in meta_keys:
