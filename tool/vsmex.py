@@ -164,26 +164,24 @@ def str_bool(v) -> str:
     return "unknown"
 
 def fmt_num(n):
-    if n is None or n == "": return "none"
-    try:
-        f = float(n)
-        return str(int(f)) if f.is_integer() else str(f).rstrip("0").rstrip(".")
-    except Exception:
-        return str(n)
-    
-def fmt_num_zero(n):
     """
     Marketplace numeric fields:
-    - Missing / unavailable → 0
+    - If missing (None / null) → write literal 'null'
     - Otherwise preserve numeric formatting
     """
-    if n is None or n == "":
-        return "0"
+    if n is None:
+        return "null"
+
+    s = str(n).strip()
+    if not s or s.lower() in {"null", "none", "n/a", "na"}:
+        return "null"
+
     try:
-        f = float(n)
+        f = float(s)
         return str(int(f)) if f.is_integer() else str(f).rstrip("0").rstrip(".")
     except Exception:
-        return "0"
+        return "null"
+
 
 def join_cats(cats) -> str:
     if not isinstance(cats, list) or not cats: return "Other"
@@ -399,9 +397,9 @@ def main():
                 "published_date": norm_date(rec.get("publishedDate")),
                 "last_updated_date": norm_date(rec.get("lastUpdated")),
                 "verified_publisher": str_bool(pub.get("isDomainVerified")),
-                "installation_count": fmt_num_zero(stats.get("install")),
-                "average_rating": fmt_num_zero(stats.get("averagerating")),
-                "rating_count": fmt_num_zero(stats.get("ratingcount")),
+                "installation_count": fmt_num(stats.get("install")),
+                "average_rating": fmt_num(stats.get("averagerating")),
+                "rating_count": fmt_num(stats.get("ratingcount")),
                 "categories": join_cats(rec.get("categories", [])),
                 "repository_url": rec.get("repository", "") or "none",
                 "flags": normalize_flags_field(rec.get("flags", "")),
