@@ -203,7 +203,7 @@ removed_list,2025-09-03,btwiuse.gopilot-chat,Typo-squatting,yes
 removed_list,2025-09-03,CharlesHoskinson.lfamnw1,Malware,yes
 removed_list,2025-09-03,JuanBlancy.popitity,Malware,yes
 removed_list,2025-09-03,EthersFoundation.bogitiy,Malware,yes
-removed_list,2025-09-03,7finney.ethcode,Malware,yes
+malicious_list,2025-09-03,7finney.ethcode,Malicious,yes
 removed_list,2025-09-03,Puglight.inspiredaily,Malware,yes
 removed_list,2025-09-03,Puglight.persistorito,Malware,yes
 removed_list,2025-09-03,Puglight.sysmotivate,Malware,yes
@@ -240,7 +240,7 @@ removed_list,2025-09-03,kast789.visual-studio-2022-theme,Copyright violation,yes
 removed_list,2025-09-03,spmeesseman.vscode-vslauncher,Copyright violation,yes
 removed_list,2025-09-03,vfd.vs2017-light-theme,Copyright violation,yes
 removed_list,2025-09-03,kast789.vs-2019-theme,Copyright violation,yes
-removed_list,2025-09-03,jamiewest.theme-light-vs-mac,Copyright violation,yes
+malicious_list,2025-09-03,jamiewest.theme-light-vs-mac,Malicious,yes
 removed_list,2025-09-03,OfekBickel.wpp,Malware,yes
 removed_list,2025-09-03,bysabi.prettier-vscode-semistandard,Typo-squatting,yes
 removed_list,2025-09-03,bysabi.prettier-vscode-standard,Typo-squatting,yes
