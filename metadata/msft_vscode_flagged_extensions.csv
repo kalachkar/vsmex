@@ -183,7 +183,7 @@ removed_list,2025-09-03,EllisonBrett.givingblankies,Malware,yes
 removed_list,2025-09-03,ETHFoundry.etherfoundrys,Malware,yes
 removed_list,2025-09-03,VanessaAster.etherefounds,Malware,yes
 removed_list,2025-09-03,bogigigigigity.etherefound,Malware,yes
-removed_list,2025-09-03,YuTengjing.vscode-colorize-plus,Typo-squatting,yes
+removed_list,2025-09-03,YuTengjing.vscode-colorize-plus,Impersonation,yes
 removed_list,2025-09-03,dafsfsdsfdfsdf11.randomic-slaying-pog,Malware,yes
 removed_list,2025-09-03,JuanFranBlancoExtensions.AmitAssaraf,Malware,yes
 removed_list,2025-09-03,JuanCrypto.juancrypto,Malware,yes
@@ -199,7 +199,7 @@ removed_list,2025-09-03,Cryptocurrency.asbaquin,Malware,yes
 removed_list,2025-09-03,JoshWEB3.solibt,Malware,yes
 removed_list,2025-09-03,JosephLubin.solib,Malware,yes
 removed_list,2025-09-03,VitalyButerin.hardhatjs,Malware,yes
-removed_list,2025-09-03,btwiuse.gopilot-chat,Typo-squatting,yes
+removed_list,2025-09-03,btwiuse.gopilot-chat,Impersonation,yes
 removed_list,2025-09-03,CharlesHoskinson.lfamnw1,Malware,yes
 removed_list,2025-09-03,JuanBlancy.popitity,Malware,yes
 removed_list,2025-09-03,EthersFoundation.bogitiy,Malware,yes
@@ -232,7 +232,7 @@ removed_list,2025-09-03,YogevAvitan.codeivri-vscode,Malware,yes
 removed_list,2025-09-03,MediaLLC.solidyy,Malware,no
 removed_list,2025-09-03,DaveWeb3.choccie,Malware,no
 removed_list,2025-09-03,DanielBlockchain.chocosnack,Malware,no
-removed_list,2025-09-03,KomaKamaki.vscode-api-client-lite,Typo-squatting,yes
+removed_list,2025-09-03,KomaKamaki.vscode-api-client-lite,Impersonation,yes
 removed_list,2025-09-03,jsayol.firebase-explorer,Copyright violation,yes
 removed_list,2025-09-03,JohnAaronNelson.ForceCode,Copyright violation,yes
 removed_list,2025-09-03,JohnAaronNelson.visualforce,Copyright violation,yes
@@ -242,13 +242,13 @@ removed_list,2025-09-03,vfd.vs2017-light-theme,Copyright violation,yes
 removed_list,2025-09-03,kast789.vs-2019-theme,Copyright violation,yes
 malicious_list,2025-09-03,jamiewest.theme-light-vs-mac,Malicious,yes
 removed_list,2025-09-03,OfekBickel.wpp,Malware,yes
-removed_list,2025-09-03,bysabi.prettier-vscode-semistandard,Typo-squatting,yes
-removed_list,2025-09-03,bysabi.prettier-vscode-standard,Typo-squatting,yes
-removed_list,2025-09-03,Shunqian.prettier-plus,Typo-squatting,yes
-removed_list,2025-09-03,remimarsal.prettier-now,Typo-squatting,yes
-removed_list,2025-09-03,iSayme.vscode-prettier-standard,Typo-squatting,yes
-removed_list,2025-09-03,jishutuan.prettier-vscode,Typo-squatting,yes
-removed_list,2025-09-03,jameszhanga.even-prettier,Typo-squatting,yes
+removed_list,2025-09-03,bysabi.prettier-vscode-semistandard,Impersonation,yes
+removed_list,2025-09-03,bysabi.prettier-vscode-standard,Impersonation,yes
+removed_list,2025-09-03,Shunqian.prettier-plus,Impersonation,yes
+removed_list,2025-09-03,remimarsal.prettier-now,Impersonation,yes
+removed_list,2025-09-03,iSayme.vscode-prettier-standard,Impersonation,yes
+removed_list,2025-09-03,jishutuan.prettier-vscode,Impersonation,yes
+removed_list,2025-09-03,jameszhanga.even-prettier,Impersonation,yes
 removed_list,2025-09-03,kaijialin.pvts,Typo-squatting,yes
 removed_list,2025-09-03,lakshits11.fresh-material-theme,Copyright violation,yes
 removed_list,2025-09-03,jRichardeau.vscode-vsproj,Copyright violation,yes
@@ -257,12 +257,12 @@ removed_list,2025-09-03,Smartie.hacknet-vscode,Copyright violation,yes
 removed_list,2025-09-03,abhiagr.livs,Copyright violation,yes
 removed_list,2025-09-03,azure-dev.azure-cli-helper,Copyright violation,yes
 removed_list,2025-09-03,v-test-publisher.vscode-azure-functions-remote-web-test,Copyright violation,yes
-removed_list,2025-09-03,DylanRampage.prettier-optimized,Typo-squatting,yes
-removed_list,2025-09-03,duailibe.miniprettier,Typo-squatting,yes
-removed_list,2025-09-03,dotatong.wt-prettier-vscode,Typo-squatting,yes
-removed_list,2025-09-03,nkurasawa.vscode-ignore-prettier,Typo-squatting,yes
-removed_list,2025-09-03,hyperproof.vscode-ext-prettier-java,Typo-squatting,yes
-removed_list,2025-09-03,publishingsofficial.prettier-plus-vscode,Typo-squatting,yes
+removed_list,2025-09-03,DylanRampage.prettier-optimized,Impersonation,yes
+removed_list,2025-09-03,duailibe.miniprettier,Impersonation,yes
+removed_list,2025-09-03,dotatong.wt-prettier-vscode,Impersonation,yes
+removed_list,2025-09-03,nkurasawa.vscode-ignore-prettier,Impersonation,yes
+removed_list,2025-09-03,hyperproof.vscode-ext-prettier-java,Impersonation,yes
+removed_list,2025-09-03,publishingsofficial.prettier-plus-vscode,Impersonation,yes
 removed_list,2025-09-03,johnhtml.dasfasdsadasdf,Malware,no
 removed_list,2025-09-03,outthaway.sol2-lang,Malware,yes
 removed_list,2025-09-03,johnh.solibit22-lang,Malware,yes
@@ -332,7 +332,7 @@ removed_list,2025-09-03,xuyanfeng.addr2line-assistant,Malware,yes
 removed_list,2025-09-03,JuanFBlanco.awswhh,Malware,yes
 removed_list,2025-09-03,JosephDembele95.email-grabber,Malware,yes
 removed_list,2025-09-03,RabobankAI.rabobank-code-assistant,Malware,yes
-removed_list,2025-09-03,Rojo.rojo-roblox-vscode,Typo-squatting,yes
+removed_list,2025-09-03,Rojo.rojo-roblox-vscode,Impersonation,yes
 removed_list,2025-09-21,CryptoCurrencyExtensions.blehai,Malware,yes
 removed_list,2025-09-21,CryptoFoundation.BlehBleh,Malware,yes
 removed_list,2025-09-21,BlockchainIndustries.bitcoin-toolkit,Malware,yes
@@ -356,7 +356,7 @@ removed_list,2025-10-15,Wumpus.bold-end,Malware,no
 removed_list,2025-10-15,beisen.codecake,Malware,yes
 removed_list,2025-10-15,Sayantan710.ollot,Malware,yes
 removed_list,2025-10-15,RachelFront.asdtif,Malware,yes
-removed_list,2025-10-15,ReadMeAI.readmeai,Typo-squatting,yes
+removed_list,2025-10-15,ReadMeAI.readmeai,Impersonation,yes
 removed_list,2025-10-15,Extensions-Topic.portugese,Malware,yes
 removed_list,2025-10-15,Extensions-Topic.german,Malware,yes
 removed_list,2025-10-15,Extensions-Topic.coffeescript,Malware,yes
@@ -365,9 +365,9 @@ removed_list,2025-10-15,Extensions-Topic.italian,Malware,yes
 removed_list,2025-10-15,Extensions-Topic.bulgarian,Malware,yes
 removed_list,2025-10-15,Extensions-Topic.korean,Malware,yes
 removed_list,2025-10-15,RileyMoore.stdrlabs-ext,Malware,yes
-removed_list,2025-10-15,AIClaude.claude-code-master,Typo-squatting,yes
-removed_list,2025-10-15,zhucan.debug-cline,Typo-squatting,yes
-removed_list,2025-10-15,sunamo-cz.specstory-autosave,Typo-squatting,yes
+removed_list,2025-10-15,AIClaude.claude-code-master,Impersonation,yes
+removed_list,2025-10-15,zhucan.debug-cline,Impersonation,yes
+removed_list,2025-10-15,sunamo-cz.specstory-autosave,Impersonation,yes
 removed_list,2025-10-15,498-00.cppplayground,Malware,yes
 malicious_list,2025-10-15,vkteam.com,Malicious,yes
 malicious_list,2025-10-15,guozebin.api-generator-plugin,Malicious,yes
@@ -387,24 +387,24 @@ removed_list,2025-10-20,cline-ai-main.cline-ai-agent,Malware,yes
 removed_list,2025-10-20,labfile.labfile,Malware,no
 removed_list,2025-10-21,BenjaminFriedl.lexica-img-fix,Malware,yes
 removed_list,2025-10-25,EricWrite.dsafsadas,Malware,yes
-removed_list,2025-10-25,plugin-manager.vscode-notes-manager,Typo-squatting,yes
+removed_list,2025-10-25,plugin-manager.vscode-notes-manager,Impersonation,yes
 removed_list,2025-10-25,thesashkin.krnl-execute-thesashkin,Malware,no
-removed_list,2025-10-28,StackspotPlatform.StackSpot,Typo-squatting,yes
+removed_list,2025-10-28,StackspotPlatform.StackSpot,Impersonation,yes
 removed_list,2025-10-29,AshleyHornja.prettierformattingplus,Malware,no
 removed_list,2025-10-29,Utilities.wowlanguage,Malware,no
 removed_list,2025-10-29,me80758262.piiithon-linter,Malware,yes
 removed_list,2025-10-30,Extensions-A.wow1language,Malware,yes
 removed_list,2025-10-30,JuanrBlanco.wow11language,Malware,no
-removed_list,2025-10-30,esbenpp.pretier-vscodee,Typo-squatting,yes
-removed_list,2025-10-30,jinyang.copilot-mcp-zh-cn,Typo-squatting,yes
+removed_list,2025-10-30,esbenpp.pretier-vscodee,Impersonation,yes
+removed_list,2025-10-30,jinyang.copilot-mcp-zh-cn,Impersonation,yes
 removed_list,2025-10-31,DavidAsh.dcbox-vs,Malware,yes
 removed_list,2025-10-31,DavidAsh.gruvbox-vs,Malware,yes
 removed_list,2025-10-31,DavidAsh.tr-lang-pack,Malware,yes
-removed_list,2025-10-31,DevelopmentInc.cfx-lua-vs,Typo-squatting;Malware,yes
-removed_list,2025-10-31,DevelopmentInc.kombai-vs,Typo-squatting;Malware,yes
-removed_list,2025-10-31,DevelopmentInc.minecraftsnippets,Typo-squatting;Malware,yes
-removed_list,2025-10-31,DevelopmentInc.pokemon,Typo-squatting;Malware,yes
-removed_list,2025-10-31,DevelopmentInc.torizon-vs,Typo-squatting;Malware,yes
+removed_list,2025-10-31,DevelopmentInc.cfx-lua-vs,Impersonation;Malware,yes
+removed_list,2025-10-31,DevelopmentInc.kombai-vs,Impersonation;Malware,yes
+removed_list,2025-10-31,DevelopmentInc.minecraftsnippets,Impersonation;Malware,yes
+removed_list,2025-10-31,DevelopmentInc.pokemon,Impersonation;Malware,yes
+removed_list,2025-10-31,DevelopmentInc.torizon-vs,Impersonation;Malware,yes
 removed_list,2025-11-05,annacode.pt-lab-simproc,Malware,no
 removed_list,2025-11-05,raidenshogun.javascript-null-sequence,Malware,no
 removed_list,2025-11-05,sahil92552.cbe-456,Malware,no
@@ -414,10 +414,10 @@ removed_list,2025-11-09,juanbIanco.soli989,Malware,yes
 removed_list,2025-11-09,vitalik-Buterin.soli-extensio,Malware,no
 removed_list,2025-11-20,solidhelium.codeforces-submitter,Untrustworthy,yes
 removed_list,2025-11-21,dfadhel.vscodepython,Malware,yes
-removed_list,2025-11-22,SamuelPinto.prettier-vscode-pluss,Typo-squatting,yes
-removed_list,2025-11-22,publishingsofficial.prettier-vscode-plus,Typo-squatting,yes
-removed_list,2025-11-26,SamuelPinto.better-vscode-html-css,Typo-squatting,yes
-removed_list,2025-11-26,SamuelPinto.better-vscode-html-css-support,Typo-squatting,no
+removed_list,2025-11-22,SamuelPinto.prettier-vscode-pluss,Impersonation,yes
+removed_list,2025-11-22,publishingsofficial.prettier-vscode-plus,Impersonation,yes
+removed_list,2025-11-26,SamuelPinto.better-vscode-html-css,Impersonation,yes
+removed_list,2025-11-26,SamuelPinto.better-vscode-html-css-support,Impersonation,no
 removed_list,2025-11-28,Prisma-Inc.prisma-studio-assistance,Malware,yes
 removed_list,2025-11-28,culvequeaka.Descargar-TRAIN-CREW-Prologue-gratuita-2022,Malware,no
 removed_list,2025-11-28,newsporcolec.Penn-Elcom-Case-Designer-Crackepub-wonynoe,Malware,no
@@ -426,7 +426,7 @@ removed_list,2025-11-28,vialenliyu.Functionsandapplications11mcgrawhillryersonpd
 removed_list,2025-12-02,71eb6d78-f65c-69f8-a0fd-58407e50bfc6.market,Spam,no
 removed_list,2025-12-02,71eb6d78-f65c-69f8-a0fd-58407e50bfc6.twilightofthewarriorswalledin,Spam,no
 removed_list,2025-12-02,71eb6d78-f65c-69f8-a0fd-58407e50bfc6.twilightofthewarriorswalledinhdtw,Spam,no
-removed_list,2025-12-02,betterthanalltime.calva-vscode,Typo-squatting,yes
+removed_list,2025-12-02,betterthanalltime.calva-vscode,Impersonation,yes
 removed_list,2025-12-02,priskinski.Theme-Afterglow-remake,Malware,yes
 removed_list,2025-12-02,priskinski.Theme-AgolaDark-remake,Malware,yes
 removed_list,2025-12-02,priskinski.Theme-AllHallowsEve-remake,Malware,yes
@@ -438,9 +438,9 @@ removed_list,2025-12-03,Malkolm.Theme-Ascetic-remake,Malware,yes
 removed_list,2025-12-03,Malkolm.Theme-Aurora-remake,Malware,yes
 removed_list,2025-12-03,Malkolm.Theme-azure-remake,Malware,yes
 removed_list,2025-12-03,Malkolm.Theme-bashling-remake,Malware,yes
-removed_list,2025-12-03,Med-H.git-graph-revamped,Typo-squatting,yes
-removed_list,2025-12-03,heartacker.git-graph-ai,Typo-squatting,yes
-removed_list,2025-12-04,77qingliu.sas-syntax,Typo-squatting,yes
+removed_list,2025-12-03,Med-H.git-graph-revamped,Impersonation,yes
+removed_list,2025-12-03,heartacker.git-graph-ai,Impersonation,yes
+removed_list,2025-12-04,77qingliu.sas-syntax,Impersonation,yes
 removed_list,2025-12-04,Dart-vsc.code-dart,Malware,yes
 removed_list,2025-12-04,bphpburnsus.iconesvscode,Malware,no
 removed_list,2025-12-04,csvmech.csvrainbow,Malware,yes
@@ -449,7 +449,7 @@ removed_list,2025-12-04,eamodas.shiny-vscode,Malware,yes
 removed_list,2025-12-04,flutcode.flutter-extension,Malware,yes
 removed_list,2025-12-04,msjsdreact.react-native-vsce,Malware,yes
 removed_list,2025-12-04,ovixcodes.basedpyright-vscode,Malware,yes
-removed_list,2025-12-04,pvparuchuri.sas,Typo-squatting,yes
+removed_list,2025-12-04,pvparuchuri.sas,Impersonation,yes
 removed_list,2025-12-04,redmat.vscode-quarkus-pro,Malware,yes
 removed_list,2025-12-04,saoudrizvsce.claude-devsce,Malware,yes
 removed_list,2025-12-04,solblanco.svetle-vsce,Malware,no
@@ -457,72 +457,72 @@ removed_list,2025-12-04,vims-vsce.vscode-vim,Malware,yes
 removed_list,2025-12-04,vsceue.volar-vscode,Malware,no
 removed_list,2025-12-04,yamlcode.yaml-vscode-extension,Malware,yes
 removed_list,2025-12-07,BigBlack.bitcoin-black,Malware,yes
-removed_list,2025-12-07,DevCatppuccinpro.catppuccin-pro-vsc,Typo-squatting,yes
-removed_list,2025-12-07,MahendrakarPrateek.prettyxml-pro,Typo-squatting,yes
-removed_list,2025-12-07,RooIncVeterinaryDev.roo-cline-pro,Typo-squatting,yes
-removed_list,2025-12-07,SpecStoryInc.specstory-vscode-pro,Typo-squatting,yes
-removed_list,2025-12-07,TheMysteryPanda.discodemulti,Typo-squatting,yes
-removed_list,2025-12-07,devCHOUZZ.vscode-better-align-pro,Typo-squatting,yes
-removed_list,2025-12-07,fyzhu.git-pretty-graph,Typo-squatting,yes
-removed_list,2025-12-07,lyywemhan.code-formatter-and-minifier-vscode,Typo-squatting,yes
+removed_list,2025-12-07,DevCatppuccinpro.catppuccin-pro-vsc,Impersonation,yes
+removed_list,2025-12-07,MahendrakarPrateek.prettyxml-pro,Impersonation,yes
+removed_list,2025-12-07,RooIncVeterinaryDev.roo-cline-pro,Impersonation,yes
+removed_list,2025-12-07,SpecStoryInc.specstory-vscode-pro,Impersonation,yes
+removed_list,2025-12-07,TheMysteryPanda.discodemulti,Impersonation,yes
+removed_list,2025-12-07,devCHOUZZ.vscode-better-align-pro,Impersonation,yes
+removed_list,2025-12-07,fyzhu.git-pretty-graph,Impersonation,yes
+removed_list,2025-12-07,lyywemhan.code-formatter-and-minifier-vscode,Impersonation,yes
 removed_list,2025-12-07,piithon.piiithon-linter,Malware,yes
-removed_list,2025-12-07,senseDevpro.profiler-php-pro,Typo-squatting,yes
-removed_list,2025-12-07,sqlmtxredev.quarto-pro,Typo-squatting,yes
-removed_list,2025-12-09,AkhilTeotia.prettier-vscode-cfml,Typo-squatting,yes
+removed_list,2025-12-07,senseDevpro.profiler-php-pro,Impersonation,yes
+removed_list,2025-12-07,sqlmtxredev.quarto-pro,Impersonation,yes
+removed_list,2025-12-09,AkhilTeotia.prettier-vscode-cfml,Impersonation,yes
 removed_list,2025-12-09,BigBlack.codo-ai,Malware,yes
 removed_list,2025-12-09,BigBlack.mrbigblacktheme,Malware,no
-removed_list,2025-12-09,complete.prettier-vscode-community,Typo-squatting,yes
-removed_list,2025-12-09,jeronimodevex.color-picker-pro,Typo-squatting,no
+removed_list,2025-12-09,complete.prettier-vscode-community,Impersonation,yes
+removed_list,2025-12-09,jeronimodevex.color-picker-pro,Impersonation,no
 removed_list,2025-12-09,ozz3dev.bitcoin-auto-trading,Malware,yes
 removed_list,2025-12-09,theme-cyberpunk.theme-neon-cyberpunk,Malware,yes
-removed_list,2025-12-13,CartagoNova.turbo-console-log-forked-by-cartago,Typo-squatting,yes
+removed_list,2025-12-13,CartagoNova.turbo-console-log-forked-by-cartago,Impersonation,yes
 removed_list,2025-12-13,EffetMer.darkgpt,Malware,yes
-removed_list,2025-12-13,LuizDoPc.luizdopc-turbo-console-log,Typo-squatting,yes
+removed_list,2025-12-13,LuizDoPc.luizdopc-turbo-console-log,Impersonation,yes
 removed_list,2025-12-13,MisterAAR.codex-ai-pro,Malware,yes
-removed_list,2025-12-13,NeoMain.Neo-Better-DevTracker,Typo-squatting,yes
-removed_list,2025-12-13,Noe.noe-tokyo-night-horizon,Typo-squatting,yes
-removed_list,2025-12-13,PhungXuanAnh.auto-run-command-with-condition,Typo-squatting,yes
-removed_list,2025-12-13,SupporterREditor.r-vscode,Typo-squatting,yes
-removed_list,2025-12-13,alexevanczuk.pks-vscode,Typo-squatting,yes
-removed_list,2025-12-13,altynbek132.turbo-console-log-custom,Typo-squatting,yes
-removed_list,2025-12-13,benpzhao.emmylua-aoe,Typo-squatting,yes
-removed_list,2025-12-13,brainz-digital-com.brainz-digital-netbeans-keybindings,Typo-squatting,yes
-removed_list,2025-12-13,cuitianze.turbo-console-log-with-emoji,Typo-squatting,yes
-removed_list,2025-12-13,cyrilproletuzi.angular-schematics-pro,Typo-squatting,yes
-removed_list,2025-12-13,dechuen-lee.tailwindcss-intellisense-auto-space,Typo-squatting,yes
+removed_list,2025-12-13,NeoMain.Neo-Better-DevTracker,Impersonation,yes
+removed_list,2025-12-13,Noe.noe-tokyo-night-horizon,Impersonation,yes
+removed_list,2025-12-13,PhungXuanAnh.auto-run-command-with-condition,Impersonation,yes
+removed_list,2025-12-13,SupporterREditor.r-vscode,Impersonation,yes
+removed_list,2025-12-13,alexevanczuk.pks-vscode,Impersonation,yes
+removed_list,2025-12-13,altynbek132.turbo-console-log-custom,Impersonation,yes
+removed_list,2025-12-13,benpzhao.emmylua-aoe,Impersonation,yes
+removed_list,2025-12-13,brainz-digital-com.brainz-digital-netbeans-keybindings,Impersonation,yes
+removed_list,2025-12-13,cuitianze.turbo-console-log-with-emoji,Impersonation,yes
+removed_list,2025-12-13,cyrilproletuzi.angular-schematics-pro,Impersonation,yes
+removed_list,2025-12-13,dechuen-lee.tailwindcss-intellisense-auto-space,Impersonation,yes
 removed_list,2025-12-13,devcodaro.codaro-pro,Malware,yes
-removed_list,2025-12-13,env.Better-dotenv,Typo-squatting,yes
-removed_list,2025-12-13,env.Javascript-snippets-plus,Typo-squatting,yes
-removed_list,2025-12-13,frunoob.ankimini,Typo-squatting,yes
-removed_list,2025-12-13,gerson577.turbo-console-log-modify,Typo-squatting,yes
-removed_list,2025-12-13,ghlandy.LiveServer-2,Typo-squatting,yes
-removed_list,2025-12-13,harrisonLin.fcbox-ai-code,Typo-squatting,yes
-removed_list,2025-12-13,idanSaban.turbo-console-debuglog,Typo-squatting,yes
+removed_list,2025-12-13,env.Better-dotenv,Impersonation,yes
+removed_list,2025-12-13,env.Javascript-snippets-plus,Impersonation,yes
+removed_list,2025-12-13,frunoob.ankimini,Impersonation,yes
+removed_list,2025-12-13,gerson577.turbo-console-log-modify,Impersonation,yes
+removed_list,2025-12-13,ghlandy.LiveServer-2,Impersonation,yes
+removed_list,2025-12-13,harrisonLin.fcbox-ai-code,Impersonation,yes
+removed_list,2025-12-13,idanSaban.turbo-console-debuglog,Impersonation,yes
 removed_list,2025-12-13,johnpborgon.codecompiler,Malware,yes
 removed_list,2025-12-13,johnpborgon.react-exe-runner,Malware,yes
 removed_list,2025-12-13,levicarlsson.shelly,Malware,yes
-removed_list,2025-12-13,linlinzhao.turbo-console-log-enhance,Typo-squatting,yes
-removed_list,2025-12-13,littensydev.charmed-icons-pro,Typo-squatting,yes
-removed_list,2025-12-13,mahdihajian.angular-files-creator,Typo-squatting,yes
-removed_list,2025-12-13,mahdihajian.vscode-pull-request-azure-devops,Typo-squatting,yes
-removed_list,2025-12-13,mahdihajian.vscode-shelf,Typo-squatting,yes
-removed_list,2025-12-13,mishannn.custom-turbo-console-log,Typo-squatting,yes
-removed_list,2025-12-13,nocnokneo.gif-player-plus,Typo-squatting,yes
+removed_list,2025-12-13,linlinzhao.turbo-console-log-enhance,Impersonation,yes
+removed_list,2025-12-13,littensydev.charmed-icons-pro,Impersonation,yes
+removed_list,2025-12-13,mahdihajian.angular-files-creator,Impersonation,yes
+removed_list,2025-12-13,mahdihajian.vscode-pull-request-azure-devops,Impersonation,yes
+removed_list,2025-12-13,mahdihajian.vscode-shelf,Impersonation,yes
+removed_list,2025-12-13,mishannn.custom-turbo-console-log,Impersonation,yes
+removed_list,2025-12-13,nocnokneo.gif-player-plus,Impersonation,yes
 removed_list,2025-12-13,pandaexpress.Theme-Anarchist-plugin,Malware,yes
 removed_list,2025-12-13,pandaexpress.Theme-AnarchistEighties-plugin,Malware,yes
 removed_list,2025-12-13,pandaexpress.Theme-Array-plugin,Malware,yes
 removed_list,2025-12-13,pandaexpress.Theme-ant-plugin,Malware,yes
 removed_list,2025-12-13,pandaexpress.Theme-arstotzka-plugin,Malware,yes
-removed_list,2025-12-13,phantomgz.vscode-theme-onedark-c,Typo-squatting,yes
-removed_list,2025-12-13,sachinsmc.turbo-rust-println,Typo-squatting,yes
-removed_list,2025-12-13,samuanv.turbo-console-log-single-quotes,Typo-squatting,yes
-removed_list,2025-12-13,sseveur.vscode-bigquery-v2,Typo-squatting,yes
-removed_list,2025-12-13,svltsweet.Svetle-for-Cursor,Typo-squatting,yes
-removed_list,2025-12-13,trlanfeng.turbo-console-log,Typo-squatting,yes
-removed_list,2025-12-13,tuur29.turbo-console-log,Typo-squatting,yes
-removed_list,2025-12-13,val-brlt.turbo-console-no-comma,Typo-squatting,yes
-removed_list,2025-12-13,ygqygq2.turbo-print-log,Typo-squatting,yes
-removed_list,2025-12-13,zero-pzp.turbo-console-log-pzp,Typo-squatting,yes
+removed_list,2025-12-13,phantomgz.vscode-theme-onedark-c,Impersonation,yes
+removed_list,2025-12-13,sachinsmc.turbo-rust-println,Impersonation,yes
+removed_list,2025-12-13,samuanv.turbo-console-log-single-quotes,Impersonation,yes
+removed_list,2025-12-13,sseveur.vscode-bigquery-v2,Impersonation,yes
+removed_list,2025-12-13,svltsweet.Svetle-for-Cursor,Impersonation,yes
+removed_list,2025-12-13,trlanfeng.turbo-console-log,Impersonation,yes
+removed_list,2025-12-13,tuur29.turbo-console-log,Impersonation,yes
+removed_list,2025-12-13,val-brlt.turbo-console-no-comma,Impersonation,yes
+removed_list,2025-12-13,ygqygq2.turbo-print-log,Impersonation,yes
+removed_list,2025-12-13,zero-pzp.turbo-console-log-pzp,Impersonation,yes
 removed_list,2025-12-13,zigbook.pilot-repl,Potentially malicious,yes
 removed_list,2025-12-15,AARCarti.darkai-ai-pro,Malware,yes
 removed_list,2025-12-15,AARCarti.fortex-ai-pro,Malware,yes
@@ -535,34 +535,34 @@ removed_list,2025-12-19,AhmedSleem.secure-code,Malware,yes
 removed_list,2025-12-19,EfferSmart.code-studio-pro,Malware,yes
 removed_list,2025-12-19,EfferSmart.qoodo-ai,Malware,yes
 removed_list,2025-12-19,InternetLK.username-poc,Malware,yes
-removed_list,2025-12-19,OPENEDAI.OPENEDAI,Typo Squatting,yes
+removed_list,2025-12-19,OPENEDAI.OPENEDAI,Impersonation,yes
 removed_list,2025-12-19,SyntaxDev.New-Christmas-Theme,Malware,yes
-removed_list,2025-12-19,codevsce.codelddb-vscode,Typo Squatting,yes
-removed_list,2025-12-19,embeddteam.embedded-build-analyzer,Typo Squatting,yes
-removed_list,2025-12-19,embeddteam.embedded-cortex-debug,Typo Squatting,yes
-removed_list,2025-12-19,embeddteam.embeddedprojectmanager,Typo Squatting,yes
+removed_list,2025-12-19,codevsce.codelddb-vscode,Impersonation,yes
+removed_list,2025-12-19,embeddteam.embedded-build-analyzer,Impersonation,yes
+removed_list,2025-12-19,embeddteam.embedded-cortex-debug,Impersonation,yes
+removed_list,2025-12-19,embeddteam.embeddedprojectmanager,Impersonation,yes
 removed_list,2025-12-19,marketplacer.marketplacer,Malware,yes
-removed_list,2025-12-19,siffat-ahmed.ai-autocomplete-siffat-ahmed,Typo Squatting,yes
-removed_list,2025-12-19,RogDeved.Night-moonlight-theme,Typo Squatting,yes
+removed_list,2025-12-19,siffat-ahmed.ai-autocomplete-siffat-ahmed,Impersonation,yes
+removed_list,2025-12-19,RogDeved.Night-moonlight-theme,Impersonation,yes
 removed_list,2025-12-19,WilliamAsaba.dev-time-tracker,Malware,yes
-removed_list,2025-12-19,chess-color-theme.chess-svelte-5-snippets,Typo Squatting,yes
-removed_list,2025-12-19,cn00.duckdb-lab,Typo Squatting,yes
-removed_list,2025-12-19,cn00.sqltools-duckdb,Typo Squatting,yes
-removed_list,2025-12-19,ferrymo.intellij-idea-new-ui-pretty-ferrymo,Typo Squatting,yes
-removed_list,2025-12-19,wlnxingdev.free-senltig,Typo Squatting,yes
-removed_list,2025-12-19,yonbip.yds-gitlab-workflow,Typo Squatting,yes
-removed_list,2025-12-23,Benachile-studio.protobuf-pro,Typo Squatting,yes
+removed_list,2025-12-19,chess-color-theme.chess-svelte-5-snippets,Impersonation,yes
+removed_list,2025-12-19,cn00.duckdb-lab,Impersonation,yes
+removed_list,2025-12-19,cn00.sqltools-duckdb,Impersonation,yes
+removed_list,2025-12-19,ferrymo.intellij-idea-new-ui-pretty-ferrymo,Impersonation,yes
+removed_list,2025-12-19,wlnxingdev.free-senltig,Impersonation,yes
+removed_list,2025-12-19,yonbip.yds-gitlab-workflow,Impersonation,yes
+removed_list,2025-12-23,Benachile-studio.protobuf-pro,Impersonation,yes
 removed_list,2025-12-23,Kiki67.gambling-corner,Spam,yes
-removed_list,2025-12-23,Ritchie.cursor-dark-plus,Typo Squatting,yes
-removed_list,2025-12-23,embedd-team.embedd-build-analyzer,Typo Squatting,yes
-removed_list,2025-12-23,embedd-team.embedd-cortex-debug,Typo Squatting,yes
-removed_list,2025-12-23,embedd-team.embedd-peripheral-viewer,Typo Squatting,yes
-removed_list,2025-12-23,embedd-team.embedd-project-manager,Typo Squatting,yes
-removed_list,2025-12-23,lsq-xgydxdx.git-graph-tool-chinese,Typo Squatting,yes
-removed_list,2025-12-23,naveenkunder.format-html,Typo Squatting,yes
-removed_list,2025-12-23,nourgaser.google-tasks-json-fork,Typo Squatting,yes
-removed_list,2025-12-23,wuyifeng.ai-svn-scm,Typo Squatting,yes
-removed_list,2025-12-23,wuyifeng.vscode-database-client,Typo Squatting,yes
+removed_list,2025-12-23,Ritchie.cursor-dark-plus,Impersonation,yes
+removed_list,2025-12-23,embedd-team.embedd-build-analyzer,Impersonation,yes
+removed_list,2025-12-23,embedd-team.embedd-cortex-debug,Impersonation,yes
+removed_list,2025-12-23,embedd-team.embedd-peripheral-viewer,Impersonation,yes
+removed_list,2025-12-23,embedd-team.embedd-project-manager,Impersonation,yes
+removed_list,2025-12-23,lsq-xgydxdx.git-graph-tool-chinese,Impersonation,yes
+removed_list,2025-12-23,naveenkunder.format-html,Impersonation,yes
+removed_list,2025-12-23,nourgaser.google-tasks-json-fork,Impersonation,yes
+removed_list,2025-12-23,wuyifeng.ai-svn-scm,Impersonation,yes
+removed_list,2025-12-23,wuyifeng.vscode-database-client,Impersonation,yes
 removed_list,2025-12-23,AutoMind.automindX,Malware,yes
 removed_list,2025-12-23,QuantumCodeLabs.ai-code-explainer,Malware,yes
 removed_list,2025-12-23,QuantumCodeLabs.ai-doc-generator,Malware,yes
@@ -572,16 +572,16 @@ removed_list,2025-12-23,QuantumCodeLabs.darky-ai,Malware,yes
 removed_list,2025-12-23,QuantumCodeLabs.dracula-pro-theme,Malware,yes
 removed_list,2025-12-23,QuantumCodeLabs.qoodo-ai-assistant,Malware,yes
 removed_list,2025-12-23,TechSolutionsPro.bitcoin-cake-theme,Malware,yes
-removed_list,2025-12-23,krabt.krabt-extension-pack,Typo Squatting,yes
-removed_list,2025-12-23,krabt.krabt-proto,Typo Squatting,yes
-removed_list,2025-12-23,serialt.sugar-extension-pack,Typo Squatting,yes
-removed_list,2025-12-23,serialt.sugar-proto,Typo Squatting,yes
-removed_list,2025-12-23,OktayAydoan.smarty-formatter,Typo Squatting,yes
+removed_list,2025-12-23,krabt.krabt-extension-pack,Impersonation,yes
+removed_list,2025-12-23,krabt.krabt-proto,Impersonation,yes
+removed_list,2025-12-23,serialt.sugar-extension-pack,Impersonation,yes
+removed_list,2025-12-23,serialt.sugar-proto,Impersonation,yes
+removed_list,2025-12-23,OktayAydoan.smarty-formatter,Impersonation,yes
 removed_list,2025-12-23,StefanYosif.axion-ai,Malware,yes
-removed_list,2025-12-28,DiegoPandiello.aws-srp-rest-client,Typo Squatting,yes
-removed_list,2025-12-28,DiegoPandiello.elixir-ls-test-args,Typo Squatting,yes
-removed_list,2025-12-28,ZhangQuan.code-translate-enhanced,Typo Squatting,yes
-removed_list,2025-12-29,Batch.Docker-Vscode-V2,Typo Squatting,yes
+removed_list,2025-12-28,DiegoPandiello.aws-srp-rest-client,Impersonation,yes
+removed_list,2025-12-28,DiegoPandiello.elixir-ls-test-args,Impersonation,yes
+removed_list,2025-12-28,ZhangQuan.code-translate-enhanced,Impersonation,yes
+removed_list,2025-12-29,Batch.Docker-Vscode-V2,Impersonation,yes
 removed_list,2025-12-30,diegofernandezpandiello.super-elixir-ls,Impersonation,yes
 removed_list,2025-12-30,pablaofficeal.taskmanager-vscode,Malware,yes
 removed_list,2025-12-30,solario.enhanced-favorites,Impersonation,yes
