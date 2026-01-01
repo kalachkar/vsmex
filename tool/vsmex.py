@@ -13,6 +13,7 @@ import csv
 import hashlib
 import io
 import json
+import zipfile
 from datetime import datetime, timezone
 from typing import Dict, Tuple, Optional
 
@@ -223,6 +224,22 @@ def normalize_msft_classification(s: str) -> str:
             out.append(p)
     return ";".join(out)
 
+def extract_vscode_engine_from_vsix(vsix_bytes: bytes) -> str:
+    """
+    Extract engines.vscode from extension/package.json inside VSIX bytes.
+    Returns "null" if not present or on any error.
+    """
+    try:
+        with zipfile.ZipFile(io.BytesIO(vsix_bytes), "r") as z:
+            with z.open("extension/package.json") as f:
+                pkg = json.load(f)
+        engines = pkg.get("engines") or {}
+        val = engines.get("vscode")
+        return str(val).strip() if val else "null"
+    except Exception:
+        return "null"
+
+
 # ---------- main ----------
 def main():
     if not getattr(config, "GITHUB_PAT", "") or "yourTokenHere" in config.GITHUB_PAT:
@@ -258,7 +275,7 @@ def main():
     BASE_BEFORE = ["captured_date","source","msft_classification_type","extension_identifier","publisher_name",
                    "version","artifact","sha256","size_mb","published_date","last_updated_date","verified_publisher",
                    "installation_count","average_rating","rating_count","categories","repository_url"]
-    META_HEADER = BASE_BEFORE + ["flags","exists_in_dataset"]
+    META_HEADER = BASE_BEFORE + ["flags", "engines_vscode", "exists_in_dataset"]
     meta_hdr = META_HEADER
 
     existing_ids = {r.get("extension_identifier","") for r in flagged_rows if r.get("extension_identifier")}
@@ -337,6 +354,7 @@ def main():
         # VSIX exists in Azure → download once for hash/size (+ optional upload)
         vsix_bytes = download_blob_bytes(cc, blob_path)
         sha256_hex = hashlib.sha256(vsix_bytes).hexdigest()
+        engines_vscode = extract_vscode_engine_from_vsix(vsix_bytes)
 
         size_val = len(vsix_bytes) / 1_000_000  # decimal MB
         if size_val < 0.01 and len(vsix_bytes) > 0:
@@ -403,6 +421,7 @@ def main():
                 "categories": join_cats(rec.get("categories", [])),
                 "repository_url": rec.get("repository", "") or "none",
                 "flags": normalize_flags_field(rec.get("flags", "")),
+                "engines_vscode": engines_vscode,
                 "exists_in_dataset": "vsmex",                        # ← write dataset name, not 'yes'
             })
             meta_keys.add((eid, version))
