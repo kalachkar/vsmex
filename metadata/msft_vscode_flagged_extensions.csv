@@ -585,3 +585,6 @@ removed_list,2025-12-29,Batch.Docker-Vscode-V2,Impersonation,yes
 removed_list,2025-12-30,diegofernandezpandiello.super-elixir-ls,Impersonation,yes
 removed_list,2025-12-30,pablaofficeal.taskmanager-vscode,Malware,yes
 removed_list,2025-12-30,solario.enhanced-favorites,Impersonation,yes
+removed_list,2026-01-06,FRONT-END-AI.front-end-ai,Publisher requested,yes
+removed_list,2026-01-06,OryonTechnology.oryon,Malware,yes; large file
+removed_list,2026-01-06,juancryptoblanco.ether-solidt,Malware,no
