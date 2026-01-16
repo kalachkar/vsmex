@@ -604,3 +604,7 @@ removed_list,2026-01-14,ctk.commandlist-enhanced,Impersonation,yes
 removed_list,2026-01-14,teakovva.overpy-bastion,Impersonation,yes
 removed_list,2026-01-15,VibeKanban.vibe-kanban-vscode,Impersonation,yes
 removed_list,2026-01-15,atom8n.thor-client-atom8n,Impersonation,yes
+removed_list,2026-01-16,DarshanChauhan.tm-workitem-tab,Impersonation,no
+removed_list,2026-01-16,borgius.lm-proxy-responses,Impersonation,yes
+removed_list,2026-01-16,borgius.localrag,Impersonation,yes; large file
+removed_list,2026-01-16,vjoker.legend-script-editor,Impersonation,yes
