@@ -586,7 +586,7 @@ removed_list,2025-12-30,diegofernandezpandiello.super-elixir-ls,Impersonation,ye
 removed_list,2025-12-30,pablaofficeal.taskmanager-vscode,Malware,yes
 removed_list,2025-12-30,solario.enhanced-favorites,Impersonation,yes
 removed_list,2026-01-06,FRONT-END-AI.front-end-ai,Publisher requested,yes
-removed_list,2026-01-06,OryonTechnology.oryon,Malware,yes; large file
+removed_list,2026-01-06,OryonTechnology.oryon,Malware,yes
 removed_list,2026-01-06,juancryptoblanco.ether-solidt,Malware,no
 removed_list,2026-01-07,ANZ-BANK.vscode-sysl,Malware,yes
 removed_list,2026-01-07,MaikeyShrimp.vscode-pets-shrimp-bata,Deprecated,yes
@@ -606,6 +606,6 @@ removed_list,2026-01-15,VibeKanban.vibe-kanban-vscode,Impersonation,yes
 removed_list,2026-01-15,atom8n.thor-client-atom8n,Impersonation,yes
 removed_list,2026-01-16,DarshanChauhan.tm-workitem-tab,Impersonation,no
 removed_list,2026-01-16,borgius.lm-proxy-responses,Impersonation,yes
-removed_list,2026-01-16,borgius.localrag,Impersonation,yes; large file
+removed_list,2026-01-16,borgius.localrag,Impersonation,yes
 removed_list,2026-01-16,vjoker.legend-script-editor,Impersonation,yes
 removed_list,2026-01-16,xuli.qt-for-python,Impersonation,yes
