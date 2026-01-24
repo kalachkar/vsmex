@@ -613,3 +613,4 @@ removed_list,2026-01-21,devSparkle.luau-lsp-overtur,Impersonation,no
 removed_list,2026-01-21,gyvscode.continue-vs,Impersonation,yes; large file
 removed_list,2026-01-21,t1mt.vsc-go-imports-sorter,Impersonation,yes
 removed_list,2026-01-23,unique123.continue-plus,Impersonation,yes; large file
+removed_list,2026-01-24,ms-vscode.vscode-embedded-tools,Publisher requested,yes
