@@ -630,3 +630,9 @@ removed_list,2026-01-30,GitlensPro.error-lens-ultra-pro,Malware,no
 removed_list,2026-01-30,GitlensPro.gitlens-monocharged,Malware,no
 removed_list,2026-01-30,GitlensPro.gitpro-ai-tools,Malware,yes
 removed_list,2026-01-30,GitlensPro.peacock-workspace-colorizer,Malware,no
+removed_list,2026-01-31,Knotron.treky-dev,Impersonation,yes
+removed_list,2026-01-31,PapaVault.papa-vault,Expired domain,yes
+removed_list,2026-01-31,S4mu31.command-runner-v2,Impersonation,yes
+removed_list,2026-01-31,S4mu31.drawfolderstructure-s4mu31,Impersonation,yes
+removed_list,2026-01-31,S4mu31.s4mu31-tema-color,Impersonation,yes
+removed_list,2026-01-31,aurora-them-creator.theme-aurora-nocturne,Impersonation,yes
