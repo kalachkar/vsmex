@@ -654,3 +654,6 @@ removed_list,2026-02-06,DoroKPNC.dart-flutter-export-helper,Impersonation,yes
 removed_list,2026-02-06,DoroKPNC.dart-flutter-exports-local,Impersonation,yes
 removed_list,2026-02-06,cosmic-themes.theme-cosmic-nebula,Malware,yes
 removed_list,2026-02-07,mrcrispy.cpln,Malware,yes
+removed_list,2026-02-10,ProjectStarboy.projectstarboy-vscode,Impersonation,yes
+removed_list,2026-02-10,ax60.electricblackfelixdivallportvs2022,Impersonation,no
+removed_list,2026-02-10,probes-team.probes,Malware,yes
