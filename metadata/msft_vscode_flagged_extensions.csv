@@ -657,3 +657,4 @@ removed_list,2026-02-07,mrcrispy.cpln,Malware,yes
 removed_list,2026-02-10,ProjectStarboy.projectstarboy-vscode,Impersonation,yes
 removed_list,2026-02-10,ax60.electricblackfelixdivallportvs2022,Impersonation,no
 removed_list,2026-02-10,probes-team.probes,Malware,yes
+removed_list,2026-02-11,kaiwu-probes.Probes-ai,Malware,no
