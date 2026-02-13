@@ -662,3 +662,6 @@ removed_list,2026-02-12,VelocityCoderPro.velocitycodeproupdate,Malware,yes
 removed_list,2026-02-12,XLRIT.vscode-gears-by-xlrit,Impersonation,yes
 removed_list,2026-02-12,anovagroups.sas-data-explorer,Impersonation,yes
 removed_list,2026-02-12,devolutionsinc.devolutions-powershell-universal,Impersonation,yes
+removed_list,2026-02-13,ArchMedia.sp-isc-devtools,Impersonation,yes
+removed_list,2026-02-13,fq.markdown-checkbox-with-timestamp-at-creation,Impersonation,yes
+removed_list,2026-02-13,xxnuo.mtrancode,Impersonation,yes
