@@ -732,3 +732,15 @@ removed_list,2026-02-21,devokaicode.cosave,Malware,yes
 removed_list,2026-02-21,fecet.vscode-neovim-fecet,Impersonation,yes
 removed_list,2026-02-21,null-Island.your-new-favorite-extension,Untrustworthy,yes
 removed_list,2026-02-21,siehc.vscode-proto3-rebirth,Impersonation,yes
+removed_list,2026-02-24,Alex-130-130.vscode-ant-design-vue-1-helper-prop,Impersonation,yes
+removed_list,2026-02-24,Hakai.functional-purple-modified,Impersonation,yes
+removed_list,2026-02-24,HanazakiShiki.emmylua-cgame,Impersonation,yes
+removed_list,2026-02-24,algovscode.algoritmika-python,Impersonation,yes
+removed_list,2026-02-24,algovscode.algoritmika-python-beta,Impersonation,yes
+removed_list,2026-02-24,gabrielbotan.gruvbox-vim,Impersonation,yes
+removed_list,2026-02-24,hapTeam.hap-eslint,Impersonation,yes
+removed_list,2026-02-24,hetu.HetuGit,Impersonation,yes
+removed_list,2026-02-24,hhu-stups.prob,Impersonation,yes; large file
+removed_list,2026-02-24,jackywjs.jacky-jest-runner,Impersonation,yes
+removed_list,2026-02-24,jackywjs.node-modules-enhanced,Impersonation,yes
+removed_list,2026-02-24,v8tech.v8-code,Malware,yes
