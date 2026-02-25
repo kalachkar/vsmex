@@ -744,3 +744,5 @@ removed_list,2026-02-24,hhu-stups.prob,Impersonation,yes; large file
 removed_list,2026-02-24,jackywjs.jacky-jest-runner,Impersonation,yes
 removed_list,2026-02-24,jackywjs.node-modules-enhanced,Impersonation,yes
 removed_list,2026-02-24,v8tech.v8-code,Malware,yes
+removed_list,2026-02-25,jjackson.bazel-syntax,Impersonation,yes
+removed_list,2026-02-25,meetrice.mysql-blade,Impersonation,yes
