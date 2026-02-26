@@ -746,3 +746,13 @@ removed_list,2026-02-24,jackywjs.node-modules-enhanced,Impersonation,yes
 removed_list,2026-02-24,v8tech.v8-code,Malware,yes
 removed_list,2026-02-25,jjackson.bazel-syntax,Impersonation,yes
 removed_list,2026-02-25,meetrice.mysql-blade,Impersonation,yes
+removed_list,2026-02-26,JarodWright.strict-paredit-fennel,Impersonation,yes
+removed_list,2026-02-26,Jinyuan.vscode-git-cruise-upgraded,Impersonation,yes
+removed_list,2026-02-26,atom8n.kanban-atom8n,Impersonation,yes
+removed_list,2026-02-26,atom8n.mcp-inspector-atom8n,Impersonation,yes
+removed_list,2026-02-26,atom8n.n8n-atom-v3,Impersonation,yes; large file
+removed_list,2026-02-26,atom8n.tampermonkey-atom8n,Impersonation,yes
+removed_list,2026-02-26,atom8n.vscode-extensionpack,Impersonation,no
+removed_list,2026-02-26,jianguoyun.cline,Impersonation,yes
+removed_list,2026-02-26,jinweizhiyuan.webstorm-new-dark2,Impersonation,yes
+removed_list,2026-02-26,johanlaneau.bcompare-vscode-remote,Impersonation,yes
