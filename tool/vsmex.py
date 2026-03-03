@@ -370,12 +370,13 @@ def main():
     flagged_rows, _, _ = load_csv_from_github(config.CSV_FLAGGED, repo=config.GITHUB_REPO)
     meta_rows,    _, _ = load_csv_from_github(config.CSV_DATASET,  repo=config.GITHUB_DATASET_REPO)
 
-    existing_ids = {r.get("extension_identifier", "") for r in flagged_rows if r.get("extension_identifier")}
-    meta_keys    = {(r.get("extension_identifier", ""), r.get("version", "")) for r in meta_rows}
+    existing_ids     = {r.get("extension_identifier", "") for r in flagged_rows if r.get("extension_identifier")}
+    existing_ids_low = {e.lower() for e in existing_ids}
+    meta_keys        = {(r.get("extension_identifier", ""), r.get("version", "")) for r in meta_rows}
 
-    # 4) Compute *new* identifiers only
-    removed_new   = {eid for eid in removed_map  if eid not in existing_ids}
-    malicious_new = {eid for eid in malicious_set if eid not in existing_ids}
+    # 4) Compute *new* identifiers only (case-insensitive to avoid duplicates like vkteam.com/VKTeam.com)
+    removed_new   = {eid for eid in removed_map  if eid.lower() not in existing_ids_low}
+    malicious_new = {eid for eid in malicious_set if eid.lower() not in existing_ids_low}
 
     print(f"Existing flagged: {len(existing_ids)} | New removed: {len(removed_new)} | New malicious: {len(malicious_new)}")
 
