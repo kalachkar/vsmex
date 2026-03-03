@@ -8,6 +8,7 @@ MAX_PAGES = 101
 SLEEP_BETWEEN_CALLS = 0.25
 MAX_RETRIES = 5
 RETRY_BACKOFF_BASE = 0.75  # seconds
+CHECKPOINT_EVERY = 500     # save Azure state blob every N new versions
 
 # Azure Storage
 AZURE_CONNECTION_STRING = "<YOUR_AZURE_STORAGE_CONNECTION_STRING>"
@@ -26,7 +27,8 @@ MSFT_REMOVED_URL = "https://raw.githubusercontent.com/microsoft/vsmarketplace/ma
 # ===== GitHub configuration (PAT-based) =====
 GITHUB_PAT = "<YOUR_GITHUB_PAT>"
 GITHUB_USERNAME = "<YOUR_GITHUB_USERNAME>"
-GITHUB_REPO = "vsmex"
+GITHUB_REPO = "vsmex"                    # public repo (code + metadata)
+GITHUB_DATASET_REPO = "vsmex-dataset"   # private repo (VSIX packages)
 GIT_BRANCH = "main"
 
 # ===== Files in the GitHub repo =====
