@@ -1,6 +1,8 @@
 # VSMEx — VSCode Malicious Extensions Dataset
 
 > A continuously updated dataset of malicious Visual Studio Code extensions, captured from Microsoft's official flagged lists and curated security research sources.
+>
+> Presented at **CODASPY 2026**: *VSMEx: A Collection Tool and a Dataset of Malicious VS Code Extensions*
 
 ---
 
@@ -138,14 +140,14 @@ The VSIX binaries and full metadata CSV are in the **private** `kalachkar/vsmex-
 
 ## Citation
 
-If you use VSMEx in your research, please cite:
+If you use VSMEx in your research, please cite our paper:
 
 ```bibtex
-@dataset{vsmex2025,
+@inproceedings{vsmex2026,
   author    = {[Author(s)]},
-  title     = {VSMEx: A Dataset of Malicious Visual Studio Code Extensions},
-  year      = {2025},
-  publisher = {GitHub},
+  title     = {VSMEx: A Collection Tool and a Dataset of Malicious VS Code Extensions},
+  booktitle = {Proceedings of the ACM Conference on Data and Application Security and Privacy (CODASPY)},
+  year      = {2026},
   url       = {https://github.com/kalachkar/vsmex}
 }
 ```
