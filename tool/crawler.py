@@ -4,6 +4,7 @@
 from __future__ import annotations
 import json
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 import requests
 from azure.storage.blob import BlobServiceClient, ContentSettings
@@ -203,6 +204,25 @@ def extract_record(ext: dict) -> dict:
         ),
     }
 
+# ========= Per-extension worker (runs in thread pool) =========
+def _process_ext(cc, ext, seen: set[str]):
+    """Blob check + optional download for one extension. Thread-safe (read-only on seen)."""
+    rec   = extract_record(ext)
+    vkey  = rec.get("_versionKey")
+    fname = rec.get("vsixFileName")
+    url   = rec.get("vsixDownloadUrl")
+
+    if not vkey or not fname or not url:
+        return "skip", None
+    if vkey in seen:
+        return "skip", None
+
+    blob_path = f"{config.VSIX_PREFIX}/{fname}"
+    if not blob_exists(cc, blob_path):
+        http_to_blob_with_retries(cc, blob_path, url)
+    return "ok", rec
+
+
 # ========= Main =========
 def main():
     cc = get_container_client()
@@ -238,24 +258,24 @@ def main():
             print(f"→ Page {page}: 0 items (end).")
             break
 
-        for ext in items:
-            rec = extract_record(ext)
-            vkey = rec.get("_versionKey")
-            fname = rec.get("vsixFileName")
-            url = rec.get("vsixDownloadUrl")
+        with ThreadPoolExecutor(max_workers=config.DOWNLOAD_WORKERS) as executor:
+            futures = {executor.submit(_process_ext, cc, ext, seen): ext for ext in items}
+            for future in as_completed(futures):
+                try:
+                    status, rec = future.result()
+                except Exception as e:
+                    errors += 1
+                    err = f"ERROR: {e}"
+                    print(f"❌ {err}")
+                    log_line(err)
+                    continue
 
-            if not vkey or not fname or not url:
-                skipped += 1
-                continue
-            if vkey in seen:
-                skipped += 1
-                continue
+                if status == "skip":
+                    skipped += 1
+                    continue
 
-            blob_path = f"{config.VSIX_PREFIX}/{fname}"
-
-            try:
-                if not blob_exists(cc, blob_path):
-                    http_to_blob_with_retries(cc, blob_path, url)
+                fname = rec.get("vsixFileName")
+                vkey  = rec.get("_versionKey")
 
                 append_line(master_client, json.dumps(rec, ensure_ascii=False))
                 newly_seen.add(vkey)
@@ -267,11 +287,6 @@ def main():
                     save_seen_versions(cc, seen)
                     newly_seen.clear()
                     log_line(f"CHECKPOINT saved ({len(seen)} total seen)")
-            except Exception as e:
-                errors += 1
-                err = f"ERROR {fname}: {e}"
-                print(f"❌ {err}")
-                log_line(err)
 
         print(f"→ Page {page}: processed {len(items)} | new={new_versions} skipped={skipped} errors={errors}")
         if len(items) < config.PAGE_SIZE:
