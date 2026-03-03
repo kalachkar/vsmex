@@ -33,10 +33,6 @@ kalachkar/vsmex  (this repo — public)
 │   └── requirements.txt
 ├── metadata/
 │   └── msft_vscode_flagged_extensions.csv   # One row per flagged extension (public)
-└── .github/workflows/
-    ├── crawler.yml        # Runs crawler every 2 hours (self-hosted runner)
-    └── vsmex.yml          # Runs vsmex sync at 8am and 8pm UTC (self-hosted runner)
-
 kalachkar/vsmex-dataset  (private — request access below)
 ├── dataset/
 │   └── <publisher.extension>/<version>/*.vsix
@@ -116,17 +112,6 @@ python3 crawler.py
 # Sync flagged extensions to dataset + metadata
 python3 vsmex.py
 ```
-
----
-
-## Automated Collection (GitHub Actions)
-
-The dataset is kept up to date via two scheduled workflows on a self-hosted runner:
-
-| Workflow | Schedule | Purpose |
-|----------|----------|---------|
-| `crawler.yml` | Every 2 hours | Crawl marketplace, download new VSIXs to Azure |
-| `vsmex.yml` | 8am and 8pm UTC | Sync newly flagged extensions to dataset and metadata |
 
 ---
 
