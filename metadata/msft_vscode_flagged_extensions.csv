@@ -610,9 +610,9 @@ removed_list,2026-01-16,borgius.localrag,Impersonation,yes
 removed_list,2026-01-16,vjoker.legend-script-editor,Impersonation,yes
 removed_list,2026-01-16,xuli.qt-for-python,Impersonation,yes
 removed_list,2026-01-21,devSparkle.luau-lsp-overtur,Impersonation,no
-removed_list,2026-01-21,gyvscode.continue-vs,Impersonation,yes; large file
+removed_list,2026-01-21,gyvscode.continue-vs,Impersonation,yes
 removed_list,2026-01-21,t1mt.vsc-go-imports-sorter,Impersonation,yes
-removed_list,2026-01-23,unique123.continue-plus,Impersonation,yes; large file
+removed_list,2026-01-23,unique123.continue-plus,Impersonation,yes
 removed_list,2026-01-24,ms-vscode.vscode-embedded-tools,Publisher requested,yes
 removed_list,2026-01-28,JackHerry.copilotx-ai-assistant,Impersonation,yes
 removed_list,2026-01-28,JackHerry.dark-ai,Malware,yes
@@ -636,7 +636,7 @@ removed_list,2026-01-31,S4mu31.command-runner-v2,Impersonation,yes
 removed_list,2026-01-31,S4mu31.drawfolderstructure-s4mu31,Impersonation,yes
 removed_list,2026-01-31,S4mu31.s4mu31-tema-color,Impersonation,yes
 removed_list,2026-01-31,aurora-them-creator.theme-aurora-nocturne,Impersonation,yes
-removed_list,2026-02-02,4t-ia.4t-ia,Untrustworthy,yes; large file
+removed_list,2026-02-02,4t-ia.4t-ia,Untrustworthy,yes
 removed_list,2026-02-02,AhmedSlem.secure-codee,Malware,yes
 removed_list,2026-02-02,OzzyDev777.csharp-editor-pro,Malware,yes
 removed_list,2026-02-02,OzzyDev777.dark-ai-professional,Malware,yes
@@ -682,7 +682,7 @@ removed_list,2026-02-19,Always-Victorious.trailing-spaces-always-victorious-edit
 removed_list,2026-02-19,AppHelix.apphelix-blog-search,Impersonation,yes
 removed_list,2026-02-19,AzelSync.alk-icons,Impersonation,yes
 removed_list,2026-02-19,EladNahman.Super-Cool-Extension,Malware,yes
-removed_list,2026-02-19,SymbiozTechnologie.mia-assistant,Malware,yes; large file
+removed_list,2026-02-19,SymbiozTechnologie.mia-assistant,Malware,yes
 removed_list,2026-02-19,TheRealGorgan.better-sidebar-markdown-notes,Impersonation,yes
 removed_list,2026-02-19,TheRealGorgan.copilot-chat-history-fork,Impersonation,yes
 removed_list,2026-02-19,TheRealGorgan.vscode-google-tasks-extension,Impersonation,yes
@@ -740,7 +740,7 @@ removed_list,2026-02-24,algovscode.algoritmika-python-beta,Impersonation,yes
 removed_list,2026-02-24,gabrielbotan.gruvbox-vim,Impersonation,yes
 removed_list,2026-02-24,hapTeam.hap-eslint,Impersonation,yes
 removed_list,2026-02-24,hetu.HetuGit,Impersonation,yes
-removed_list,2026-02-24,hhu-stups.prob,Impersonation,yes; large file
+removed_list,2026-02-24,hhu-stups.prob,Impersonation,yes
 removed_list,2026-02-24,jackywjs.jacky-jest-runner,Impersonation,yes
 removed_list,2026-02-24,jackywjs.node-modules-enhanced,Impersonation,yes
 removed_list,2026-02-24,v8tech.v8-code,Malware,yes
@@ -750,7 +750,7 @@ removed_list,2026-02-26,JarodWright.strict-paredit-fennel,Impersonation,yes
 removed_list,2026-02-26,Jinyuan.vscode-git-cruise-upgraded,Impersonation,yes
 removed_list,2026-02-26,atom8n.kanban-atom8n,Impersonation,yes
 removed_list,2026-02-26,atom8n.mcp-inspector-atom8n,Impersonation,yes
-removed_list,2026-02-26,atom8n.n8n-atom-v3,Impersonation,yes; large file
+removed_list,2026-02-26,atom8n.n8n-atom-v3,Impersonation,yes
 removed_list,2026-02-26,atom8n.tampermonkey-atom8n,Impersonation,yes
 removed_list,2026-02-26,atom8n.vscode-extensionpack,Impersonation,no
 removed_list,2026-02-26,jianguoyun.cline,Impersonation,yes

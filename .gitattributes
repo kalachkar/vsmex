@@ -1,2 +1,7 @@
 # *.vsix filter=lfs diff=lfs merge=lfs -text
-dataset/OryonTechnology.oryon/0.2.0/OryonTechnology.oryon-0.2.0.vsix filter=lfs diff=lfs merge=lfs -text
+dataset/gyvscode.continue-vs/1.0.0/gyvscode.continue-vs-1.0.0.vsix filter=lfs diff=lfs merge=lfs -text
+dataset/unique123.continue-plus/1.0.2/unique123.continue-plus-1.0.2.vsix filter=lfs diff=lfs merge=lfs -text
+dataset/4t-ia.4t-ia/1.3.31/4t-ia.4t-ia-1.3.31.vsix filter=lfs diff=lfs merge=lfs -text
+dataset/SymbiozTechnologie.mia-assistant/1.0.5/SymbiozTechnologie.mia-assistant-1.0.5.vsix filter=lfs diff=lfs merge=lfs -text
+dataset/hhu-stups.prob/3.0.0/hhu-stups.prob-3.0.0.vsix filter=lfs diff=lfs merge=lfs -text
+dataset/atom8n.n8n-atom-v3/3.23.0/atom8n.n8n-atom-v3-3.23.0.vsix filter=lfs diff=lfs merge=lfs -text
