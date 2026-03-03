@@ -1,24 +1,12 @@
 # VSMEx — VSCode Malicious Extensions Dataset
 
-> A continuously updated dataset of malicious Visual Studio Code extensions, captured from Microsoft's official flagged lists and curated security research sources.
->
 > Presented at **CODASPY 2026**: *VSMEx: A Collection Tool and a Dataset of Malicious VS Code Extensions*
 
----
+A continuously updated dataset of malicious Visual Studio Code extensions, captured from Microsoft's official flagged lists and curated security research sources. VSMEx monitors `marketplace.json` and `RemovedPackages.md`, captures all available VSIX binaries, and records rich metadata (sha256, version, install count, engine constraints, etc.).
 
-## Overview
+**Stats (as of latest sync):** 796 flagged extensions · 1,106 captured VSIX binaries · Sources: Microsoft malicious list, removed list, BKC
 
-VSMEx tracks and archives malicious VSCode extensions at the binary level. It monitors two Microsoft sources:
-
-- **`marketplace.json`** — extensions currently flagged as malicious
-- **`RemovedPackages.md`** — extensions formally removed with classification
-
-For each flagged extension, VSMEx captures all available versions from Azure Blob Storage and records rich metadata (publisher, version, sha256, install count, engine constraints, etc.).
-
-**Dataset stats (as of latest sync):**
-- 796 flagged extension identifiers
-- 1,106 captured VSIX binaries across all versions
-- Sources: Microsoft malicious list, Microsoft removed list, BKC
+**Dataset access:** The VSIX binaries and full metadata are in the private `kalachkar/vsmex-dataset` repository. To request access, open an issue with your name, institution, and intended use.
 
 ---
 
@@ -31,9 +19,10 @@ kalachkar/vsmex  (this repo — public)
 │   ├── crawler.py         # Crawls VS Code Marketplace → Azure Blob Storage
 │   ├── vsmex.py           # Syncs flagged extensions → vsmex-dataset + metadata
 │   └── requirements.txt
-├── metadata/
-│   └── msft_vscode_flagged_extensions.csv   # One row per flagged extension (public)
-kalachkar/vsmex-dataset  (private — request access below)
+└── metadata/
+    └── msft_vscode_flagged_extensions.csv   # One row per flagged extension (public)
+
+kalachkar/vsmex-dataset  (private — request access above)
 ├── dataset/
 │   └── <publisher.extension>/<version>/*.vsix
 └── metadata/
@@ -112,14 +101,6 @@ python3 crawler.py
 # Sync flagged extensions to dataset + metadata
 python3 vsmex.py
 ```
-
----
-
-## Dataset Access
-
-The VSIX binaries and full metadata CSV are in the **private** `kalachkar/vsmex-dataset` repository to prevent misuse.
-
-**To request access:** Open an issue in this repository with your name, institution, and intended use. Researchers are added as repository collaborators.
 
 ---
 
