@@ -1,10 +1,21 @@
 # VSMEx — VSCode Malicious Extensions Dataset
 
-> Presented at **CODASPY 2026**: *VSMEx: A Collection Tool and a Dataset of Malicious VS Code Extensions*
+> Presented at **[CODASPY 2026](https://www.codaspy.org/2026/)** — The 16th ACM Conference on Data and Application Security and Privacy, June 23–25, 2026, Frankfurt am Main, Germany.
+>
+> *VSMEx: A Collection Tool and a Dataset of Malicious VS Code Extensions*
 
 A continuously updated dataset of malicious Visual Studio Code extensions, captured from Microsoft's official flagged lists and curated security research sources. VSMEx monitors `marketplace.json` and `RemovedPackages.md`, captures all available VSIX binaries, and records rich metadata (sha256, version, install count, engine constraints, etc.).
 
-**Stats (as of latest sync):** 796 flagged extensions · 1,106 captured VSIX binaries · Sources: Microsoft malicious list, removed list, BKC
+**Citation:**
+```bibtex
+@inproceedings{vsmex2026,
+  author    = {[Author(s)]},
+  title     = {VSMEx: A Collection Tool and a Dataset of Malicious VS Code Extensions},
+  booktitle = {Proceedings of the ACM Conference on Data and Application Security and Privacy (CODASPY)},
+  year      = {2026},
+  url       = {https://github.com/kalachkar/vsmex}
+}
+```
 
 **Dataset access:** The VSIX binaries and full metadata are in the private `kalachkar/vsmex-dataset` repository. To request access, open an issue with your name, institution, and intended use.
 
@@ -100,22 +111,6 @@ python3 crawler.py
 
 # Sync flagged extensions to dataset + metadata
 python3 vsmex.py
-```
-
----
-
-## Citation
-
-If you use VSMEx in your research, please cite our paper:
-
-```bibtex
-@inproceedings{vsmex2026,
-  author    = {[Author(s)]},
-  title     = {VSMEx: A Collection Tool and a Dataset of Malicious VS Code Extensions},
-  booktitle = {Proceedings of the ACM Conference on Data and Application Security and Privacy (CODASPY)},
-  year      = {2026},
-  url       = {https://github.com/kalachkar/vsmex}
-}
 ```
 
 ---
