@@ -6,7 +6,7 @@
 #  - for ALL versions found in Azure: uploads artifact to vsmex-dataset/dataset/<id>/<ver>/<file>.vsix
 #    and appends a row to vsmex_metadata.csv (skips duplicates by (identifier, version))
 # Dates are YYYY-MM-DD; size_mb has a min of 0.01 for non-empty files.
-# Large files (>= LARGE_FILE_THRESHOLD_MB) are skipped for GitHub upload — handled via Git LFS separately.
+# Large files (>= LARGE_FILE_THRESHOLD_MB) are uploaded via GitHub LFS Batch API (streamed from Azure).
 
 from __future__ import annotations
 import base64
@@ -14,6 +14,8 @@ import csv
 import hashlib
 import io
 import json
+import os
+import tempfile
 import time
 import zipfile
 from datetime import datetime, timezone
@@ -138,6 +140,59 @@ def get_blob_size_mb(cc, blob_path: str) -> float:
 
 def download_blob_bytes(cc, blob_path: str) -> bytes:
     return cc.get_blob_client(blob_path).download_blob().readall()
+
+
+def stream_azure_to_temp(cc, blob_path: str) -> Tuple[str, str, int]:
+    """Stream blob to a temp file. Returns (tmp_path, sha256_hex, size_bytes)."""
+    h = hashlib.sha256()
+    size = 0
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".vsix") as f:
+        tmp_path = f.name
+        for chunk in cc.get_blob_client(blob_path).download_blob().chunks():
+            f.write(chunk)
+            h.update(chunk)
+            size += len(chunk)
+    return tmp_path, h.hexdigest(), size
+
+
+def upload_lfs_object(repo: str, oid: str, size: int, tmp_path: str) -> bool:
+    """Upload file to GitHub LFS via Batch API. Returns True if newly uploaded."""
+    batch_url = f"https://github.com/{config.GITHUB_USERNAME}/{repo}.git/info/lfs/objects/batch"
+    auth = base64.b64encode(f"{config.GITHUB_USERNAME}:{config.GITHUB_PAT}".encode()).decode()
+    lfs_hdrs = {
+        "Accept": "application/vnd.git-lfs+json",
+        "Content-Type": "application/vnd.git-lfs+json",
+        "Authorization": f"Basic {auth}",
+    }
+    r = requests.post(batch_url, json={
+        "operation": "upload", "transfers": ["basic"],
+        "objects": [{"oid": oid, "size": size}],
+    }, headers=lfs_hdrs, timeout=30)
+    r.raise_for_status()
+    obj = r.json()["objects"][0]
+    if "error" in obj:
+        raise RuntimeError(f"LFS batch error: {obj['error']}")
+    upload_info = obj.get("actions", {}).get("upload")
+    if not upload_info:
+        return False  # already exists in LFS
+    with open(tmp_path, "rb") as f:
+        requests.put(upload_info["href"], data=f,
+                     headers=upload_info.get("header", {}), timeout=600).raise_for_status()
+    verify_info = obj.get("actions", {}).get("verify")
+    if verify_info:
+        requests.post(verify_info["href"], json={"oid": oid, "size": size},
+                      headers={**lfs_hdrs, **verify_info.get("header", {})},
+                      timeout=30).raise_for_status()
+    return True
+
+
+def commit_lfs_pointer(dataset_path: str, oid: str, size: int,
+                       existing_sha: Optional[str], repo: str):
+    """Commit an LFS pointer file to the GitHub repo."""
+    pointer = f"version https://git-lfs.github.com/spec/v1\noid sha256:{oid}\nsize {size}\n"
+    gh_put_content(dataset_path, pointer.encode("utf-8"),
+                   message=f"Add LFS pointer {dataset_path.split('/')[-1]}",
+                   sha=existing_sha, repo=repo)
 
 
 # ---------- metadata_master.jsonl index (Azure) ----------
@@ -374,30 +429,40 @@ def main():
             is_large = size_val >= LARGE_FILE_THRESHOLD_MB
             size_mb  = f"{max(size_val, 0.01):.2f}".rstrip("0").rstrip(".")
 
+            dataset_path = f"{config.DATASET_ROOT}/{eid}/{version}/{vsix_name}"
+            _, existing_sha = gh_get_content(dataset_path, repo=config.GITHUB_DATASET_REPO)
+
             if is_large:
-                vsix_bytes     = None
-                sha256_hex     = "N/A (large file)"
+                tmp_path = None
+                try:
+                    print(f"  [lfs] {eid}@{version}: streaming {size_mb} MB from Azure …")
+                    tmp_path, sha256_hex, size_bytes = stream_azure_to_temp(cc, blob_path)
+                    upload_lfs_object(config.GITHUB_DATASET_REPO, sha256_hex, size_bytes, tmp_path)
+                    if existing_sha is None:
+                        commit_lfs_pointer(dataset_path, sha256_hex, size_bytes,
+                                           None, repo=config.GITHUB_DATASET_REPO)
+                        uploaded_vsix += 1
+                except Exception as e:
+                    print(f"  [warn] LFS upload failed for {eid}@{version}: {e}")
+                    sha256_hex = "N/A (large file)"
+                finally:
+                    if tmp_path and os.path.exists(tmp_path):
+                        os.unlink(tmp_path)
                 engines_vscode = "null"
             else:
                 vsix_bytes     = download_blob_bytes(cc, blob_path)
                 sha256_hex     = hashlib.sha256(vsix_bytes).hexdigest()
                 engines_vscode = extract_vscode_engine_from_vsix(vsix_bytes)
-
-            # Upload to vsmex-dataset if not already there (non-large only)
-            dataset_path = f"{config.DATASET_ROOT}/{eid}/{version}/{vsix_name}"
-            _, existing_sha = gh_get_content(dataset_path, repo=config.GITHUB_DATASET_REPO)
-            need_upload = (existing_sha is None) and (not is_large) and (vsix_bytes is not None)
-
-            if need_upload:
-                try:
-                    gh_put_content(
-                        dataset_path, vsix_bytes,
-                        message=f"Add VSIX {eid}@{version}",
-                        sha=None, repo=config.GITHUB_DATASET_REPO,
-                    )
-                    uploaded_vsix += 1
-                except requests.exceptions.HTTPError as e:
-                    print(f"[warn] VSIX upload failed for {eid}@{version}: {e}")
+                if existing_sha is None:
+                    try:
+                        gh_put_content(
+                            dataset_path, vsix_bytes,
+                            message=f"Add VSIX {eid}@{version}",
+                            sha=None, repo=config.GITHUB_DATASET_REPO,
+                        )
+                        uploaded_vsix += 1
+                    except requests.exceptions.HTTPError as e:
+                        print(f"  [warn] VSIX upload failed for {eid}@{version}: {e}")
 
             # Metadata row
             if (eid, version) not in meta_keys:
@@ -429,7 +494,7 @@ def main():
                 new_meta_rows += 1
 
             captured_versions.append(version)
-            print(f"  [add] {eid}@{version}: large={is_large} upload={'YES' if need_upload else 'no'}")
+            print(f"  [add] {eid}@{version}: large={is_large} size={size_mb}MB sha256={sha256_hex[:16]}…")
 
         # One flagged row per extension (after processing all versions)
         latest_version = recs[-1].get("version", "none") if recs else "none"
