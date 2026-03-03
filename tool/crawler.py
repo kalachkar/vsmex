@@ -133,7 +133,7 @@ def http_to_blob_with_retries(cc, blob_path: str, url: str):
             if i < config.MAX_RETRIES - 1:
                 time.sleep(config.RETRY_BACKOFF_BASE * (2 ** i))
             else:
-                raise last_err
+                raise last_err or RuntimeError(f"Upload failed after {config.MAX_RETRIES} attempts")
 
 # ========= State + Logging =========
 def load_seen_versions(cc) -> set[str]:
@@ -261,6 +261,12 @@ def main():
                 newly_seen.add(vkey)
                 new_versions += 1
                 print(f"✅ {fname}")
+
+                if len(newly_seen) % config.CHECKPOINT_EVERY == 0:
+                    seen.update(newly_seen)
+                    save_seen_versions(cc, seen)
+                    newly_seen.clear()
+                    log_line(f"CHECKPOINT saved ({len(seen)} total seen)")
             except Exception as e:
                 errors += 1
                 err = f"ERROR {fname}: {e}"
