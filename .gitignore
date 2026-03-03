@@ -13,7 +13,6 @@ __pycache__/
 .env
 venv/
 .venv/
-tool/config.py
 
 # OS files
 .DS_Store
