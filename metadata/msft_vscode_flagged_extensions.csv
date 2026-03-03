@@ -369,7 +369,7 @@ removed_list,2025-10-15,AIClaude.claude-code-master,Impersonation,2025-09-15,yes
 removed_list,2025-10-15,zhucan.debug-cline,Impersonation,2025-09-16,yes,1,3.0.12,2025-09-03
 removed_list,2025-10-15,sunamo-cz.specstory-autosave,Impersonation,2025-09-15,yes,1,1.0.6,2025-09-03
 removed_list,2025-10-15,498-00.cppplayground,Malware,2025-10-02,yes,1,1.0.43,2025-09-25
-malicious_list,2025-10-15,vkteam.com,Malicious,none,no,0,none,none
+malicious_list,2025-10-15,vkteam.com,Malicious,none,yes,1,1.1.7,2025-09-25
 malicious_list,2025-10-15,guozebin.api-generator-plugin,Malicious,none,yes,1,0.2.2,2025-08-25
 malicious_list,2025-10-19,ab-498.httpformat,Malicious,none,yes,1,1.0.56,2025-06-23
 removed_list,2025-10-19,reactsnippetsai.es7-react-js-snippets-ai,Malware,2025-09-09,yes,1,1.9.14,2025-09-03
@@ -451,7 +451,7 @@ removed_list,2025-12-04,msjsdreact.react-native-vsce,Malware,2025-12-02,yes,2,1.
 removed_list,2025-12-04,ovixcodes.basedpyright-vscode,Malware,2025-12-02,yes,1,1.34.0,2025-12-04
 removed_list,2025-12-04,pvparuchuri.sas,Impersonation,2025-12-03,yes,1,0.0.1,2025-12-04
 removed_list,2025-12-04,redmat.vscode-quarkus-pro,Malware,2025-12-02,yes,1,1.21.2025112808,2025-12-04
-removed_list,2025-12-04,saoudrizvsce.claude-devsce,Malware,2025-12-02,yes,1,3.38.3,2025-12-04
+removed_list,2025-12-04,saoudrizvsce.claude-devsce,Malware,2025-12-02,yes,3,3.38.3,2025-12-04
 removed_list,2025-12-04,solblanco.svetle-vsce,Malware,2025-12-02,no,0,none,none
 removed_list,2025-12-04,vims-vsce.vscode-vim,Malware,2025-12-02,yes,2,1.32.2,2025-12-04
 removed_list,2025-12-04,vsceue.volar-vscode,Malware,2025-12-02,no,0,none,none
@@ -586,7 +586,7 @@ removed_list,2025-12-30,diegofernandezpandiello.super-elixir-ls,Impersonation,20
 removed_list,2025-12-30,pablaofficeal.taskmanager-vscode,Malware,2025-12-29,yes,1,1.4.5,2025-12-30
 removed_list,2025-12-30,solario.enhanced-favorites,Impersonation,2025-12-29,yes,1,3.0.0,2025-12-30
 removed_list,2026-01-06,FRONT-END-AI.front-end-ai,Publisher requested,2025-12-31,yes,1,2.3.5,2026-01-06
-removed_list,2026-01-06,OryonTechnology.oryon,Malware,2026-01-02,yes,2,0.2.0,2026-01-06
+removed_list,2026-01-06,OryonTechnology.oryon,Malware,2026-01-02,yes,20,0.2.0,2026-01-06
 removed_list,2026-01-06,juancryptoblanco.ether-solidt,Malware,2026-01-04,no,0,none,none
 removed_list,2026-01-07,ANZ-BANK.vscode-sysl,Malware,2026-01-05,yes,1,0.64.0,2026-01-07
 removed_list,2026-01-07,MaikeyShrimp.vscode-pets-shrimp-bata,Deprecated,2026-01-06,yes,1,1.27.1,2026-01-07
@@ -750,7 +750,7 @@ removed_list,2026-02-26,JarodWright.strict-paredit-fennel,Impersonation,2026-02-
 removed_list,2026-02-26,Jinyuan.vscode-git-cruise-upgraded,Impersonation,2026-02-24,yes,1,0.0.5,2026-02-26
 removed_list,2026-02-26,atom8n.kanban-atom8n,Impersonation,2026-02-24,yes,17,1.65.0,2026-02-26
 removed_list,2026-02-26,atom8n.mcp-inspector-atom8n,Impersonation,2026-02-24,yes,1,1.16.0,2026-02-26
-removed_list,2026-02-26,atom8n.n8n-atom-v3,Impersonation,2026-02-24,yes,5,3.23.0,2026-02-26
+removed_list,2026-02-26,atom8n.n8n-atom-v3,Impersonation,2026-02-24,yes,14,3.23.0,2026-02-26
 removed_list,2026-02-26,atom8n.tampermonkey-atom8n,Impersonation,2026-02-24,yes,3,1.65.0,2026-02-26
 removed_list,2026-02-26,atom8n.vscode-extensionpack,Impersonation,2026-02-24,no,0,none,none
 removed_list,2026-02-26,jianguoyun.cline,Impersonation,2026-02-24,yes,8,3.57.1,2026-02-26
@@ -785,3 +785,13 @@ removed_list,2026-03-02,nimashoghi.gistfs-updated-main-nsh,Impersonation,2026-02
 removed_list,2026-03-02,njzy.pnpm-catalog-lens-njzy,Impersonation,2026-02-28,yes,1,0.0.1,2026-03-02
 removed_list,2026-03-03,nicovy.symbolsnicovy,Impersonation,2026-02-28,yes,1,0.0.23,2026-03-03
 removed_list,2026-03-03,njzy.pnpm-catalog-lens-rush,Impersonation,2026-02-28,yes,1,0.0.1,2026-03-03
+malicious_list,2025-08-25,VukRosic.openaicodexplayground,Malicious,none,yes,1,0.0.5,2025-08-25
+malicious_list,2025-08-25,btwiuse.vscode-remote-server,Malicious,none,yes,1,0.0.5,2025-08-25
+malicious_list,2025-08-25,dingzex.dsp-ide,Malicious,none,yes,1,3.11.2001,2025-08-25
+malicious_list,2025-08-25,midjourney.midjourney,Malicious,none,yes,1,3.0.9,2025-08-25
+malicious_list,2025-09-25,prada555.Theme-Acai-ported,Malicious,none,yes,1,1.0.0,2025-09-25
+malicious_list,2025-09-25,prada555.Theme-Active4D-ported,Malicious,none,yes,1,1.0.0,2025-09-25
+malicious_list,2025-08-25,ssda.chatgpt-extension,Malicious,none,yes,1,9.6.1,2025-08-25
+malicious_list,2025-08-25,starkwang.figimg,Malicious,none,yes,1,0.0.4,2025-08-25
+malicious_list,2025-08-25,starkwang.itxishu,Malicious,none,yes,1,0.0.8,2025-08-25
+malicious_list,2025-08-25,sunitmal.memory-vault,Malicious,none,yes,1,0.0.4,2025-08-25
