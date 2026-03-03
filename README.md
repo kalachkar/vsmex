@@ -1,6 +1,6 @@
 # VSMEx — VSCode Malicious Extensions Dataset
 
-> Presented at **[CODASPY 2026](https://www.codaspy.org/2026/)** — The 16th ACM Conference on Data and Application Security and Privacy, June 23–25, 2026, Frankfurt am Main, Germany.
+> To be presented at **[CODASPY 2026](https://www.codaspy.org/2026/)** — The 16th ACM Conference on Data and Application Security and Privacy, June 23–25, 2026, Frankfurt am Main, Germany.
 >
 > *VSMEx: A Collection Tool and a Dataset of Malicious VS Code Extensions*
 
