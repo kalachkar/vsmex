@@ -16,8 +16,9 @@ To be presented at [CODASPY 2026](https://www.codaspy.org/2026/) — June 23–2
 
 ## Dataset access
 
-VSIX binaries and full metadata are in [`kalachkar/vsmex-dataset`](https://github.com/kalachkar/vsmex-dataset) (private).
-To request access, email from an institutional address stating your reason:
+The VSIX packages and full metadata are kept in a separate private repository — [`kalachkar/vsmex-dataset`](https://github.com/kalachkar/vsmex-dataset) — and are not publicly available. Access is gated to prevent misuse: these are real malicious packages.
+
+To request access, email from an institutional address with your name, institution, and intended use. We only respond to institutional email addresses.
 
 - Dr. Yury Zhauniarovich — Y.Zhauniarovich [at] tudelft [dot] nl
 - Kotaiba Alachkar — k.alachkar [at] tudelft [dot] nl
