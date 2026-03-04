@@ -6,11 +6,11 @@ To be presented at [CODASPY 2026](https://www.codaspy.org/2026/) — June 23–2
 
 ```bibtex
 @inproceedings{vsmex2026,
-  author    = {Kotaiba Alachkar and Yury Zhauniarovich},
+  author    = {[Authors]},
   title     = {VSMEx: A Collection Tool and a Dataset of Malicious VS Code Extensions},
   booktitle = {Proceedings of the 16th ACM Conference on Data and Application Security and Privacy (CODASPY)},
   year      = {2026},
-  url       = {https://github.com/kalachkar/vsmex}
+  url       = {[URL]}
 }
 ```
 
