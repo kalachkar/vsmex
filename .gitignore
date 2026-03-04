@@ -18,6 +18,3 @@ venv/
 .DS_Store
 Thumbs.db
 desktop.ini
-
-# Local config (secrets via env vars — do not commit)
-tool/config.py
