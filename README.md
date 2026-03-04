@@ -61,3 +61,7 @@ python3 tool/vsmex.py    # sync Microsoft's flagged lists → dataset + metadata
 ## License
 
 See [LICENSE](LICENSE).
+
+## Acknowledgements
+
+We thank [Marc Ohm](https://github.com/dasfreak/Backstabbers-Knife-Collection) for the Backstabbers' Knife Collection, which provided initial malicious VS Code extension samples used in this dataset, and [Karlo Zanki](https://www.reversinglabs.com) from ReversingLabs for sharing additional samples and expertise.
