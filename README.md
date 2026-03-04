@@ -19,8 +19,8 @@ To be presented at [CODASPY 2026](https://www.codaspy.org/2026/) — June 23–2
 VSIX binaries and full metadata are in [`kalachkar/vsmex-dataset`](https://github.com/kalachkar/vsmex-dataset) (private).
 To request access, email from an institutional address stating your reason:
 
-- Dr. Yury Zhauniarovich — Y.Zhauniarovich@tudelft.nl
-- Kotaiba Alachkar — k.alachkar@tudelft.nl
+- Dr. Yury Zhauniarovich — Y.Zhauniarovich [at] tudelft [dot] nl
+- Kotaiba Alachkar — k.alachkar [at] tudelft [dot] nl
 
 ### `metadata/msft_vscode_flagged_extensions.csv` (this repo)
 
