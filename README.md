@@ -64,4 +64,4 @@ See [LICENSE](LICENSE).
 
 ## Acknowledgements
 
-We thank [Marc Ohm](https://github.com/dasfreak/Backstabbers-Knife-Collection) for the Backstabbers' Knife Collection, which provided initial malicious VS Code extension samples used in this dataset, and [Karlo Zanki](https://www.reversinglabs.com) from ReversingLabs for sharing additional samples and expertise.
+We thank [Marc Ohm](https://github.com/dasfreak/Backstabbers-Knife-Collection) for the Backstabbers' Knife Collection, which provided initial malicious VS Code extension samples used in this dataset, and [Karlo Zanki](https://www.reversinglabs.com) from ReversingLabs for sharing additional samples.
