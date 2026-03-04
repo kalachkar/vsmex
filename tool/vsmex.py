@@ -23,7 +23,7 @@ from typing import Dict, List, Tuple, Optional
 
 import requests
 from azure.storage.blob import BlobServiceClient
-from azure.core.exceptions import ResourceNotFoundError
+from azure.core.exceptions import ResourceNotFoundError, ResourceModifiedError
 
 # VSIX files >= this size are not uploaded via GitHub Contents API — use Git LFS instead
 LARGE_FILE_THRESHOLD_MB = 100.0
@@ -198,31 +198,39 @@ def commit_lfs_pointer(dataset_path: str, oid: str, size: int,
 # ---------- metadata_master.jsonl index (Azure) ----------
 
 def build_master_index(cc):
-    by_version:   Dict[str, dict]        = {}
-    latest_by_id: Dict[str, dict]        = {}
-    all_by_id:    Dict[str, List[dict]]  = {}
-
     bc = cc.get_blob_client(config.MASTER_METADATA_BLOB)
-    try:
-        stream = bc.download_blob()
-    except ResourceNotFoundError:
-        raise SystemExit("[FATAL] Azure blob metadata_master.jsonl not found.")
 
-    for chunk in stream.chunks():
-        for line in chunk.splitlines():
-            if not line:
-                continue
-            try:
-                rec = json.loads(line.decode("utf-8"))
-            except Exception:
-                continue
-            vkey = rec.get("_versionKey")
-            eid  = rec.get("_extKey")
-            if vkey:
-                by_version[vkey] = rec
-            if eid:
-                latest_by_id[eid] = rec
-                all_by_id.setdefault(eid, []).append(rec)
+    for attempt in range(1, 4):
+        by_version:   Dict[str, dict]       = {}
+        latest_by_id: Dict[str, dict]       = {}
+        all_by_id:    Dict[str, List[dict]] = {}
+        try:
+            stream = bc.download_blob()
+        except ResourceNotFoundError:
+            raise SystemExit("[FATAL] Azure blob metadata_master.jsonl not found.")
+        try:
+            for chunk in stream.chunks():
+                for line in chunk.splitlines():
+                    if not line:
+                        continue
+                    try:
+                        rec = json.loads(line.decode("utf-8"))
+                    except Exception:
+                        continue
+                    vkey = rec.get("_versionKey")
+                    eid  = rec.get("_extKey")
+                    if vkey:
+                        by_version[vkey] = rec
+                    if eid:
+                        latest_by_id[eid] = rec
+                        all_by_id.setdefault(eid, []).append(rec)
+            break  # success
+        except ResourceModifiedError:
+            if attempt < 3:
+                print(f"  [warn] metadata_master.jsonl modified during download (crawler overlap), retrying in 60s … ({attempt}/3)")
+                time.sleep(60)
+            else:
+                raise
 
     return by_version, latest_by_id, all_by_id
 
