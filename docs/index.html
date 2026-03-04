@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VSMEx — Malicious VS Code Extensions Dataset</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/dataTables.bootstrap5.min.css" />
+
+  <style>
+    :root {
+      --dark:    #0f172a;
+      --accent:  #4f46e5;
+      --accent2: #818cf8;
+      --muted:   #64748b;
+      --border:  #e2e8f0;
+      --bg:      #f8fafc;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: #1e293b;
+      padding-top: 64px;
+    }
+
+    /* ── Navbar ── */
+    .navbar {
+      background: var(--dark);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: -0.01em;
+      color: #fff !important;
+    }
+    .navbar .nav-link { color: #94a3b8 !important; font-size: 0.9rem; }
+    .navbar .nav-link:hover { color: #fff !important; }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--dark);
+      color: #fff;
+      padding: 90px 0 80px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .hero .tagline {
+      font-size: 1.1rem;
+      color: #94a3b8;
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.6;
+    }
+    .hero .btn-primary-custom {
+      background: var(--accent);
+      border: none;
+      color: #fff;
+      padding: 0.65rem 1.6rem;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.15s;
+    }
+    .hero .btn-primary-custom:hover { background: #4338ca; }
+    .hero .btn-outline-custom {
+      border: 1px solid #334155;
+      color: #cbd5e1;
+      padding: 0.65rem 1.6rem;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .hero .btn-outline-custom:hover { border-color: #64748b; color: #fff; }
+
+    /* ── Stats ── */
+    .stats-row {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+    .stat-item { text-align: center; padding: 0 2rem; }
+    .stat-item + .stat-item { border-left: 1px solid var(--border); }
+    .stat-num {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1;
+    }
+    .stat-lbl {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 0.35rem;
+    }
+
+    /* ── Sections ── */
+    .section { padding: 80px 0; }
+    .section-alt { background: #fff; }
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .section-lead {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.7;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    /* ── Table ── */
+    .table-wrapper {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow-x: auto;
+    }
+    table.dataTable thead th {
+      background: var(--dark);
+      color: #94a3b8;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      border: none !important;
+      padding: 0.85rem 1rem;
+    }
+    table.dataTable tbody td {
+      font-size: 0.85rem;
+      padding: 0.65rem 1rem;
+      border-color: #f1f5f9 !important;
+      vertical-align: middle;
+    }
+    /* prevent date & count columns from wrapping */
+    #extTable td:nth-child(4),
+    #extTable td:nth-child(6),
+    #extTable td:nth-child(7),
+    #extTable th:nth-child(4),
+    #extTable th:nth-child(6),
+    #extTable th:nth-child(7) { white-space: nowrap; }
+    /* header tooltip cursor */
+    #extTable thead th[data-bs-toggle="tooltip"] { cursor: help; }
+    table.dataTable tbody tr:hover { background: #f8fafc; }
+    code { font-size: 0.8rem; color: #4f46e5; background: #eef2ff; padding: 0.1em 0.4em; border-radius: 4px; }
+    .pill {
+      display: inline-block;
+      padding: 0.15em 0.65em;
+      border-radius: 99px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    .pill-red    { background: #fee2e2; color: #b91c1c; }
+    .pill-orange { background: #ffedd5; color: #c2410c; }
+    .pill-green  { background: #dcfce7; color: #15803d; }
+    .pill-gray   { background: #f1f5f9; color: #64748b; }
+    .pill-indigo { background: #eef2ff; color: #4338ca; }
+
+    /* ── DataTables overrides ── */
+    .dataTables_wrapper .dataTables_filter { display: none; }  /* hidden — we use custom search */
+    .dataTables_wrapper .dataTables_length select {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.35rem 1.4rem 0.35rem 0.5rem;
+      font-size: 0.82rem;
+      background: #f8fafc;
+      color: #1e293b;
+      appearance: auto;
+      cursor: pointer;
+      outline: none;
+      width: auto;
+    }
+    .dataTables_wrapper .dataTables_length select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px #eef2ff;
+    }
+    .dataTables_wrapper .dataTables_length { font-size: 0.82rem; }
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_paginate { font-size: 0.82rem; }
+    .page-link { color: var(--accent); }
+    .page-item.active .page-link { background: var(--accent); border-color: var(--accent); }
+
+    /* ── Filter bar ── */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .filter-search {
+      flex: 1;
+      min-width: 180px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.45rem 0.9rem 0.45rem 2.2rem;
+      font-size: 0.85rem;
+      color: #1e293b;
+      background: #f8fafc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E") no-repeat 0.7rem center;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .filter-search::placeholder { color: #94a3b8; }
+    .filter-search:focus { border-color: var(--accent); box-shadow: 0 0 0 3px #eef2ff; background-color: #fff; }
+    .filter-select {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.85rem;
+      background: #f8fafc;
+      color: #1e293b;
+      cursor: pointer;
+      outline: none;
+      appearance: auto;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .filter-select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px #eef2ff; }
+    .reset-btn {
+      border: none;
+      border-radius: 8px;
+      padding: 0.45rem 1rem;
+      font-size: 0.82rem;
+      background: #f1f5f9;
+      color: var(--muted);
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .reset-btn:hover { background: #e2e8f0; color: #1e293b; }
+
+    /* ── Access card ── */
+    .access-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 520px;
+      margin: 2rem auto 0;
+    }
+    .contact-row { padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; }
+    .contact-row:last-child { border-bottom: none; }
+    .contact-name { font-weight: 600; font-size: 0.9rem; }
+    .contact-email { font-size: 0.82rem; color: var(--muted); font-family: monospace; }
+
+    /* ── Citation ── */
+    .citation-wrap {
+      max-width: 720px;
+      margin: 2rem auto 0;
+      position: relative;
+    }
+    .citation-block {
+      background: #0f172a;
+      color: #e2e8f0;
+      border-radius: 10px;
+      padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+      font-size: 0.83rem;
+      line-height: 1.85;
+      white-space: pre-wrap;
+      text-align: left;
+      margin: 0;
+      font-family: "Fira Code", "JetBrains Mono", monospace;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 0.65rem;
+      right: 0.65rem;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #94a3b8;
+      border-radius: 6px;
+      padding: 0.3rem 0.7rem;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      font-family: inherit;
+    }
+    .copy-btn:hover { background: rgba(255,255,255,0.15); color: #e2e8f0; }
+    .copy-btn.copied { color: #4ade80; border-color: #4ade80; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--dark);
+      color: #475569;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.8rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    footer a { color: #64748b; text-decoration: none; }
+    footer a:hover { color: #94a3b8; }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">VSMEx</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto gap-1">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#access">Access</a></li>
+        <li class="nav-item"><a class="nav-link" href="#cite">Cite</a></li>
+        <li class="nav-item"><a class="nav-link" href="#data">Data</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="container">
+    <h1>VSMEx</h1>
+    <p class="tagline">
+      A dataset of malicious VS Code extensions removed by Microsoft,
+      with VSIX packages and extension metadata.
+    </p>
+    <div class="d-flex justify-content-center flex-wrap gap-3">
+      <a href="#about" class="btn-primary-custom">Learn More</a>
+      <a href="#" class="btn-outline-custom">Read the Paper</a>
+      <a href="#access" class="btn-outline-custom">Request Access</a>
+    </div>
+  </div>
+</div>
+
+<!-- Stats -->
+<div class="stats-row">
+  <div class="container">
+    <div class="d-flex justify-content-center flex-wrap">
+      <div class="stat-item">
+        <div class="stat-num" id="stat-total">—</div>
+        <div class="stat-lbl">Unique extensions</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" id="stat-vsix">—</div>
+        <div class="stat-lbl">VSIX packages collected</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- About -->
+<section id="about" class="section text-center">
+  <div class="container">
+    <h2 class="section-title">About</h2>
+    <p class="section-lead">
+      VS Code's extension ecosystem has become a target for software supply chain attacks.
+      No publicly available, continuously updated dataset existed for malicious VS Code extensions —
+      so we built VSMEx. It tracks Microsoft's official
+      <a href="https://main.vscode-cdn.net/extensions/marketplace.json" target="_blank">malicious</a>
+      and
+      <a href="https://github.com/microsoft/vsmarketplace/blob/main/RemovedPackages.md" target="_blank">removed</a>
+      extension lists and captures VSIX packages before they disappear from the marketplace.
+    </p>
+    <p class="mt-3" style="font-size:0.9rem; color:var(--muted);">
+      To be presented at
+      <a href="https://www.codaspy.org/2026/" target="_blank">CODASPY 2026</a>
+      — June 23–25, Frankfurt am Main, Germany.
+    </p>
+  </div>
+</section>
+
+<!-- Access -->
+<section id="access" class="section section-alt text-center">
+  <div class="container">
+    <h2 class="section-title">Dataset Access</h2>
+    <p class="section-lead">
+      The VSIX packages and full metadata are kept in a separate private repository
+      (<code>kalachkar/vsmex-dataset</code>) and are not publicly available.
+      Access is gated to prevent misuse — these are real malicious packages.
+    </p>
+    <p class="section-lead mt-3">
+      To request access, email us from an institutional address stating your name,
+      institution, and intended use. We only respond to institutional email addresses.
+    </p>
+    <div class="access-card">
+      <div class="contact-row">
+        <div class="contact-name">Dr. Yury Zhauniarovich</div>
+        <div class="contact-email">Y.Zhauniarovich [at] tudelft [dot] nl</div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-name">Kotaiba Alachkar</div>
+        <div class="contact-email">k.alachkar [at] tudelft [dot] nl</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cite -->
+<section id="cite" class="section text-center">
+  <div class="container-xl">
+    <h2 class="section-title">Cite</h2>
+    <p class="section-lead">If you use VSMEx in your research, please cite:</p>
+    <div class="citation-wrap">
+      <button class="copy-btn" id="copy-cite">Copy</button>
+      <pre class="citation-block" id="cite-text">@inproceedings{vsmex2026,
+  author    = {[Authors]},
+  title     = {VSMEx: A Collection Tool and a Dataset
+               of Malicious VS Code Extensions},
+  booktitle = {Proc. of the 16th ACM Conference on Data and
+               Application Security and Privacy (CODASPY)},
+  year      = {2026},
+  url       = {[URL]}
+}</pre>
+    </div>
+  </div>
+</section>
+
+<!-- Acknowledgements -->
+<section class="section text-center">
+  <div class="container">
+    <h2 class="section-title">Acknowledgements</h2>
+    <p class="section-lead">
+      We thank <strong>Marc Ohm</strong> for the
+      <a href="https://github.com/dasfreak/Backstabbers-Knife-Collection" target="_blank">Backstabbers' Knife Collection</a>,
+      which provided initial malicious VS Code extension samples used in this dataset,
+      and <strong>Karlo Zanki</strong> from
+      <a href="https://www.reversinglabs.com" target="_blank">ReversingLabs</a>
+      for sharing additional samples.
+    </p>
+  </div>
+</section>
+
+<!-- Data -->
+<section id="data" class="section section-alt">
+  <div class="container-xl">
+    <h2 class="section-title text-center mb-1">Microsoft-Flagged VS Code Extensions Captured by VSMEx</h2>
+    <p class="text-center mb-4" style="font-size:0.88rem; color:var(--muted);">Sourced from Microsoft's <a href="https://main.vscode-cdn.net/extensions/marketplace.json" target="_blank">malicious extensions</a> and <a href="https://github.com/microsoft/vsmarketplace/blob/main/RemovedPackages.md" target="_blank">removed packages</a> lists</p>
+
+    <div class="filter-bar">
+      <input id="filter-search" class="filter-search" type="search" placeholder="Search extensions…" />
+      <select id="filter-classification" class="filter-select">
+        <option value="">All classifications</option>
+      </select>
+      <select id="filter-source" class="filter-select">
+        <option value="">All sources</option>
+        <option value="removed">Removed list</option>
+        <option value="malicious">Malicious list</option>
+      </select>
+      <select id="filter-captured" class="filter-select">
+        <option value="">All captured</option>
+        <option value="yes">Captured</option>
+        <option value="no">Not captured</option>
+      </select>
+      <button id="filter-reset" class="reset-btn">↺ Reset</button>
+    </div>
+
+    <div class="table-wrapper">
+      <table id="extTable" class="table table-hover mb-0" style="width:100%">
+        <thead>
+          <tr>
+            <th data-bs-toggle="tooltip" data-bs-title="Unique extension identifier in publisher.name format">Extension</th>
+            <th data-bs-toggle="tooltip" data-bs-title="Microsoft's threat classification for this extension">Classification</th>
+            <th data-bs-toggle="tooltip" data-bs-title="Which Microsoft list flagged this extension: removed packages or malicious extensions">Source</th>
+            <th data-bs-toggle="tooltip" data-bs-title="Date Microsoft removed the extension from the marketplace">Removed</th>
+            <th data-bs-toggle="tooltip" data-bs-title="Whether we successfully captured a VSIX binary before removal">Captured</th>
+            <th data-bs-toggle="tooltip" data-bs-title="Number of VSIX versions captured in the dataset">Versions</th>
+            <th data-bs-toggle="tooltip" data-bs-title="Date we first captured this extension">Capture date</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>VSMEx · 2026</span>
+  <span style="margin: 0 0.75rem; opacity:0.3;">|</span>
+  <a href="https://github.com/kalachkar/vsmex" target="_blank">GitHub</a>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.8/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+<script>
+const CSV = "https://raw.githubusercontent.com/kalachkar/vsmex/main/metadata/msft_vscode_flagged_extensions.csv";
+
+// Copy citation button
+document.getElementById("copy-cite").addEventListener("click", function() {
+  const text = document.getElementById("cite-text").textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    this.textContent = "Copied!";
+    this.classList.add("copied");
+    setTimeout(() => { this.textContent = "Copy"; this.classList.remove("copied"); }, 2000);
+  });
+});
+
+// Init Bootstrap tooltips on table headers
+document.querySelectorAll('#extTable thead th[data-bs-toggle="tooltip"]').forEach(el => {
+  new bootstrap.Tooltip(el, { placement: "top", trigger: "hover" });
+});
+
+Papa.parse(CSV, {
+  download: true, header: true, skipEmptyLines: true,
+  complete(results) {
+    const rows = results.data;
+    const totalVsix = rows.reduce((s, r) => s + (parseInt(r.version_count) || 0), 0);
+
+    document.getElementById("stat-total").textContent = rows.length;
+    document.getElementById("stat-vsix").textContent  = totalVsix;
+
+    const tbody = document.getElementById("tableBody");
+    rows.forEach(r => {
+      const isRemoved = r.source === "removed_list";
+      const isCaptured = r.captured === "yes";
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td><code>${r.extension_identifier || ""}</code></td>
+        <td><span class="pill pill-indigo">${r.msft_classification_type || ""}</span></td>
+        <td><span class="pill ${isRemoved ? "pill-red" : "pill-orange"}">${isRemoved ? "removed" : "malicious"}</span></td>
+        <td>${r.msft_removed_date !== "none" ? r.msft_removed_date : "—"}</td>
+        <td><span class="pill ${isCaptured ? "pill-green" : "pill-gray"}">${r.captured || "no"}</span></td>
+        <td class="text-center">${r.version_count || "0"}</td>
+        <td>${r.capture_date !== "none" ? r.capture_date : "—"}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    // Populate classification dropdown — deduplicate case-insensitively
+    const classMap = new Map();
+    rows.forEach(r => {
+      const v = (r.msft_classification_type || "").trim();
+      if (v && !classMap.has(v.toLowerCase())) classMap.set(v.toLowerCase(), v);
+    });
+    const classSelect = document.getElementById("filter-classification");
+    [...classMap.values()].sort().forEach(c => {
+      const opt = document.createElement("option");
+      opt.value = c; opt.textContent = c;
+      classSelect.appendChild(opt);
+    });
+
+    const table = $("#extTable").DataTable({
+      pageLength: 25,
+      order: [[3, "desc"]],
+      dom: '<"d-flex justify-content-between align-items-center mb-2"l>rt<"d-flex justify-content-between align-items-center mt-2"ip>'
+    });
+
+    // Custom search input → global DataTables search
+    document.getElementById("filter-search").addEventListener("input", function() {
+      table.search(this.value).draw();
+    });
+
+    // Dropdown filters → column search (exact match)
+    [
+      ["filter-classification", 1],
+      ["filter-source",         2],
+      ["filter-captured",       4]
+    ].forEach(([id, col]) => {
+      document.getElementById(id).addEventListener("change", function() {
+        const val = this.value;
+        table.column(col).search(val ? "^" + val + "$" : "", true, false).draw();
+      });
+    });
+
+    document.getElementById("filter-reset").addEventListener("click", function() {
+      document.getElementById("filter-search").value = "";
+      ["filter-classification", "filter-source", "filter-captured"]
+        .forEach(id => { document.getElementById(id).value = ""; });
+      table.search("").columns().search("").draw();
+    });
+  }
+});
+</script>
+</body>
+</html>
