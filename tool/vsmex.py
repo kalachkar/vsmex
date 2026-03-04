@@ -106,15 +106,26 @@ def parse_marketplace_json(txt: str) -> set[str]:
         return set()
 
 
-def parse_removed_md(txt: str) -> Dict[str, str]:
-    out: Dict[str, str] = {}
+def _norm_ms_date(s: str) -> str:
+    """Convert M/D/YYYY → YYYY-MM-DD. Returns original string on failure."""
+    from datetime import datetime as _dt
+    try:
+        return _dt.strptime(s.strip(), "%m/%d/%Y").strftime("%Y-%m-%d")
+    except Exception:
+        return s.strip()
+
+
+def parse_removed_md(txt: str) -> Dict[str, Tuple[str, str]]:
+    """Returns {identifier: (removal_date_iso, classification)}."""
+    out: Dict[str, Tuple[str, str]] = {}
     for raw in io.StringIO(txt):
         line = raw.strip()
         if not line.startswith("|") or "---" in line:
             continue
         parts = [p.strip() for p in line.split("|") if p.strip() != ""]
         if len(parts) >= 3 and not parts[0].lower().startswith("extension identifier"):
-            out[parts[0]] = parts[2]
+            # cols: Extension Identifier | Removal Date | Type
+            out[parts[0]] = (_norm_ms_date(parts[1]), parts[2])
     return out
 
 
@@ -393,7 +404,7 @@ def main():
     for eid in sorted(removed_new | malicious_new):
         if eid in removed_new:
             source         = "removed_list"
-            classification = normalize_msft_classification(removed_map.get(eid, "Malware"))
+            classification = normalize_msft_classification(removed_map.get(eid, ("none", "Malware"))[1])
         else:
             source         = "malicious_list"
             classification = "Malicious"
@@ -405,7 +416,7 @@ def main():
 
     for source, eid, classification in worklist:
         recs = all_by_id.get(eid, [])
-        msft_removed_date = removed_map.get(eid, "none") if source == "removed_list" else "none"
+        msft_removed_date = removed_map.get(eid, ("none", ""))[0] if source == "removed_list" else "none"
 
         if not recs:
             flagged_rows.append({
