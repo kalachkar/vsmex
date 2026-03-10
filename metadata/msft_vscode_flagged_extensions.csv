@@ -721,7 +721,7 @@ removed_list,2026-02-21,TrueCrimeDev.tableau-lsp,Impersonation,2026-02-19,yes,1,
 removed_list,2026-02-21,clacla100.claudemem,Malware,2026-02-19,yes,3,0.0.92,2026-02-21
 removed_list,2026-02-21,clacla100.cosave100,Malware,2026-02-19,yes,9,0.0.92,2026-02-21
 removed_list,2026-02-21,clicli100.openclaw100,Malware,2026-02-19,yes,3,0.0.96,2026-02-21
-removed_list,2026-02-21,clicli100.windsurf100,malware,2026-02-19,yes,4,0.0.96,2026-02-21
+removed_list,2026-02-21,clicli100.windsurf100,Malware,2026-02-19,yes,4,0.0.96,2026-02-21
 removed_list,2026-02-21,cobot100.cosave101,Malware,2026-02-19,yes,8,0.0.96,2026-02-21
 removed_list,2026-02-21,cobot100.cursor100,Malware,2026-02-19,yes,4,0.0.96,2026-02-21
 removed_list,2026-02-21,cobot100.kilobrasil,Malware,2026-02-19,yes,1,0.0.96,2026-02-21
