@@ -5,13 +5,7 @@ Dataset of malicious VS Code extensions collected from Microsoft's flagged exten
 To be presented at [CODASPY 2026](https://www.codaspy.org/2026/) — June 23–25, Frankfurt am Main.
 
 ```bibtex
-@inproceedings{vsmex2026,
-  author    = {[Authors]},
-  title     = {VSMEx: A Collection Tool and a Dataset of Malicious VS Code Extensions},
-  booktitle = {Proceedings of the 16th ACM Conference on Data and Application Security and Privacy (CODASPY)},
-  year      = {2026},
-  url       = {[URL]}
-}
+TBD
 ```
 
 ## Dataset access
@@ -46,12 +40,12 @@ pip install -r tool/requirements.txt
 ```
 
 ```bash
-export AZURE_CONNECTION_STRING="..."
-export AZURE_CONTAINER_NAME="..."
-export GITHUB_PAT="..."
-export GITHUB_USERNAME="kalachkar"
-export GITHUB_REPO="vsmex"
-export GITHUB_DATASET_REPO="vsmex-dataset"
+export AZURE_CONNECTION_STRING="<your-azure-connection-string>"
+export AZURE_CONTAINER_NAME="<your-container-name>"
+export GITHUB_PAT="<your-github-pat>"
+export GITHUB_USERNAME="<your-github-username>"
+export GITHUB_REPO="<your-repo-name>"
+export GITHUB_DATASET_REPO="<your-dataset-repo-name>"
 ```
 
 ```bash
