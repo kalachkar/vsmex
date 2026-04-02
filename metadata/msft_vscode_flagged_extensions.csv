@@ -1115,3 +1115,10 @@ removed_list,2026-03-31,ihyajb.cfxlua-intellisense,Impersonation,2026-03-31,yes,
 removed_list,2026-03-31,itanshield.titanshield-vscode,Malware,2026-03-30,no,0,none,none
 removed_list,2026-03-31,otimiza.local-agent-screen-viewer,Malware,2026-03-30,yes,1,0.2.0,2026-03-31
 removed_list,2026-03-31,ultimateBroK.symbols-enhance,Impersonation,2026-03-30,yes,1,0.0.26,2026-03-31
+removed_list,2026-04-02,AugmentedValueAcceleration.ava-supernova,Malware,2026-04-01,yes,123,0.34.4,2026-04-02
+removed_list,2026-04-02,Brett-Wilson.markdown-shortcuts-chinese,Impersonation,2026-04-01,yes,3,0.12.4,2026-04-02
+removed_list,2026-04-02,DaMaoCloud.damao-aie,Impersonation,2026-04-01,no,0,none,none
+removed_list,2026-04-02,FlowIndex.flowindex-cadence,Impersonation,2026-04-01,yes,2,3.1.0,2026-04-02
+removed_list,2026-04-02,kova-lang.kova-material-iconse,Impersonation,2026-04-01,no,0,none,none
+removed_list,2026-04-02,rabbitsyntax.rabbitsyntax,Owner Request,2026-04-01,yes,1,0.1.0,2026-04-02
+removed_list,2026-04-02,toommyliu.cursor-dark-no-italicse,Impersonation,2026-04-01,no,0,none,none
