@@ -1153,3 +1153,7 @@ removed_list,2026-04-08,sneakyloris.team-pulse,Malware,2026-04-07,no,0,none,none
 removed_list,2026-04-08,stunning-yunwu.code-debugger-plus,Impersonation,2026-04-07,no,0,none,none
 removed_list,2026-04-08,thirst.cfxlua-types-intellisense,Impersonation,2026-04-07,no,0,none,none
 removed_list,2026-04-08,tohuw.focus-lines,Impersonation,2026-04-07,no,0,none,none
+removed_list,2026-04-09,IZOT-TE-3-FINAL.static-code-parser-FINAL,Untrustworthy,2026-04-08,yes,1,1.0.0,2026-04-09
+removed_list,2026-04-09,IZOT-TE-3.static-code-parser,Untrustworthy,2026-04-08,yes,1,1.0.0,2026-04-09
+removed_list,2026-04-09,sla-guardian.static-sla-guardian,Untrustworthy,2026-04-08,yes,1,1.0.0,2026-04-09
+removed_list,2026-04-09,tak-vibecoding.tak,Untrustworthy,2026-04-08,no,0,none,none
