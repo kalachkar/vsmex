@@ -14,7 +14,7 @@ The VSIX packages and full metadata are kept in a separate private repository �
 
 To request access, email from an institutional address with your name, institution, and intended use. We only respond to institutional email addresses.
 
-- Dr. Yury Zhauniarovich — Y.Zhauniarovich [at] tudelft [dot] nl
+- Dr. Yury Zhauniarovich — y.zhauniarovich [at] tudelft [dot] nl
 - Kotaiba Alachkar — k.alachkar [at] tudelft [dot] nl
 
 ### `metadata/msft_vscode_flagged_extensions.csv` (this repo)
