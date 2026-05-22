@@ -1436,3 +1436,12 @@ removed_list,2026-05-21,VivekChoudhury.google-gui-support,Impersonation,2026-05-
 removed_list,2026-05-21,stark.bgide,Impersonation,2026-05-21,yes,1,1.53.53,2026-05-21
 removed_list,2026-05-21,sunsetHightlight.sunset-highlight,Malware,2026-05-21,no,0,none,none
 removed_list,2026-05-21,taillaaa.codilore-ai,Impersonation,2026-05-21,no,0,none,none
+removed_list,2026-05-22,Embedder.embedder-infineon,Untrustworthy,2026-05-22,yes,26,0.3.81,2026-05-22
+removed_list,2026-05-22,FlyingsMarmot.vscode-clangd-ucpp,Impersonation,2026-05-22,yes,1,1.0.1,2026-05-22
+removed_list,2026-05-22,LangNico.maxima-syntax-highlighting-new,Impersonation,2026-05-22,no,0,none,none
+removed_list,2026-05-22,auraone.agent-studio-open,Untrustworthy,2026-05-21,no,0,none,none
+removed_list,2026-05-22,auraone.rubric-studio,Untrustworthy,2026-05-21,no,0,none,none
+removed_list,2026-05-22,dimitrius-cadimout.confluence-publisher,Untrustworthy,2026-05-21,no,0,none,none
+removed_list,2026-05-22,samkj.orchestrai,Untrustworthy,2026-05-22,no,0,none,none
+removed_list,2026-05-22,vix.php-import-resolver,Impersonation,2026-05-22,no,0,none,none
+removed_list,2026-05-22,wenox.wenox,Untrustworthy,2026-05-22,no,0,none,none
