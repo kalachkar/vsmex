@@ -1454,3 +1454,12 @@ removed_list,2026-05-24,openbase.openbase-icons,Untrustworthy,2026-05-24,no,0,no
 removed_list,2026-05-24,openbase.openbase-theme,Untrustworthy,2026-05-24,no,0,none,none
 removed_list,2026-05-24,openbase.openbase-vscode,Untrustworthy,2026-05-24,no,0,none,none
 removed_list,2026-05-24,romanage.romanage,Untrustworthy,2026-05-23,no,0,none,none
+removed_list,2026-05-26,ArthurNeuman.eslint-disable-typescript-snippets,Impersonation,2026-05-26,no,0,none,none
+removed_list,2026-05-26,Moushu.material-icon-theme-moushu,Impersonation,2026-05-23,yes,2,1.0.3,2026-05-26
+removed_list,2026-05-26,Trent-Tompkins.claude-codex-black-edition,Impersonation,2026-05-26,no,0,none,none
+removed_list,2026-05-26,VSCodeExtensionDevelopment.project-restructure-typescript,Malware,2026-05-23,no,0,none,none
+removed_list,2026-05-26,copilot-multi-provider.copilot-multi-provider,Impersonation,2026-05-26,no,0,none,none
+removed_list,2026-05-26,ray2666.antigravity-proxy,Untrustworthy,2026-05-26,yes,1,0.0.1,2026-05-26
+removed_list,2026-05-26,songyanglin.vscode-office-plus,Impersonation,2026-05-26,no,0,none,none
+removed_list,2026-05-26,zhoulufeng.blf-viewer-canfd,Impersonation,2026-05-26,no,0,none,none
+removed_list,2026-05-26,zijinshanren.vscode-clangd-modules,Impersonation,2026-05-26,no,0,none,none
