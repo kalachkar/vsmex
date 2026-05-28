@@ -1465,3 +1465,8 @@ removed_list,2026-05-26,zhoulufeng.blf-viewer-canfd,Impersonation,2026-05-26,no,
 removed_list,2026-05-26,zijinshanren.vscode-clangd-modules,Impersonation,2026-05-26,no,0,none,none
 removed_list,2026-05-27,64kramsystem.vscode-open-in-github-wiki-fixed,Impersonation,2026-05-27,no,0,none,none
 removed_list,2026-05-27,Sm1lerrpasy.ton-func-syntax-highlighter,Malware,2026-05-27,no,0,none,none
+removed_list,2026-05-28,DorianN612.remote-text-fetcher,Malware,2026-05-27,no,0,none,none
+removed_list,2026-05-28,DorianN612.wordcountertool,Untrustworthy,2026-05-27,no,0,none,none
+removed_list,2026-05-28,aurogon-as.unreal-angelscript-aurogon,Impersonation,2026-05-28,yes,1,1.7.9017,2026-05-28
+removed_list,2026-05-28,li-zheng-rong.vscode-clangd-modules-support,Impersonation,2026-05-28,no,0,none,none
+removed_list,2026-05-28,seeker.super-change-case-fork,Impersonation,2026-05-28,no,0,none,none
