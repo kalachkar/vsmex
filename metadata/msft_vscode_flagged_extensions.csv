@@ -1489,3 +1489,9 @@ removed_list,2026-06-01,RoyHtml.meta-lang,Untrustworthy,2026-06-01,no,0,none,non
 removed_list,2026-06-01,RoyHtml.xampp-manager,Malware,2026-06-01,no,0,none,none
 removed_list,2026-06-01,mathieu42.monokai-dark-by-mathieu42,Impersonation,2026-06-01,no,0,none,none
 removed_list,2026-06-01,phpLens.phpLens,Spam,2026-06-01,no,0,none,none
+removed_list,2026-06-02,BloxTask.bloxtask,Untrustworthy,2026-06-02,no,0,none,none
+removed_list,2026-06-02,Involute.bs5-kit&ssr,Untrustworthy,2026-06-02,no,0,none,none
+removed_list,2026-06-02,test-ui-harry.harry-test,Untrustworthy,2026-06-01,no,0,none,none
+removed_list,2026-06-02,test-ui-harry.preview-beta,Untrustworthy,2026-06-01,no,0,none,none
+removed_list,2026-06-02,vtkn.amazon-bedrock-copilot-chat,Malware,2026-06-02,yes,34,0.10.0,2026-06-02
+removed_list,2026-06-02,wenwj.luaforqc,Impersonation,2026-06-02,yes,4,0.2.43,2026-06-02
