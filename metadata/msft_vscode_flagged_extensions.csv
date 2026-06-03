@@ -1495,3 +1495,5 @@ removed_list,2026-06-02,test-ui-harry.harry-test,Untrustworthy,2026-06-01,no,0,n
 removed_list,2026-06-02,test-ui-harry.preview-beta,Untrustworthy,2026-06-01,no,0,none,none
 removed_list,2026-06-02,vtkn.amazon-bedrock-copilot-chat,Malware,2026-06-02,yes,34,0.10.0,2026-06-02
 removed_list,2026-06-02,wenwj.luaforqc,Impersonation,2026-06-02,yes,4,0.2.43,2026-06-02
+removed_list,2026-06-03,Involute.bs5-kit,Untrustworthy,2026-06-02,no,0,none,none
+removed_list,2026-06-03,pemhkakbh.theme-helper-utils,Untrustworthy,2026-06-03,no,0,none,none
