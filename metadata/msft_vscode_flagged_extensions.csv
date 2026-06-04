@@ -1497,3 +1497,7 @@ removed_list,2026-06-02,vtkn.amazon-bedrock-copilot-chat,Malware,2026-06-02,yes,
 removed_list,2026-06-02,wenwj.luaforqc,Impersonation,2026-06-02,yes,4,0.2.43,2026-06-02
 removed_list,2026-06-03,Involute.bs5-kit,Untrustworthy,2026-06-02,no,0,none,none
 removed_list,2026-06-03,pemhkakbh.theme-helper-utils,Untrustworthy,2026-06-03,no,0,none,none
+removed_list,2026-06-04,apzcode.apzcode-ai,Impersonation,2026-06-04,no,0,none,none
+removed_list,2026-06-04,guabutian.todo-tree-fix,Impersonation,2026-06-04,no,0,none,none
+removed_list,2026-06-04,laurence06363.laurence-hello-world-5,Untrustworthy,2026-06-04,no,0,none,none
+removed_list,2026-06-04,wenwj.qc-lua,Impersonation,2026-06-04,no,0,none,none
