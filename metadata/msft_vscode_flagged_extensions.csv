@@ -1501,3 +1501,9 @@ removed_list,2026-06-04,apzcode.apzcode-ai,Impersonation,2026-06-04,no,0,none,no
 removed_list,2026-06-04,guabutian.todo-tree-fix,Impersonation,2026-06-04,no,0,none,none
 removed_list,2026-06-04,laurence06363.laurence-hello-world-5,Untrustworthy,2026-06-04,no,0,none,none
 removed_list,2026-06-04,wenwj.qc-lua,Impersonation,2026-06-04,no,0,none,none
+removed_list,2026-06-05,RoPilot.ropilot,Malware,2026-06-04,no,0,none,none
+removed_list,2026-06-05,RoPlanner.roplanner,Malware,2026-06-04,no,0,none,none
+removed_list,2026-06-05,RoTasker.rotasker,Malware,2026-06-04,no,0,none,none
+removed_list,2026-06-05,SchlafferBenjamin.terminal-compiler,Untrustworthy,2026-06-05,no,0,none,none
+removed_list,2026-06-05,SchlafferBenjamin.tridev-development-hub,Untrustworthy,2026-06-05,no,0,none,none
+removed_list,2026-06-05,voanhnd.copilot-credit-counter,Untrustworthy,2026-06-05,no,0,none,none
