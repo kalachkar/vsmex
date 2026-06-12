@@ -1567,3 +1567,17 @@ removed_list,2026-06-11,rwbcy.trwbcy-poc,Malware,2026-06-10,no,0,none,none
 removed_list,2026-06-11,solderspark.spark-code,Malware,2026-06-10,no,0,none,none
 removed_list,2026-06-11,sun-xm.quick-action,Malware,2026-06-10,yes,1,0.0.26,2026-06-11
 removed_list,2026-06-11,visomaGmbH.vsm-vscode-deploy-reloaded,Impersonation,2026-06-10,no,0,none,none
+removed_list,2026-06-12,AppCreationsPLC.boardwalkdevapp,Untrustworthy,2026-06-11,no,0,none,none
+removed_list,2026-06-12,Aussie.FastTask,Untrustworthy,2026-06-11,no,0,none,none
+removed_list,2026-06-12,Blamely.blamely,Malware,2026-06-11,yes,1,1.0.0,2026-06-12
+removed_list,2026-06-12,JahidLimon.php-namespace-resolver-plus,Impersonation,2026-06-11,no,0,none,none
+removed_list,2026-06-12,SerbByteDevelopment.gpt-code-generator,Untrustworthy,2026-06-11,yes,1,1.0.1,2026-06-12
+removed_list,2026-06-12,ShopifySTORES.liquidpeptide,Malware,2026-06-11,no,0,none,none
+removed_list,2026-06-12,barakolshe.forq,Malware,2026-06-11,no,0,none,none
+removed_list,2026-06-12,kudsu.sober-ssh,Malware,2026-06-11,no,0,none,none
+removed_list,2026-06-12,liumeng1201.android-helper,Impersonation,2026-06-11,no,0,none,none
+removed_list,2026-06-12,madmansidea.sidetrack-music,Malware,2026-06-11,no,0,none,none
+removed_list,2026-06-12,shogo-ai.shogo-vscode,Untrustworthy,2026-06-11,no,0,none,none
+removed_list,2026-06-12,smooth-soft.assessme-flow,Malware,2026-06-11,yes,1,1.0.1,2026-06-12
+removed_list,2026-06-12,tuanpham.tunas-graphql-explorer-pro,Untrustworthy,2026-06-11,no,0,none,none
+removed_list,2026-06-12,tuanpham.tunas-ruby-call-flow,Untrustworthy,2026-06-11,no,0,none,none
