@@ -5,12 +5,27 @@ Dataset of malicious VS Code extensions collected from Microsoft's flagged exten
 To be presented at [CODASPY 2026](https://www.codaspy.org/2026/) — June 23–25, Frankfurt am Main.
 
 ```bibtex
-TBD
+@inproceedings{Alachkar2026VSMEx,
+  title     = {VSMEx: A Collection Tool and a Dataset of Malicious VS Code Extensions: Data/Toolset Paper},
+  author    = {Alachkar, Kotaiba and Gaastra, Dirk and Gadyatskaya, Olga and Barbaro, Eduardo and van Eeten, Michel and Zhauniarovich, Yury},
+  booktitle = {Proceedings of the Sixteenth ACM Conference on Data and Application Security and Privacy},
+  pages     = {138–144},
+  year      = {2026},
+  url       = {https://doi.org/10.1145/3800506.3803487},
+  address   = {New York, NY, USA},
+  doi       = {10.1145/3800506.3803487},
+  isbn      = {9798400725623},
+  keywords  = {vs code, malicious extensions, dataset, collection tool},
+  location  = {Germany},
+  numpages  = {7},
+  publisher = {Association for Computing Machinery},
+  series    = {CODASPY '26},
+}
 ```
 
 ## Dataset access
 
-The VSIX packages and full metadata are kept in a separate private repository — [`kalachkar/vsmex-dataset`](https://github.com/kalachkar/vsmex-dataset) — and are not publicly available. Access is gated to prevent misuse: these are real malicious packages.
+The VSIX packages and full metadata are kept in a separate private repository — [`kalachkar/vsmex-dataset`](https://github.com/kalachkar/vsmex-dataset) — and are not publicly available. Access is gated to prevent misuse.
 
 To request access, email from an institutional address with your name, institution, and intended use. We only respond to institutional email addresses.
 
