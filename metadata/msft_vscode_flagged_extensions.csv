@@ -1636,3 +1636,9 @@ removed_list,2026-06-15,mglab.mglab,Malware,2026-06-15,no,0,none,none
 removed_list,2026-06-15,mtglitch.claude-usage-bars,Impersonation,2026-06-14,no,0,none,none
 removed_list,2026-06-15,namhhitvn.gitlens-support-symbolic-link,Impersonation,2026-06-14,yes,1,15.2.1,2026-06-15
 removed_list,2026-06-15,rustcc.rust-analyzer-cn,Impersonation,2026-06-14,yes,1,0.6.0,2026-06-15
+removed_list,2026-06-16,0miles.vscode-git-graph-alter,Impersonation,2026-06-15,no,0,none,none
+removed_list,2026-06-16,EonaCat.AvaloniaFree,Impersonation,2026-06-15,no,0,none,none
+removed_list,2026-06-16,PatchLabs.boardtrack,Malware,2026-06-15,no,0,none,none
+removed_list,2026-06-16,Primer4128.polykai-pro,Impersonation,2026-06-15,yes,1,0.0.1,2026-06-16
+removed_list,2026-06-16,mtglitch.claude-usage-monitor-mtg,Impersonation,2026-06-15,no,0,none,none
+removed_list,2026-06-16,swarmiq-os.swarmiq-connect,Malware,2026-06-15,no,0,none,none
