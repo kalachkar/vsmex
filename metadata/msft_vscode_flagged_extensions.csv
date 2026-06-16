@@ -1642,3 +1642,17 @@ removed_list,2026-06-16,PatchLabs.boardtrack,Malware,2026-06-15,no,0,none,none
 removed_list,2026-06-16,Primer4128.polykai-pro,Impersonation,2026-06-15,yes,1,0.0.1,2026-06-16
 removed_list,2026-06-16,mtglitch.claude-usage-monitor-mtg,Impersonation,2026-06-15,no,0,none,none
 removed_list,2026-06-16,swarmiq-os.swarmiq-connect,Malware,2026-06-15,no,0,none,none
+removed_list,2026-06-16,Abhilash001.t-ex,Malware,2026-06-16,yes,3,0.0.10,2026-06-16
+removed_list,2026-06-16,Kickbacksai.kickbacks-ai,Untrustworthy,2026-06-16,no,0,none,none
+removed_list,2026-06-16,MachineConfiguration-test.machine-configuration,Untrustworthy,2026-06-16,no,0,none,none
+removed_list,2026-06-16,QiYijiazhen.glm-for-copilot,Untrustworthy,2026-06-16,no,0,none,none
+removed_list,2026-06-16,Roger-Han.mimo-code-ai,Impersonation,2026-06-16,no,0,none,none
+removed_list,2026-06-16,YicoFighting.line-lens,Malware,2026-06-16,no,0,none,none
+removed_list,2026-06-16,adwaitkeshari.lull,Malware,2026-06-16,no,0,none,none
+removed_list,2026-06-16,arclens.arc-lens,Malware,2026-06-16,no,0,none,none
+removed_list,2026-06-16,atman-dev.opencode-chat-unofficial-custom,Impersonation,2026-06-16,no,0,none,none
+removed_list,2026-06-16,ext-lab.git-history-plus,Impersonation,2026-06-16,yes,1,1.1.8,2026-06-16
+removed_list,2026-06-16,git-ai-cli.git-ai-cli,Impersonation,2026-06-16,no,0,none,none
+removed_list,2026-06-16,kiracode.kira-code,Impersonation,2026-06-16,no,0,none,none
+removed_list,2026-06-16,mkd-corp.keural-vscode,Malware,2026-06-16,no,0,none,none
+removed_list,2026-06-16,sparrowcodes.sparrowcodes,Malware,2026-06-16,no,0,none,none
