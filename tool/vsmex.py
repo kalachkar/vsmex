@@ -26,7 +26,7 @@ from azure.storage.blob import BlobServiceClient
 from azure.core.exceptions import ResourceNotFoundError, ResourceModifiedError
 
 # VSIX files >= this size are not uploaded via GitHub Contents API — use Git LFS instead
-LARGE_FILE_THRESHOLD_MB = 100.0
+LARGE_FILE_THRESHOLD_MB = 40.0
 
 try:
     import config

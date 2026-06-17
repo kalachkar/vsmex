@@ -97,6 +97,18 @@ def get_append_client(cc, blob_name: str):
 def append_line(append_client, text_line: str):
     append_client.append_block((text_line + "\n").encode("utf-8"))
 
+def append_lines_batch(append_client, lines: list[str]):
+    if not lines:
+        return
+    payload = ("\n".join(lines) + "\n").encode("utf-8")
+    # Azure append_block limit is 4 MB; split if needed
+    LIMIT = 4 * 1024 * 1024
+    if len(payload) <= LIMIT:
+        append_client.append_block(payload)
+    else:
+        for line in lines:
+            append_client.append_block((line + "\n").encode("utf-8"))
+
 def read_text_blob(cc, blob_name: str) -> str | None:
     bc = cc.get_blob_client(blob_name)
     try:
@@ -258,6 +270,8 @@ def main():
             print(f"→ Page {page}: 0 items (end).")
             break
 
+        page_records: list[str] = []
+
         with ThreadPoolExecutor(max_workers=config.DOWNLOAD_WORKERS) as executor:
             futures = {executor.submit(_process_ext, cc, ext, seen): ext for ext in items}
             for future in as_completed(futures):
@@ -277,16 +291,19 @@ def main():
                 fname = rec.get("vsixFileName")
                 vkey  = rec.get("_versionKey")
 
-                append_line(master_client, json.dumps(rec, ensure_ascii=False))
+                page_records.append(json.dumps(rec, ensure_ascii=False))
                 newly_seen.add(vkey)
                 new_versions += 1
                 print(f"✅ {fname}")
 
-                if len(newly_seen) % config.CHECKPOINT_EVERY == 0:
-                    seen.update(newly_seen)
-                    save_seen_versions(cc, seen)
-                    newly_seen.clear()
-                    log_line(f"CHECKPOINT saved ({len(seen)} total seen)")
+        if page_records:
+            append_lines_batch(master_client, page_records)
+
+        if newly_seen and len(newly_seen) % config.CHECKPOINT_EVERY == 0:
+            seen.update(newly_seen)
+            save_seen_versions(cc, seen)
+            newly_seen.clear()
+            log_line(f"CHECKPOINT saved ({len(seen)} total seen)")
 
         print(f"→ Page {page}: processed {len(items)} | new={new_versions} skipped={skipped} errors={errors}")
         if len(items) < config.PAGE_SIZE:
