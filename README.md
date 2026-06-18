@@ -1,8 +1,8 @@
 # VSMEx
 
-Dataset of malicious VS Code extensions collected from Microsoft's flagged extension lists.
+A collection tool and dataset of malicious VS Code extensions removed by Microsoft.
 
-To be presented at [CODASPY 2026](https://www.codaspy.org/2026/) — June 23–25, Frankfurt am Main.
+Presented at [CODASPY 2026](https://www.codaspy.org/2026/) — June 23–25, Frankfurt am Main.
 
 ```bibtex
 @inproceedings{Alachkar2026VSMEx,
@@ -25,48 +25,58 @@ To be presented at [CODASPY 2026](https://www.codaspy.org/2026/) — June 23–2
 
 ## Dataset access
 
-The VSIX packages and full metadata are kept in a separate private repository — [`kalachkar/vsmex-dataset`](https://github.com/kalachkar/vsmex-dataset) — and are not publicly available. Access is gated to prevent misuse.
+The VSIX packages and full metadata are not publicly available to prevent misuse. Access is provided to approved institutional researchers via [SURFfilesender](https://www.surf.nl/en/services/surffilesender).
 
-To request access, email from an institutional address with your name, institution, and intended use. We only respond to institutional email addresses.
+To request access, email from an institutional address with your name, institution, and intended use.
 
 - Dr. Yury Zhauniarovich — y.zhauniarovich [at] tudelft [dot] nl
 - Kotaiba Alachkar — k.alachkar [at] tudelft [dot] nl
 
-### `metadata/msft_vscode_flagged_extensions.csv` (this repo)
-
-One row per flagged extension: `source`, `checked_date`, `extension_identifier`, `msft_classification_type`, `msft_removed_date`, `captured`, `version_count`, `latest_version`, `capture_date`.
-
-### `metadata/vsmex_metadata.csv` (vsmex-dataset)
-
-One row per `(extension, version)`: `captured_date`, `source`, `msft_classification_type`, `extension_identifier`, `publisher_name`, `version`, `artifact`, `sha256`, `size_mb`, `published_date`, `last_updated_date`, `verified_publisher`, `installation_count`, `average_rating`, `rating_count`, `categories`, `repository_url`, `flags`, `engines_vscode`, `exists_in_dataset`.
-
 ## Contents
 
+### Public (this repo)
+
 - `metadata/msft_vscode_flagged_extensions.csv` — one row per flagged extension
-- `tool/crawler.py` — crawls the VS Code Marketplace, stores new VSIXs in Azure Blob Storage
-- `tool/vsmex.py` — reads Microsoft's flagged lists, syncs captured extensions to the dataset
+- `metadata/vsmex_metadata.csv` — one row per captured (extension, version) with sha256, size, ratings, etc.
+- `stats.json` — live dataset statistics (read by the [project page](https://kalachkar.github.io/vsmex/))
+
+### CSV schemas
+
+**msft_vscode_flagged_extensions.csv**: `source`, `checked_date`, `extension_identifier`, `msft_classification_type`, `msft_removed_date`, `captured`, `version_count`, `latest_version`, `capture_date`.
+
+**vsmex_metadata.csv**: `captured_date`, `source`, `msft_classification_type`, `extension_identifier`, `publisher_name`, `version`, `artifact`, `sha256`, `size_mb`, `published_date`, `last_updated_date`, `verified_publisher`, `installation_count`, `average_rating`, `rating_count`, `categories`, `repository_url`, `flags`, `engines_vscode`, `exists_in_dataset`.
+
+### Tool
+
+- `tool/crawler.py` — crawls the VS Code Marketplace, stores new VSIX files locally
+- `tool/vsmex.py` — reads Microsoft's flagged lists, captures extensions to the dataset, syncs metadata to this repo
+- `tool/config.py` — shared configuration
+
+Previous Azure-based versions are archived in `tool/v1-azure/`.
 
 ## Running
 
-Requires Python 3.11+, Azure Blob Storage, and a GitHub fine-grained PAT (Contents: read/write on both repos).
+Requires Python 3.11+ (tested on 3.14).
 
 ```bash
 pip install -r tool/requirements.txt
 ```
 
+Set environment variables in `~/.vsmex_env`:
 ```bash
-export AZURE_CONNECTION_STRING="<your-azure-connection-string>"
-export AZURE_CONTAINER_NAME="<your-container-name>"
-export GITHUB_PAT="<your-github-pat>"
-export GITHUB_USERNAME="<your-github-username>"
-export GITHUB_REPO="<your-repo-name>"
-export GITHUB_DATASET_REPO="<your-dataset-repo-name>"
+export GITHUB_PAT="ghp_your_fine_grained_pat"
+export GITHUB_USERNAME="your-github-username"
+export VSMEX_BASE_DIR="/path/to/vsmex"
 ```
 
+Source it and run:
 ```bash
-python3 tool/crawler.py  # fetch new VSIXs from marketplace → Azure
-python3 tool/vsmex.py    # sync Microsoft's flagged lists → dataset + metadata
+. ~/.vsmex_env
+python3 tool/crawler.py   # fetch new VSIXs from marketplace
+python3 tool/vsmex.py     # sync Microsoft's flagged lists → dataset + metadata
 ```
+
+For cron: `. ~/.vsmex_env && cd /path/to/vsmex/tool && python3 crawler.py`
 
 ## License
 

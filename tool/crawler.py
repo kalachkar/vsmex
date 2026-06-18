@@ -1,25 +1,18 @@
 #!/usr/bin/env python3
-# crawler.py — Incremental VSIX sync (append-only master & log; uses state/state.txt)
+# crawler.py — Incremental VSIX sync (local filesystem)
 
 from __future__ import annotations
 import json
+import os
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 import requests
-from azure.storage.blob import BlobServiceClient, ContentSettings
-from azure.core.exceptions import ResourceNotFoundError
 
-try:
-    import config
-except ModuleNotFoundError:
-    raise RuntimeError(
-        "Missing config.py. Copy config_template.py → config.py and fill in your credentials."
-    )
+import config
 
 # ========= time helpers =========
 def _now():
-    # Fixes deprecation warning (timezone-aware)
     return datetime.now(timezone.utc) if config.USE_UTC else datetime.now()
 
 def snapshot_date():
@@ -36,7 +29,6 @@ HEADERS = {
     "User-Agent": "Visual Studio Code/1.93.0",
     "X-Market-Client-Id": "VSCode",
 }
-# versions, files, tags, publisher, stats, latest, props
 FLAGS = (0x1 | 0x2 | 0x4 | 0x8 | 0x20 | 0x80 | 0x100)
 
 def build_payload(page_number: int) -> dict:
@@ -55,7 +47,6 @@ def build_payload(page_number: int) -> dict:
     }
 
 def resilient_post(session, url, headers, json_payload) -> requests.Response:
-    """POST with retries and exponential backoff."""
     last_err: Exception | None = None
     for attempt in range(1, config.MAX_RETRIES + 1):
         try:
@@ -68,94 +59,89 @@ def resilient_post(session, url, headers, json_payload) -> requests.Response:
                 sleep_for = config.RETRY_BACKOFF_BASE * (2 ** (attempt - 1))
                 print(f"   ! Request failed (attempt {attempt}/{config.MAX_RETRIES}): {e}. Retrying in {sleep_for:.2f}s...")
                 time.sleep(sleep_for)
-
-    # If we got here, all retries failed
     raise RuntimeError(f"POST request failed after {config.MAX_RETRIES} attempts: {last_err}")
 
-# ========= Azure helpers =========
-def get_container_client():
-    svc = BlobServiceClient.from_connection_string(config.AZURE_CONNECTION_STRING)
-    cc = svc.get_container_client(config.AZURE_CONTAINER_NAME)
-    try:
-        cc.get_container_properties()
-    except Exception:
-        cc.create_container()
-    return cc
+# ========= Local filesystem helpers =========
+def _ensure_parent(path: str):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
 
-def get_append_client(cc, blob_name: str):
-    bc = cc.get_blob_client(blob_name)
-    try:
-        props = bc.get_blob_properties()
-        if getattr(props, "blob_type", None) != "AppendBlob":
-            raise RuntimeError(
-                f"Blob '{blob_name}' exists with type '{props.blob_type}', not AppendBlob."
-            )
-    except ResourceNotFoundError:
-        bc.create_append_blob()
-    return bc
-
-def append_line(append_client, text_line: str):
-    append_client.append_block((text_line + "\n").encode("utf-8"))
-
-def append_lines_batch(append_client, lines: list[str]):
+def append_lines(path: str, lines: list[str]):
     if not lines:
         return
-    payload = ("\n".join(lines) + "\n").encode("utf-8")
-    # Azure append_block limit is 4 MB; split if needed
-    LIMIT = 4 * 1024 * 1024
-    if len(payload) <= LIMIT:
-        append_client.append_block(payload)
-    else:
-        for line in lines:
-            append_client.append_block((line + "\n").encode("utf-8"))
+    _ensure_parent(path)
+    payload = "".join(line + "\n" for line in lines)
+    with open(path, "a", encoding="utf-8") as f:
+        f.write(payload)
+        f.flush()
+        os.fsync(f.fileno())
 
-def read_text_blob(cc, blob_name: str) -> str | None:
-    bc = cc.get_blob_client(blob_name)
-    try:
-        return bc.download_blob().readall().decode("utf-8")
-    except ResourceNotFoundError:
+def read_text_file(path: str) -> str | None:
+    if not os.path.isfile(path):
         return None
+    with open(path, "r", encoding="utf-8") as f:
+        return f.read()
 
-def overwrite_text_blob(cc, blob_name: str, text: str):
-    cc.get_blob_client(blob_name).upload_blob(text.encode("utf-8"), overwrite=True)
+def write_text_file(path: str, text: str):
+    _ensure_parent(path)
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        f.write(text)
+    os.replace(tmp, path)
 
-def blob_exists(cc, blob_path: str) -> bool:
+def download_to_file(url: str, dest: str):
+    _ensure_parent(dest)
+    tmp = dest + ".tmp"
     try:
-        cc.get_blob_client(blob_path).get_blob_properties()
-        return True
-    except ResourceNotFoundError:
-        return False
+        with requests.get(url, stream=True, timeout=60) as r:
+            r.raise_for_status()
+            with open(tmp, "wb") as f:
+                for chunk in r.iter_content(chunk_size=65536):
+                    f.write(chunk)
+        os.replace(tmp, dest)
+    except Exception:
+        if os.path.exists(tmp):
+            os.unlink(tmp)
+        raise
 
-def http_to_blob_with_retries(cc, blob_path: str, url: str):
-    bc = cc.get_blob_client(blob_path)
+def download_with_retries(url: str, dest: str):
     last_err = None
     for i in range(config.MAX_RETRIES):
         try:
-            with requests.get(url, stream=True, timeout=60) as r:
-                r.raise_for_status()
-                r.raw.decode_content = True
-                bc.upload_blob(
-                    r.raw,
-                    overwrite=True,
-                    content_settings=ContentSettings(content_type="application/octet-stream"),
-                    max_concurrency=4,
-                )
+            download_to_file(url, dest)
             return
         except Exception as e:
             last_err = e
             if i < config.MAX_RETRIES - 1:
                 time.sleep(config.RETRY_BACKOFF_BASE * (2 ** i))
-            else:
-                raise last_err or RuntimeError(f"Upload failed after {config.MAX_RETRIES} attempts")
+    raise last_err or RuntimeError(f"Download failed after {config.MAX_RETRIES} attempts")
 
 # ========= State + Logging =========
-def load_seen_versions(cc) -> set[str]:
-    txt = read_text_blob(cc, config.STATE_BLOB)
-    return set(line.strip() for line in txt.splitlines() if line.strip()) if txt else set()
+def load_seen_versions() -> set[str]:
+    txt = read_text_file(config.STATE_FILE)
+    if txt:
+        return set(line.strip() for line in txt.splitlines() if line.strip())
+    print("cache.txt not found — rebuilding from metadata_master.jsonl ...")
+    return _rebuild_seen_from_metadata()
 
-def save_seen_versions(cc, seen_set: set[str]):
+def _rebuild_seen_from_metadata() -> set[str]:
+    import re
+    pattern = re.compile(r'"_versionKey"\s*:\s*"([^"]+)"')
+    seen = set()
+    path = config.MASTER_METADATA_FILE
+    if not os.path.isfile(path):
+        return seen
+    with open(path, "r", encoding="utf-8") as f:
+        for line in f:
+            m = pattern.search(line)
+            if m:
+                seen.add(m.group(1))
+    print(f"  Rebuilt {len(seen)} entries from metadata")
+    save_seen_versions(seen)
+    return seen
+
+def save_seen_versions(seen_set: set[str]):
     text = "\n".join(sorted(seen_set)) + ("\n" if seen_set else "")
-    overwrite_text_blob(cc, config.STATE_BLOB, text)
+    write_text_file(config.STATE_FILE, text)
 
 # ========= Record extraction =========
 def extract_record(ext: dict) -> dict:
@@ -216,108 +202,160 @@ def extract_record(ext: dict) -> dict:
         ),
     }
 
+# ========= Stats =========
+def load_stats() -> dict:
+    if os.path.isfile(config.STATS_FILE):
+        with open(config.STATS_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+def save_stats(stats: dict):
+    write_text_file(config.STATS_FILE, json.dumps(stats, indent=2) + "\n")
+
 # ========= Per-extension worker (runs in thread pool) =========
-def _process_ext(cc, ext, seen: set[str]):
-    """Blob check + optional download for one extension. Thread-safe (read-only on seen)."""
-    rec   = extract_record(ext)
-    vkey  = rec.get("_versionKey")
+def _process_ext(ext, seen: set[str]):
+    rec = extract_record(ext)
+    vkey = rec.get("_versionKey")
+    ext_key = rec.get("_extKey")
     fname = rec.get("vsixFileName")
-    url   = rec.get("vsixDownloadUrl")
+    url = rec.get("vsixDownloadUrl")
+    version = rec.get("version")
 
-    if not vkey or not fname or not url:
-        return "skip", None
+    if not vkey or not fname or not url or not ext_key or not version:
+        return "skip", None, 0
     if vkey in seen:
-        return "skip", None
+        return "skip", None, 0
 
-    blob_path = f"{config.VSIX_PREFIX}/{fname}"
-    if not blob_exists(cc, blob_path):
-        http_to_blob_with_retries(cc, blob_path, url)
-    return "ok", rec
-
+    dest = os.path.join(config.VSIX_DIR, ext_key, version, fname)
+    downloaded = not os.path.isfile(dest)
+    if downloaded:
+        download_with_retries(url, dest)
+    size = os.path.getsize(dest)
+    return "ok", rec, size if downloaded else 0
 
 # ========= Main =========
 def main():
-    cc = get_container_client()
-    log_client = get_append_client(cc, config.LOG_BLOB)
-    master_client = get_append_client(cc, config.MASTER_METADATA_BLOB)
+    for d in [os.path.dirname(config.MASTER_METADATA_FILE),
+              os.path.dirname(config.STATE_FILE),
+              os.path.dirname(config.LOG_FILE),
+              config.VSIX_DIR]:
+        os.makedirs(d, exist_ok=True)
 
     def log_line(msg: str):
-        append_line(log_client, f"{now_stamp()} | {msg}")
+        append_lines(config.LOG_FILE, [f"{now_stamp()} | {msg}"])
 
-    seen = load_seen_versions(cc)
-    print(f"Seen versions loaded from blob: {len(seen)}")
+    seen = load_seen_versions()
+    print(f"Seen versions loaded: {len(seen)}")
     log_line(f"RUN START seen={len(seen)}")
 
     session = requests.Session()
     new_versions = skipped = errors = 0
+    downloaded_bytes = 0
+    known_ext_keys = {vkey.rsplit("@", 1)[0] for vkey in seen}
+    new_ext_keys: set[str] = set()
     newly_seen: set[str] = set()
 
-    for page in range(1, config.MAX_PAGES + 1):
-        try:
-            r = resilient_post(session, MARKETPLACE_URL, HEADERS, build_payload(page))
-            if not isinstance(r, requests.Response):
-                raise RuntimeError("Expected a valid Response object but got None")
+    try:
+        for page in range(1, config.MAX_PAGES + 1):
+            try:
+                r = resilient_post(session, MARKETPLACE_URL, HEADERS, build_payload(page))
+                if not isinstance(r, requests.Response):
+                    raise RuntimeError("Expected a valid Response object but got None")
+                data = r.json()
+                items = data.get("results", [{}])[0].get("extensions", [])
+            except Exception as e:
+                msg = f"FATAL page={page} error={e}"
+                print(msg)
+                log_line(msg)
+                break
 
-            data = r.json()
-            items = data.get("results", [{}])[0].get("extensions", [])
-        except Exception as e:
-            msg = f"FATAL page={page} error={e}"
-            print(msg)
-            log_line(msg)
-            break
+            if not items:
+                print(f"-> Page {page}: 0 items (end).")
+                break
 
-        if not items:
-            print(f"→ Page {page}: 0 items (end).")
-            break
+            page_records: list[str] = []
+            page_vkeys: list[str] = []
 
-        page_records: list[str] = []
+            with ThreadPoolExecutor(max_workers=config.DOWNLOAD_WORKERS) as executor:
+                futures = {executor.submit(_process_ext, ext, seen): ext for ext in items}
+                for future in as_completed(futures):
+                    try:
+                        status, rec, dl_size = future.result()
+                    except Exception as e:
+                        errors += 1
+                        err = f"ERROR: {e}"
+                        print(f"  {err}")
+                        log_line(err)
+                        continue
 
-        with ThreadPoolExecutor(max_workers=config.DOWNLOAD_WORKERS) as executor:
-            futures = {executor.submit(_process_ext, cc, ext, seen): ext for ext in items}
-            for future in as_completed(futures):
-                try:
-                    status, rec = future.result()
-                except Exception as e:
-                    errors += 1
-                    err = f"ERROR: {e}"
-                    print(f"❌ {err}")
-                    log_line(err)
-                    continue
+                    if status == "skip":
+                        skipped += 1
+                        continue
 
-                if status == "skip":
-                    skipped += 1
-                    continue
+                    fname = rec.get("vsixFileName")
+                    vkey = rec.get("_versionKey")
+                    ext_key = rec.get("_extKey")
 
-                fname = rec.get("vsixFileName")
-                vkey  = rec.get("_versionKey")
+                    page_records.append(json.dumps(rec, ensure_ascii=False))
+                    page_vkeys.append(vkey)
+                    downloaded_bytes += dl_size
+                    if ext_key and ext_key not in known_ext_keys:
+                        new_ext_keys.add(ext_key)
+                        known_ext_keys.add(ext_key)
+                    new_versions += 1
+                    print(f"  + {fname}")
 
-                page_records.append(json.dumps(rec, ensure_ascii=False))
-                newly_seen.add(vkey)
-                new_versions += 1
-                print(f"✅ {fname}")
+            if page_records:
+                append_lines(config.MASTER_METADATA_FILE, page_records)
+                newly_seen.update(page_vkeys)
 
-        if page_records:
-            append_lines_batch(master_client, page_records)
+            if newly_seen and len(newly_seen) % config.CHECKPOINT_EVERY == 0:
+                seen.update(newly_seen)
+                save_seen_versions(seen)
+                newly_seen.clear()
+                log_line(f"CHECKPOINT saved ({len(seen)} total seen)")
 
-        if newly_seen and len(newly_seen) % config.CHECKPOINT_EVERY == 0:
+            print(f"-> Page {page}: processed {len(items)} | new={new_versions} skipped={skipped} errors={errors}")
+            if len(items) < config.PAGE_SIZE:
+                print(f"-> Page {page} short; likely last page.")
+                break
+            time.sleep(config.SLEEP_BETWEEN_CALLS)
+
+    except KeyboardInterrupt:
+        print("\nInterrupted.")
+        log_line("RUN INTERRUPTED by user")
+    except OSError as e:
+        print(f"\nDisk error: {e}")
+        log_line(f"RUN ABORTED disk error: {e}")
+    except Exception as e:
+        print(f"\nUnexpected error: {e}")
+        log_line(f"RUN ABORTED unexpected: {e}")
+    finally:
+        if newly_seen:
             seen.update(newly_seen)
-            save_seen_versions(cc, seen)
-            newly_seen.clear()
-            log_line(f"CHECKPOINT saved ({len(seen)} total seen)")
+            try:
+                save_seen_versions(seen)
+            except OSError as e:
+                print(f"CRITICAL: failed to save state: {e}")
 
-        print(f"→ Page {page}: processed {len(items)} | new={new_versions} skipped={skipped} errors={errors}")
-        if len(items) < config.PAGE_SIZE:
-            print(f"→ Page {page} short; likely last page.")
-            break
-        time.sleep(config.SLEEP_BETWEEN_CALLS)
+        summary = f"RUN END new={new_versions} skipped={skipped} errors={errors} seen_total={len(seen)}"
+        print("\n" + summary)
+        try:
+            log_line(summary)
+        except OSError:
+            pass
 
-    if newly_seen:
-        seen.update(newly_seen)
-        save_seen_versions(cc, seen)
-
-    summary = f"RUN END new={new_versions} skipped={skipped} errors={errors} seen_total={len(seen)}"
-    print("\n" + summary)
-    log_line(summary)
+        try:
+            stats = load_stats()
+            mp = stats.get("marketplace", {})
+            mp["total_extensions"] = mp.get("total_extensions", 0) + len(new_ext_keys)
+            mp["total_vsix_files"] = mp.get("total_vsix_files", 0) + new_versions
+            mp["total_size_gb"] = round(mp.get("total_size_gb", 0) + downloaded_bytes / 1e9, 2)
+            mp["last_sync"] = now_stamp()
+            stats["marketplace"] = mp
+            save_stats(stats)
+        except Exception as e:
+            print(f"WARNING: failed to update stats: {e}")
 
 if __name__ == "__main__":
     main()
