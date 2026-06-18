@@ -1,0 +1,15 @@
+{
+  "marketplace": {
+    "total_number_of_extensions": 214449,
+    "total_size_gb": 1298.97,
+    "last_sync": "2026-06-18 09:37:07"
+  },
+  "dataset": {
+    "total_flagged": 17,
+    "total_captured": 52,
+    "total_vsix_files": 52,
+    "unique_extensions": 17,
+    "total_size_gb": 1.48,
+    "last_sync": "2026-06-18 11:00:53"
+  }
+}
