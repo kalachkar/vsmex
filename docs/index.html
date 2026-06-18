@@ -581,6 +581,7 @@ const STATS_URL = "https://raw.githubusercontent.com/kalachkar/vsmex/main/stats.
 // Stats from stats.json
 fetch(STATS_URL).then(r => r.json()).then(s => {
   const ds = s.dataset || {};
+  const mp = s.marketplace || {};
   document.getElementById("stat-flagged").textContent = (ds.total_flagged || 0).toLocaleString();
   document.getElementById("stat-captured").textContent = (ds.total_vsix_files || 0).toLocaleString();
   document.getElementById("stat-size").textContent = (ds.total_size_gb || 0) + "GB";
