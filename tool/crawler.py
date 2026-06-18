@@ -154,9 +154,9 @@ def extract_record(ext: dict) -> dict:
     def safe_date(s):
         return s[:10] if isinstance(s, str) else None
 
-    publisher_name = ext.get("publisher", {}).get("publisherName")
-    extension_name = ext.get("extensionName")
-    version = latest.get("version")
+    publisher_name = (ext.get("publisher", {}).get("publisherName") or "").strip()
+    extension_name = (ext.get("extensionName") or "").strip()
+    version = (latest.get("version") or "").strip()
 
     ext_key = f"{publisher_name}.{extension_name}" if publisher_name and extension_name else None
     version_key = f"{ext_key}@{version}" if ext_key and version else None
