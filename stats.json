@@ -5,11 +5,11 @@
     "last_sync": "2026-06-18 09:37:07"
   },
   "dataset": {
-    "total_flagged": 17,
-    "total_captured": 52,
-    "total_vsix_files": 52,
-    "unique_extensions": 17,
-    "total_size_gb": 1.48,
-    "last_sync": "2026-06-18 11:00:53"
+    "total_flagged": 1674,
+    "total_captured": 2959,
+    "total_vsix_files": 2959,
+    "unique_extensions": 1439,
+    "total_size_gb": 37.51,
+    "last_sync": "2026-06-18 11:16:26"
   }
 }
