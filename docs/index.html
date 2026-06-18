@@ -426,7 +426,7 @@
     <p style="font-size:0.85rem; color:#a3a3a3; margin-bottom:1.75rem;">
       Built on a local mirror of <span style="color:var(--red); font-family:'JetBrains Mono',monospace; font-weight:500;" id="stat-mp-ext">&mdash;</span> marketplace extensions
       totaling <span style="color:var(--red); font-family:'JetBrains Mono',monospace; font-weight:500;" id="stat-mp-size">&mdash;</span>
-      <span style="color:#525252; font-size:0.75rem;">(last updated: <span id="stat-mp-date">&mdash;</span>)</span>
+      <span style="color:#525252; font-size:0.75rem;">(updated: <span id="stat-mp-date">&mdash;</span>)</span>
     </p>
 
     <div class="hero-actions">
@@ -587,7 +587,7 @@ fetch(STATS_URL).then(r => r.json()).then(s => {
   document.getElementById("stat-size").textContent = (ds.total_size_gb || 0) + "GB";
   const mpExt = mp.total_extensions || mp.total_number_of_extensions || 0;
   document.getElementById("stat-mp-ext").textContent = mpExt.toLocaleString();
-  document.getElementById("stat-mp-size").textContent = (mp.total_size_gb || 0).toLocaleString() + " GB";
+  document.getElementById("stat-mp-size").textContent = (mp.total_size_gb || 0).toLocaleString() + "GB";
   const lastSync = mp.last_sync || ds.last_sync || "";
   document.getElementById("stat-mp-date").textContent = lastSync ? lastSync.split(" ")[0] : "—";
 }).catch(() => {});
