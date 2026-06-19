@@ -348,7 +348,7 @@ def main():
         try:
             stats = load_stats()
             mp = stats.get("marketplace", {})
-            mp["total_extensions"] = mp.get("total_extensions", 0) + len(new_ext_keys)
+            mp["total_number_of_extensions"] = mp.get("total_number_of_extensions", 0) + len(new_ext_keys)
             mp["total_vsix_files"] = mp.get("total_vsix_files", 0) + new_versions
             mp["total_size_gb"] = round(mp.get("total_size_gb", 0) + downloaded_bytes / 1e9, 2)
             mp["last_sync"] = now_stamp()
