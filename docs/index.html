@@ -422,7 +422,7 @@
         <span class="hero-stat-label">Dataset size</span>
       </div>
       <div class="hero-stat">
-        <span class="hero-stat-num" id="stat-ds-date" style="font-size:1rem;">&mdash;</span>
+        <span class="hero-stat-num" id="stat-ds-date">&mdash;</span>
         <span class="hero-stat-label">Last updated</span>
       </div>
     </div>
@@ -592,7 +592,7 @@ fetch(STATS_URL).then(r => r.json()).then(s => {
   document.getElementById("stat-mp-ext").textContent = mpExt.toLocaleString();
   document.getElementById("stat-mp-size").textContent = (mp.total_size_gb || 0).toLocaleString() + "GB";
   const dsSync = ds.last_sync || "";
-  document.getElementById("stat-ds-date").textContent = dsSync ? dsSync.split(" ")[0] : "—";
+  document.getElementById("stat-ds-date").textContent = dsSync ? dsSync + " UTC" : "—";
 }).catch(() => {});
 
 // Copy citation
