@@ -1705,3 +1705,5 @@ removed_list,2026-06-19,TuyaOpen.TuyaOpenIDE,Impersonation,2026-06-18,yes,8,0.0.
 removed_list,2026-06-19,bismarkvargas.bkcode,Malware,2026-06-19,yes,20,1.70.4,2026-06-19
 removed_list,2026-06-19,everyapi-ai.everyapi-vscode,Untrustworthy,2026-06-19,yes,8,0.13.1,2026-06-19
 removed_list,2026-06-19,pogacic.vscode-proto3-upkeep,Impersonation,2026-06-19,yes,1,0.5.8,2026-06-19
+removed_list,2026-06-20,AppCreatePLC.boardtrackapps,Malware,2026-06-19,yes,2,1.7.5,2026-06-20
+removed_list,2026-06-20,dhakshnamoorthi.nexus-code-agent,Untrustworthy,2026-06-19,yes,1,0.0.5,2026-06-20
