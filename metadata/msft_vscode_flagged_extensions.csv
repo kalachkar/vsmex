@@ -1721,3 +1721,9 @@ removed_list,2026-06-23,guavaduck.omnirouter-ai,Malware,2026-06-22,no,0,none,non
 removed_list,2026-06-23,kazan.myworldline,Malware,2026-06-22,yes,1,0.0.1,2026-06-23
 removed_list,2026-06-23,worldline.aicodefix,Malware,2026-06-22,yes,1,0.0.1,2026-06-23
 removed_list,2026-06-23,worldline.wlpfo-toolkit,Malware,2026-06-22,yes,1,1.0.0,2026-06-23
+removed_list,2026-06-23,Lars-Ve.cses-tracker,Untrustworthy,2026-06-23,yes,1,1.0.0,2026-06-23
+removed_list,2026-06-23,pascal-lab.vide-ide,Malware,2026-06-23,yes,7,1.1.0,2026-06-23
+removed_list,2026-06-23,smonteros.pixel-agents-opencode,Impersonation,2026-06-23,yes,1,1.4.1,2026-06-23
+removed_list,2026-06-23,songyanglin.office-viewer-vditor,Impersonation,2026-06-23,yes,1,0.0.1,2026-06-23
+removed_list,2026-06-23,xdearboy.xdearboy-pack-s,Untrustworthy,2026-06-23,yes,1,0.0.1,2026-06-23
+removed_list,2026-06-23,zyk-zhang.zyk-microapp-plugin,Impersonation,2026-06-23,yes,2,1.1.7,2026-06-23
