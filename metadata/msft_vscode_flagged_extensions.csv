@@ -1719,3 +1719,8 @@ removed_list,2026-06-22,RoamAI.roam-crew,Malware,2026-06-22,yes,57,0.9.5,2026-06
 removed_list,2026-06-22,bortolabs.claude-code-usage-bar,Untrustworthy,2026-06-22,yes,3,0.21.1,2026-06-22
 removed_list,2026-06-22,ng-jk.sftp-ng-jk,Impersonation,2026-06-22,yes,1,1.16.3,2026-06-22
 removed_list,2026-06-22,richardgubangxa.sf-buddy,Malware,2026-06-22,yes,9,0.10.0,2026-06-22
+removed_list,2026-06-23,Floriani.mcp-hub,Malware,2026-06-22,yes,1,0.1.0,2026-06-23
+removed_list,2026-06-23,guavaduck.omnirouter-ai,Malware,2026-06-22,no,0,none,none
+removed_list,2026-06-23,kazan.myworldline,Malware,2026-06-22,yes,1,0.0.1,2026-06-23
+removed_list,2026-06-23,worldline.aicodefix,Malware,2026-06-22,yes,1,0.0.1,2026-06-23
+removed_list,2026-06-23,worldline.wlpfo-toolkit,Malware,2026-06-22,yes,1,1.0.0,2026-06-23
