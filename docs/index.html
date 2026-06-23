@@ -585,7 +585,7 @@ const STATS_URL = "https://raw.githubusercontent.com/kalachkar/vsmex/main/stats.
 fetch(STATS_URL).then(r => r.json()).then(s => {
   const ds = s.dataset || {};
   const mp = s.marketplace || {};
-  document.getElementById("stat-flagged").textContent = (ds.total_flagged || 0).toLocaleString();
+  document.getElementById("stat-flagged").textContent = (ds.unique_extensions || 0).toLocaleString();
   document.getElementById("stat-captured").textContent = (ds.total_vsix_files || 0).toLocaleString();
   document.getElementById("stat-size").textContent = (ds.total_size_gb || 0) + "GB";
   const mpExt = mp.total_number_of_extensions || mp.total_extensions || 0;
