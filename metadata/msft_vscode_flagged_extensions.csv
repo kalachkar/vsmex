@@ -1727,3 +1727,5 @@ removed_list,2026-06-23,smonteros.pixel-agents-opencode,Impersonation,2026-06-23
 removed_list,2026-06-23,songyanglin.office-viewer-vditor,Impersonation,2026-06-23,yes,1,0.0.1,2026-06-23
 removed_list,2026-06-23,xdearboy.xdearboy-pack-s,Untrustworthy,2026-06-23,yes,1,0.0.1,2026-06-23
 removed_list,2026-06-23,zyk-zhang.zyk-microapp-plugin,Impersonation,2026-06-23,yes,2,1.1.7,2026-06-23
+removed_list,2026-06-24,AppPublishPLC.boardtrackappel,Malware,2026-06-23,no,0,none,none
+removed_list,2026-06-24,hexlabs.boardtrackappe,Malware,2026-06-23,no,0,none,none
