@@ -1789,3 +1789,5 @@ removed_list,2026-07-03,devflowtools.projectflow,Malware,2026-07-02,yes,3,1.1.1,
 removed_list,2026-07-03,mangaba-ai.mangaba-ai,Malware,2026-07-02,yes,2,0.11.9,2026-07-03
 removed_list,2026-07-03,uai-systems.uai-extension,Untrustworthy,2026-07-02,yes,62,3.10.345,2026-07-03
 removed_list,2026-07-03,yhx6071.nc,Untrustworthy,2026-07-02,yes,9,0.1.2,2026-07-03
+removed_list,2026-07-04,Ares-Agent.ares-agent,Malware,2026-07-04,yes,3,0.1.9,2026-07-04
+removed_list,2026-07-04,vscodemobile.vscodemobile,Malware,2026-07-04,yes,8,1.0.0,2026-07-04
