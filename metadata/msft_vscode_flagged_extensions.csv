@@ -1791,3 +1791,6 @@ removed_list,2026-07-03,uai-systems.uai-extension,Untrustworthy,2026-07-02,yes,6
 removed_list,2026-07-03,yhx6071.nc,Untrustworthy,2026-07-02,yes,9,0.1.2,2026-07-03
 removed_list,2026-07-04,Ares-Agent.ares-agent,Malware,2026-07-04,yes,3,0.1.9,2026-07-04
 removed_list,2026-07-04,vscodemobile.vscodemobile,Malware,2026-07-04,yes,8,1.0.0,2026-07-04
+removed_list,2026-07-05,ChristopherDengler.imagecomments,Untrustworthy,2026-07-05,no,0,none,none
+removed_list,2026-07-05,DevFlowHub.devflowhub,Malware,2026-07-05,yes,4,1.2.2,2026-07-05
+removed_list,2026-07-05,OIOXO.oioxo-vscode,Malware,2026-07-05,yes,39,0.12.7,2026-07-05
