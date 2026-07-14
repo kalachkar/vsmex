@@ -1836,3 +1836,6 @@ removed_list,2026-07-13,cloorc.kubernetes-tools,Impersonation,2026-07-13,yes,1,1
 removed_list,2026-07-13,cloorc.vscefiles,Impersonation,2026-07-13,yes,1,0.8.0,2026-07-13
 removed_list,2026-07-13,dg19.todo-atlas,Impersonation,2026-07-13,yes,1,1.0.0,2026-07-13
 removed_list,2026-07-13,krzysztof-d.justybaselite-netezza,Untrustworthy,2026-07-13,yes,99,3.16.0,2026-07-13
+removed_list,2026-07-14,Gopherlume.colorloco,Untrustworthy,2026-07-13,yes,1,1.0.1,2026-07-14
+removed_list,2026-07-14,Jumbo.JumboKey,Untrustworthy,2026-07-13,yes,1,1.0.2,2026-07-14
+removed_list,2026-07-14,adr-org.adr-manager-vscode,Impersonation,2026-07-14,yes,2,0.0.2,2026-07-14
