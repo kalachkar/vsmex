@@ -1839,3 +1839,15 @@ removed_list,2026-07-13,krzysztof-d.justybaselite-netezza,Untrustworthy,2026-07-
 removed_list,2026-07-14,Gopherlume.colorloco,Untrustworthy,2026-07-13,yes,1,1.0.1,2026-07-14
 removed_list,2026-07-14,Jumbo.JumboKey,Untrustworthy,2026-07-13,yes,1,1.0.2,2026-07-14
 removed_list,2026-07-14,adr-org.adr-manager-vscode,Impersonation,2026-07-14,yes,2,0.0.2,2026-07-14
+removed_list,2026-07-15,128BitStudios.codex-stats-updated,Impersonation,2026-07-15,yes,1,1.0.5,2026-07-15
+removed_list,2026-07-15,JumboCore.Jumbos,Untrustworthy,2026-07-15,yes,1,1.0.0,2026-07-15
+removed_list,2026-07-15,Ship-lab.markpad,Untrustworthy,2026-07-15,yes,15,0.3.5,2026-07-15
+removed_list,2026-07-15,ebdonato.donato-ariake-dark,Impersonation,2026-07-15,yes,2,1.1.1,2026-07-15
+removed_list,2026-07-15,justybase.justybase-db2,Impersonation,2026-07-15,yes,1,3.16.6,2026-07-15
+removed_list,2026-07-15,justybase.justybase-duckdb,Impersonation,2026-07-15,yes,1,3.16.6,2026-07-15
+removed_list,2026-07-15,justybase.justybase-mssql,Impersonation,2026-07-15,yes,1,3.16.6,2026-07-15
+removed_list,2026-07-15,justybase.justybase-mysql,Impersonation,2026-07-15,yes,1,3.16.6,2026-07-15
+removed_list,2026-07-15,justybase.justybase-netezza,Impersonation,2026-07-15,yes,1,3.16.6,2026-07-15
+removed_list,2026-07-15,justybase.justybase-oracle,Impersonation,2026-07-15,yes,1,3.16.6,2026-07-15
+removed_list,2026-07-15,justybase.justybase-postgresql,Impersonation,2026-07-15,yes,1,3.16.6,2026-07-15
+removed_list,2026-07-15,mantasmikaI.vscode-theme-pIuto,Impersonation,2026-07-15,yes,1,0.1.0,2026-07-15
