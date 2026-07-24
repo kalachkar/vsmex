@@ -1884,3 +1884,6 @@ removed_list,2026-07-23,dark-matter7232.stm32-for-vscode-community,Impersonation
 removed_list,2026-07-23,everestsystems.lotse-language-vscode,Untrustworthy,2026-07-22,yes,1,13.37.0,2026-07-23
 removed_list,2026-07-23,markovic.jetbrains-file-icon-theme-php,Impersonation,2026-07-23,yes,2,1.7.1,2026-07-23
 removed_list,2026-07-23,riai-marketplace.riai-marketplace-mcp-test,Malware,2026-07-23,yes,5,1.5.2,2026-07-23
+removed_list,2026-07-24,CPLUSPLUS.cpp-compiler-provider,Untrustworthy,2026-07-23,yes,4,0.0.5,2026-07-24
+removed_list,2026-07-24,CPLUSPLUS.java-compiler-provider,Untrustworthy,2026-07-23,yes,3,0.0.5,2026-07-24
+removed_list,2026-07-24,model-selection.TerminalRun,Impersonation,2026-07-23,yes,1,0.0.7,2026-07-24
