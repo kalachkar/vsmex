@@ -1887,3 +1887,12 @@ removed_list,2026-07-23,riai-marketplace.riai-marketplace-mcp-test,Malware,2026-
 removed_list,2026-07-24,CPLUSPLUS.cpp-compiler-provider,Untrustworthy,2026-07-23,yes,4,0.0.5,2026-07-24
 removed_list,2026-07-24,CPLUSPLUS.java-compiler-provider,Untrustworthy,2026-07-23,yes,3,0.0.5,2026-07-24
 removed_list,2026-07-24,model-selection.TerminalRun,Impersonation,2026-07-23,yes,1,0.0.7,2026-07-24
+removed_list,2026-07-25,DevMany.verde-sync,Untrustworthy,2026-07-24,yes,6,2.0.7,2026-07-25
+removed_list,2026-07-25,GMSoftwares.trello-workspace,Impersonation,2026-07-25,yes,2,1.0.2,2026-07-25
+removed_list,2026-07-25,Pstudio.pstudio-cph,Impersonation,2026-07-25,yes,1,2077.0.4,2026-07-25
+removed_list,2026-07-25,Zaur.zz-sftp,Impersonation,2026-07-25,yes,1,0.0.2,2026-07-25
+removed_list,2026-07-25,devshub-ai.devshub-basedpyright,Impersonation,2026-07-25,yes,1,1.39.9,2026-07-25
+removed_list,2026-07-25,devshub-ai.devshub-dotenv,Impersonation,2026-07-25,yes,1,1.0.1,2026-07-25
+removed_list,2026-07-25,devshub-ai.devshub-file-icons,Impersonation,2026-07-25,yes,1,12.19.0,2026-07-25
+removed_list,2026-07-25,devshub-ai.devshub-go,Impersonation,2026-07-25,yes,1,0.56.0,2026-07-25
+removed_list,2026-07-25,devshub-ai.devshub-python,Impersonation,2026-07-25,yes,1,2026.4.0,2026-07-25
