@@ -308,9 +308,9 @@ def main():
             if page_records:
                 append_lines(config.MASTER_METADATA_FILE, page_records)
                 newly_seen.update(page_vkeys)
+                seen.update(page_vkeys)
 
-            if newly_seen and len(newly_seen) % config.CHECKPOINT_EVERY == 0:
-                seen.update(newly_seen)
+            if newly_seen and len(newly_seen) >= config.CHECKPOINT_EVERY:
                 save_seen_versions(seen)
                 newly_seen.clear()
                 log_line(f"CHECKPOINT saved ({len(seen)} total seen)")
