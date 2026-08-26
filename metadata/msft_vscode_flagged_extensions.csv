@@ -2047,3 +2047,16 @@ removed_list,2026-08-24,code-colab.codecolab,Untrustworthy,2026-08-23,no,0,none,
 removed_list,2026-08-24,luo2430.luo2430-npmx,Impersonation,2026-08-22,no,0,none,none
 removed_list,2026-08-24,mnjit.mnjit-vscode,Impersonation,2026-08-21,no,0,none,none
 removed_list,2026-08-24,naruse-love.google-antigravity-zh-cn,Impersonation,2026-08-22,no,0,none,none
+removed_list,2026-08-26,AgendaStudios.frux-board,Malware,2026-08-26,yes,1,1.0.1,2026-08-26
+removed_list,2026-08-26,AgentChatBus.deepseek-gold-harness,Impersonation,2026-08-24,yes,1,0.1.58,2026-08-26
+removed_list,2026-08-26,CODEZPC.deepseek-statusbar,Impersonation,2026-08-24,yes,1,1.2.3,2026-08-26
+removed_list,2026-08-26,RandomityMB.torquescript-debugger,Impersonation,2026-08-26,yes,1,0.1.0,2026-08-26
+removed_list,2026-08-26,RandomityMB.torquescript-language-support,Impersonation,2026-08-26,yes,1,0.0.6,2026-08-26
+removed_list,2026-08-26,ShunichiHorigome.vscode-log-viewer-fork,Impersonation,2026-08-26,yes,1,0.14.3,2026-08-26
+removed_list,2026-08-26,TianliangQi.antigravity-usage-monitor,Impersonation,2026-08-26,yes,2,1.0.3,2026-08-26
+removed_list,2026-08-26,VincentUllmann.vscode-nuke,Impersonation,2026-08-24,yes,1,0.1.1,2026-08-26
+removed_list,2026-08-26,WellinWorks.arux-board,Malware,2026-08-26,yes,2,1.0.2,2026-08-26
+removed_list,2026-08-26,dsh-vscode-plugin.dsh-vscode-plugin,Impersonation,2026-08-26,yes,1,1.0.0,2026-08-26
+removed_list,2026-08-26,luo2430.luo2430-npmx-0,Impersonation,2026-08-25,yes,1,0.9.3,2026-08-26
+removed_list,2026-08-26,mervick.deepseek-peak-hours,Impersonation,2026-08-24,yes,1,0.1.2,2026-08-26
+removed_list,2026-08-26,ronakmaheshwari077.Cat-Code,Impersonation,2026-08-24,yes,1,1.0.0,2026-08-26
