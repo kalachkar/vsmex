@@ -2178,3 +2178,7 @@ removed_list,2026-09-09,Lunascape.lunascape-doc,Malware,2026-09-09,yes,6,0.22.10
 removed_list,2026-09-09,MusicCreates.musicicgen,Malware,2026-09-09,yes,1,1.0.1,2026-09-09
 removed_list,2026-09-09,anaer.a-git-log,Impersonation,2026-09-09,yes,2,0.1.1,2026-09-09
 removed_list,2026-09-09,yeceen.har-auto-analyzer,Impersonation,2026-09-09,yes,6,0.0.19,2026-09-09
+removed_list,2026-09-10,FontingFonts.monkeyfont,Malware,2026-09-10,yes,1,1.0.0,2026-09-10
+removed_list,2026-09-10,augura-team.augura-dev,Malware,2026-09-09,yes,2,1.0.2,2026-09-10
+removed_list,2026-09-10,kairo.kairo-designer,Untrustworthy,2026-09-10,yes,1,0.0.1,2026-09-10
+removed_list,2026-09-10,txefficiency.lct-code-review,Untrustworthy,2026-09-10,yes,5,0.1.16,2026-09-10
