@@ -2182,3 +2182,14 @@ removed_list,2026-09-10,FontingFonts.monkeyfont,Malware,2026-09-10,yes,1,1.0.0,2
 removed_list,2026-09-10,augura-team.augura-dev,Malware,2026-09-09,yes,2,1.0.2,2026-09-10
 removed_list,2026-09-10,kairo.kairo-designer,Untrustworthy,2026-09-10,yes,1,0.0.1,2026-09-10
 removed_list,2026-09-10,txefficiency.lct-code-review,Untrustworthy,2026-09-10,yes,5,0.1.16,2026-09-10
+removed_list,2026-09-11,Lily-Pathvela.lily-pathvela,Malware,2026-09-10,yes,1,0.1.31,2026-09-11
+removed_list,2026-09-11,Nyisulya.bongocode-ai,Malware,2026-09-11,yes,14,2.0.8,2026-09-11
+removed_list,2026-09-11,SalHax.keil-helper-plus,Impersonation,2026-09-11,yes,1,0.1.0,2026-09-11
+removed_list,2026-09-11,SuyuDiao.bios-build-assistant,Untrustworthy,2026-09-11,yes,3,0.1.3,2026-09-11
+removed_list,2026-09-11,WorkoraNet.workora,Malware,2026-09-11,yes,2,1.0.1,2026-09-11
+removed_list,2026-09-11,a1phaZ.mr-creator,Malware,2026-09-11,yes,7,1.11.0,2026-09-11
+removed_list,2026-09-11,creeperw.polyllm,Impersonation,2026-09-11,yes,1,0.4.4,2026-09-11
+removed_list,2026-09-11,drmrStudio.opencode-scribe,Impersonation,2026-09-11,yes,1,0.13.5,2026-09-11
+removed_list,2026-09-11,jasonbg-koi.koi-markt-bug1,Malware,2026-09-10,yes,1,0.0.3,2026-09-11
+removed_list,2026-09-11,meijiahao.video-preview-fast,Impersonation,2026-09-11,yes,2,0.5.1,2026-09-11
+removed_list,2026-09-11,sighted2.sighted2-vscode,Impersonation,2026-09-11,yes,3,0.5.0,2026-09-11
