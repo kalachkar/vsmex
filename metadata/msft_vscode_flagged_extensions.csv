@@ -2194,3 +2194,5 @@ removed_list,2026-09-11,jasonbg-koi.koi-markt-bug1,Malware,2026-09-10,yes,1,0.0.
 removed_list,2026-09-11,meijiahao.video-preview-fast,Impersonation,2026-09-11,yes,2,0.5.1,2026-09-11
 removed_list,2026-09-11,sighted2.sighted2-vscode,Impersonation,2026-09-11,yes,3,0.5.0,2026-09-11
 removed_list,2026-09-13,zjqtzzc.make-git-great-again,Impersonation,2026-09-12,yes,2,0.5.0,2026-09-13
+removed_list,2026-09-13,nerfine-dev.projectly-app,Malware,2026-09-13,yes,1,1.0.0,2026-09-13
+removed_list,2026-09-13,ovcharik.vscode-gitlab-codeowners,Impersonation,2026-09-13,yes,2,0.2.1,2026-09-13
