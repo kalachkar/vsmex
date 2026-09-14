@@ -2196,3 +2196,8 @@ removed_list,2026-09-11,sighted2.sighted2-vscode,Impersonation,2026-09-11,yes,3,
 removed_list,2026-09-13,zjqtzzc.make-git-great-again,Impersonation,2026-09-12,yes,2,0.5.0,2026-09-13
 removed_list,2026-09-13,nerfine-dev.projectly-app,Malware,2026-09-13,yes,1,1.0.0,2026-09-13
 removed_list,2026-09-13,ovcharik.vscode-gitlab-codeowners,Impersonation,2026-09-13,yes,2,0.2.1,2026-09-13
+removed_list,2026-09-14,ApeFonting.apefonts,Malware,2026-09-14,yes,1,1.0.0,2026-09-14
+removed_list,2026-09-14,LingyuSoftware.open-canvas,Untrustworthy,2026-09-14,yes,1,0.0.1,2026-09-14
+removed_list,2026-09-14,NodePack.live-test-candidate,Malware,2026-09-14,yes,3,0.6.0,2026-09-14
+removed_list,2026-09-14,NodePack.live-test-hr,Malware,2026-09-14,yes,2,0.6.0,2026-09-14
+removed_list,2026-09-14,nightgauge.nightgauge-vscode,Malware,2026-09-14,yes,5,0.4.1,2026-09-14
