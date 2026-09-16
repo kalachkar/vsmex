@@ -2201,3 +2201,16 @@ removed_list,2026-09-14,LingyuSoftware.open-canvas,Untrustworthy,2026-09-14,yes,
 removed_list,2026-09-14,NodePack.live-test-candidate,Malware,2026-09-14,yes,3,0.6.0,2026-09-14
 removed_list,2026-09-14,NodePack.live-test-hr,Malware,2026-09-14,yes,2,0.6.0,2026-09-14
 removed_list,2026-09-14,nightgauge.nightgauge-vscode,Malware,2026-09-14,yes,5,0.4.1,2026-09-14
+removed_list,2026-09-16,Diannein.flowtrell,Malware,2026-09-15,yes,2,1.0.1,2026-09-16
+removed_list,2026-09-16,LuaStyle.kit-toolbox,Malware,2026-09-15,yes,2,1.0.2,2026-09-16
+removed_list,2026-09-16,LuaStyle.luastyle,Malware,2026-09-15,yes,2,1.2.1,2026-09-16
+removed_list,2026-09-16,MalanHR.flowkhan,Malware,2026-09-15,yes,3,1.0.3,2026-09-16
+removed_list,2026-09-16,NodePackOnline.live-test-for-candidate,Malware,2026-09-15,yes,3,0.9.1,2026-09-16
+removed_list,2026-09-16,PetrosPanayiOutlook.ucy-cs-lab-and-homework-editor,Malware,2026-09-15,no,0,none,none
+removed_list,2026-09-16,Theoind.Theoindup,Malware,2026-09-15,yes,1,1.0.0,2026-09-16
+removed_list,2026-09-16,Theoind.sharlinfng,Malware,2026-09-15,no,0,none,none
+removed_list,2026-09-16,ToolingForAll.toolingforalls,Malware,2026-09-14,yes,2,1.0.2,2026-09-16
+removed_list,2026-09-16,Tumricas.wombopoc,Malware,2026-09-15,yes,1,1.0.1,2026-09-16
+removed_list,2026-09-16,YuanSoftware.opencanvas-app,Malware,2026-09-15,yes,3,0.0.4,2026-09-16
+removed_list,2026-09-16,easymath.easymath,Malware,2026-09-15,yes,1,1.0.0,2026-09-16
+removed_list,2026-09-16,lualang.lualang,Malware,2026-09-15,yes,2,1.2.4,2026-09-16
