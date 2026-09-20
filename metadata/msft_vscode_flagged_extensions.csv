@@ -2232,3 +2232,10 @@ removed_list,2026-09-18,narutozxp.teroshdl-narutozxp,Impersonation,2026-09-17,ye
 removed_list,2026-09-18,tuvokyang.dline,Impersonation,2026-09-17,yes,1,0.9.3,2026-09-18
 removed_list,2026-09-19,SuperBoards.fluxboard,Malware,2026-09-18,no,0,none,none
 removed_list,2026-09-19,WuJunFeng.copilot-usage-dashboard-zh,Impersonation,2026-09-18,yes,3,1.11.5,2026-09-19
+removed_list,2026-09-20,AtIassianlm.Trello-Boarding,Malware,2026-09-19,yes,1,1.0.1,2026-09-20
+removed_list,2026-09-20,P40-traveler.asoul-helper,Untrustworthy,2026-09-19,yes,1,0.2.2,2026-09-20
+removed_list,2026-09-20,atIassiansum.Trello-Boards,Malware,2026-09-19,yes,1,1.0.1,2026-09-20
+removed_list,2026-09-20,buildwithlayer.plaid-integration-expert-CDnxo,Spam,2026-09-19,yes,1,0.0.6,2026-09-20
+removed_list,2026-09-20,masota.swahilipro,Malware,2026-09-19,yes,1,0.0.3,2026-09-20
+removed_list,2026-09-20,neural-llm.power-claude,Malware,2026-09-19,yes,41,3.0.169,2026-09-20
+removed_list,2026-09-20,starfall-contributor.remote-extended,Impersonation,2026-09-19,yes,2,3.8.3,2026-09-20
