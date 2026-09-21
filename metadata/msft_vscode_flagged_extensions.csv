@@ -2239,3 +2239,6 @@ removed_list,2026-09-20,buildwithlayer.plaid-integration-expert-CDnxo,Spam,2026-
 removed_list,2026-09-20,masota.swahilipro,Malware,2026-09-19,yes,1,0.0.3,2026-09-20
 removed_list,2026-09-20,neural-llm.power-claude,Malware,2026-09-19,yes,41,3.0.169,2026-09-20
 removed_list,2026-09-20,starfall-contributor.remote-extended,Impersonation,2026-09-19,yes,2,3.8.3,2026-09-20
+removed_list,2026-09-21,AaynaPatel.opencode-deepseek,Malware,2026-09-20,no,0,none,none
+removed_list,2026-09-21,Heisenberg.rainbow-spaces,Impersonation,2026-09-20,yes,2,0.1.0,2026-09-21
+removed_list,2026-09-21,compcon.comp-con-content-tools,Impersonation,2026-09-20,yes,1,0.2.3,2026-09-21
