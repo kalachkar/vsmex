@@ -2270,3 +2270,10 @@ removed_list,2026-09-24,buildwithlayer.twilio-integration-expert-jBWVB,Impersona
 removed_list,2026-09-24,buildwithlayer.vite-integration-expert-p8NvA,Impersonation,2026-09-23,yes,1,0.0.3,2026-09-24
 removed_list,2026-09-24,buildwithlayer.vs-code-integration-expert-fP5Ll,Impersonation,2026-09-23,yes,1,0.0.3,2026-09-24
 removed_list,2026-09-24,pedro-time-tracker-spike.time-tracker-naa-obo-spike,Malware,2026-09-23,no,0,none,none
+removed_list,2026-09-25,AndrewAltair.claude-quota,Untrustworthy,2026-09-24,yes,1,0.1.1,2026-09-25
+removed_list,2026-09-25,Topsy2003Turvey.vscode-language-pack-af,Impersonation,2026-09-24,yes,2,1.131.4,2026-09-25
+removed_list,2026-09-25,auton-changeguard.auton-changeguard,Spam,2026-09-24,yes,1,0.1.1,2026-09-25
+removed_list,2026-09-25,bendyaming.open-in-editor-vscode-atopos,Impersonation,2026-09-24,yes,1,1.1.1,2026-09-25
+removed_list,2026-09-25,msobb-research-aisha.msobb-xdm-poc-b7f3,Malware,2026-09-24,no,0,none,none
+removed_list,2026-09-25,nathan-0910.ftl-dev,Impersonation,2026-09-24,yes,2,0.0.12,2026-09-25
+removed_list,2026-09-25,xuezchuang.VSAI,Impersonation,2026-09-24,no,0,none,none
