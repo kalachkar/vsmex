@@ -2289,3 +2289,8 @@ removed_list,2026-09-26,raylei.atm-real-code,Spam,2026-09-25,yes,1,1.0.0,2026-09
 removed_list,2026-09-26,raylei.atm-upload-control,Spam,2026-09-25,yes,1,1.0.0,2026-09-26
 removed_list,2026-09-26,semasquare.vscode-coverage-gutters,Impersonation,2026-09-25,yes,1,2.7.2,2026-09-26
 removed_list,2026-09-26,wuyujiesong.opencode-update,Impersonation,2026-09-25,yes,1,1.0.0,2026-09-26
+removed_list,2026-09-27,Canvasorg.Canvas-Boarding,Malware,2026-09-26,yes,1,1.0.0,2026-09-27
+removed_list,2026-09-27,JasielDelarosa.jira-board,Malware,2026-09-26,yes,5,1.0.5,2026-09-27
+removed_list,2026-09-27,aiwormcn.everything-copilot-chat,Impersonation,2026-09-26,yes,3,0.1.2,2026-09-27
+removed_list,2026-09-27,patrick-local.commit-timeline,Impersonation,2026-09-26,yes,1,0.7.14,2026-09-27
+removed_list,2026-09-27,weichweich.olpat-ext,Impersonation,2026-09-26,yes,1,0.21.2,2026-09-27
