@@ -2309,3 +2309,7 @@ removed_list,2026-09-28,viralinclive.sftp-sync-viralinc,Malware,2026-09-27,yes,2
 removed_list,2026-09-28,viralinclive.sqlite-viewer-viralinc,Malware,2026-09-27,yes,4,1.0.7,2026-09-28
 removed_list,2026-09-28,viralinclive.time-tracker-viralin,Malware,2026-09-27,no,0,none,none
 removed_list,2026-09-28,viralinclive.todo-tree-viralinc,Malware,2026-09-27,yes,2,1.0.2,2026-09-28
+removed_list,2026-09-29,AdityaNishad.compro,Malware,2026-09-28,yes,5,1.0.0,2026-09-29
+removed_list,2026-09-29,DriftHubs.drift-hubs,Malware,2026-09-28,yes,1,1.0.0,2026-09-29
+removed_list,2026-09-29,JohnFMerondic.drift-board,Malware,2026-09-28,yes,2,1.1.2,2026-09-29
+removed_list,2026-09-29,aitranslate.ai-hover-translate,Impersonation,2026-09-28,yes,1,0.4.2,2026-09-29
