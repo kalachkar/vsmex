@@ -2313,3 +2313,12 @@ removed_list,2026-09-29,AdityaNishad.compro,Malware,2026-09-28,yes,5,1.0.0,2026-
 removed_list,2026-09-29,DriftHubs.drift-hubs,Malware,2026-09-28,yes,1,1.0.0,2026-09-29
 removed_list,2026-09-29,JohnFMerondic.drift-board,Malware,2026-09-28,yes,2,1.1.2,2026-09-29
 removed_list,2026-09-29,aitranslate.ai-hover-translate,Impersonation,2026-09-28,yes,1,0.4.2,2026-09-29
+removed_list,2026-09-30,TorbScript.torbscript,Untrustworthy,2026-09-29,yes,1,0.2.20260929,2026-09-30
+removed_list,2026-09-30,brunomueller.pixel-agents-cloud,Impersonation,2026-09-29,yes,1,1.4.1,2026-09-30
+removed_list,2026-09-30,cdaringe.vscode-jest-runner-dummy,Impersonation,2026-09-29,yes,1,0.0.4,2026-09-30
+removed_list,2026-09-30,jjackson08.bazel-syntax-highlighting,Impersonation,2026-09-29,yes,1,1.0.0,2026-09-30
+removed_list,2026-09-30,katrine-jensen-next.vscode-language-pack-da-next,Impersonation,2026-09-29,yes,1,1.0.10,2026-09-30
+removed_list,2026-09-30,lucapersichini.MultiMerge,Impersonation,2026-09-29,no,0,none,none
+removed_list,2026-09-30,matheus-tupy.Tupy-Language,Untrustworthy,2026-09-29,yes,1,0.1.0,2026-09-30
+removed_list,2026-09-30,s-h-a-d-o-w.devcontainer-open-containing-folder,Impersonation,2026-09-29,yes,2,1.0.3,2026-09-30
+removed_list,2026-09-30,s-h-a-d-o-w.pnpm-catalog-lens-plus,Impersonation,2026-09-29,yes,2,1.0.200008,2026-09-30
