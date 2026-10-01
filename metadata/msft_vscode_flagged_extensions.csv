@@ -2322,3 +2322,5 @@ removed_list,2026-09-30,lucapersichini.MultiMerge,Impersonation,2026-09-29,no,0,
 removed_list,2026-09-30,matheus-tupy.Tupy-Language,Untrustworthy,2026-09-29,yes,1,0.1.0,2026-09-30
 removed_list,2026-09-30,s-h-a-d-o-w.devcontainer-open-containing-folder,Impersonation,2026-09-29,yes,2,1.0.3,2026-09-30
 removed_list,2026-09-30,s-h-a-d-o-w.pnpm-catalog-lens-plus,Impersonation,2026-09-29,yes,2,1.0.200008,2026-09-30
+removed_list,2026-10-01,Muzyu.deepseek-usage-monitor,Impersonation,2026-09-30,yes,2,2.0.0,2026-10-01
+removed_list,2026-10-01,j62268781-alt.pi-code-chat,Impersonation,2026-09-30,yes,1,1.0.1,2026-10-01
