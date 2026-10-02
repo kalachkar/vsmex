@@ -2324,3 +2324,8 @@ removed_list,2026-09-30,s-h-a-d-o-w.devcontainer-open-containing-folder,Imperson
 removed_list,2026-09-30,s-h-a-d-o-w.pnpm-catalog-lens-plus,Impersonation,2026-09-29,yes,2,1.0.200008,2026-09-30
 removed_list,2026-10-01,Muzyu.deepseek-usage-monitor,Impersonation,2026-09-30,yes,2,2.0.0,2026-10-01
 removed_list,2026-10-01,j62268781-alt.pi-code-chat,Impersonation,2026-09-30,yes,1,1.0.1,2026-10-01
+removed_list,2026-10-02,adityavarman-manjunath.roc-nightly,Impersonation,2026-10-01,yes,3,0.0.4,2026-10-02
+removed_list,2026-10-02,holiday-themes.theme-coca-cola-christmas,Malware,2026-10-01,yes,2,1.0.2,2026-10-02
+removed_list,2026-10-02,lohsebhipolg2s.theme-aurora-borealis,Malware,2026-10-01,yes,3,1.0.2,2026-10-02
+removed_list,2026-10-02,pulsedigital.framemap-dev,Malware,2026-10-01,yes,2,0.2.0,2026-10-02
+removed_list,2026-10-02,zpeterg.intellij-idea-keybindings-mac-to-pc,Impersonation,2026-10-01,yes,1,0.0.1,2026-10-02
