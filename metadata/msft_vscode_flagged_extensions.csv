@@ -2329,3 +2329,8 @@ removed_list,2026-10-02,holiday-themes.theme-coca-cola-christmas,Malware,2026-10
 removed_list,2026-10-02,lohsebhipolg2s.theme-aurora-borealis,Malware,2026-10-01,yes,3,1.0.2,2026-10-02
 removed_list,2026-10-02,pulsedigital.framemap-dev,Malware,2026-10-01,yes,2,0.2.0,2026-10-02
 removed_list,2026-10-02,zpeterg.intellij-idea-keybindings-mac-to-pc,Impersonation,2026-10-01,yes,1,0.0.1,2026-10-02
+removed_list,2026-10-03,BhavyaJustChill.vscode-power-mode-reborn,Impersonation,2026-10-02,yes,1,1.1.0,2026-10-03
+removed_list,2026-10-03,Lavender-Studio.theme-lavender-dreams,Malware,2026-10-02,yes,1,1.0.0,2026-10-03
+removed_list,2026-10-03,charcoal-mint-studio.theme-charcoal-mint,Malware,2026-10-02,yes,2,1.0.1,2026-10-03
+removed_list,2026-10-03,etairi.vscode-idris2,Impersonation,2026-10-02,yes,1,0.1.0,2026-10-03
+removed_list,2026-10-03,production-sun-set.theme-sunset-gradient,Malware,2026-10-02,yes,1,1.0.0,2026-10-03
