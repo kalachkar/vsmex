@@ -2334,3 +2334,6 @@ removed_list,2026-10-03,Lavender-Studio.theme-lavender-dreams,Malware,2026-10-02
 removed_list,2026-10-03,charcoal-mint-studio.theme-charcoal-mint,Malware,2026-10-02,yes,2,1.0.1,2026-10-03
 removed_list,2026-10-03,etairi.vscode-idris2,Impersonation,2026-10-02,yes,1,0.1.0,2026-10-03
 removed_list,2026-10-03,production-sun-set.theme-sunset-gradient,Malware,2026-10-02,yes,1,1.0.0,2026-10-03
+removed_list,2026-10-04,nexrallcode.nexrall-code-vscode,Untrustworthy,2026-10-03,no,0,none,none
+removed_list,2026-10-04,sohang3112.pdf-fork,Impersonation,2026-10-03,yes,2,1.2.3,2026-10-04
+removed_list,2026-10-04,v4rm4n.roc-community,Impersonation,2026-10-03,yes,1,0.0.5,2026-10-04
