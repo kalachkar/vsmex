@@ -2377,3 +2377,15 @@ removed_list,2026-10-12,summitforge.flowcanvas-dev,Untrustworthy,2026-10-11,yes,
 removed_list,2026-10-12,taoscope.taoscope-coding-assessment,Malware,2026-10-06,yes,8,0.6.0,2026-10-12
 removed_list,2026-10-12,wavepeak.slatecanvas-dev,Untrustworthy,2026-10-05,yes,1,0.0.1,2026-10-12
 removed_list,2026-10-12,zenithfoundry.chalkspace-dev,Malware,2026-10-09,yes,1,0.0.1,2026-10-12
+removed_list,2026-10-13,CifroArts.cifroarts-csharp-devkit-extended,Impersonation,2026-10-13,yes,1,1.0.0,2026-10-13
+removed_list,2026-10-13,CifroArts.soft-default-theme,Impersonation,2026-10-13,yes,1,1.0.0,2026-10-13
+removed_list,2026-10-13,TanishqKancharla.opencode-vscode,Impersonation,2026-10-13,yes,17,0.4.4,2026-10-13
+removed_list,2026-10-13,ali50m.markupfmt,Impersonation,2026-10-13,yes,2,1.8.0,2026-10-13
+removed_list,2026-10-13,anishqKancharla.opencode-vscode,Impersonation,2026-10-13,no,0,none,none
+removed_list,2026-10-13,jupyterv-snippet.jupyter-v-snippets,Impersonation,2026-10-13,yes,2,0.0.4,2026-10-13
+removed_list,2026-10-13,nimblescape.comment-markdown-links,Untrustworthy,2026-10-13,yes,3,0.4.3,2026-10-13
+removed_list,2026-10-13,nimblescape.nimblescape-comment-markdown-links,Untrustworthy,2026-10-13,no,0,none,none
+removed_list,2026-10-13,nimblescape.nimblescape-devspaces,Untrustworthy,2026-10-13,yes,9,0.5.0,2026-10-13
+removed_list,2026-10-13,nimblescape.nimblescape-markdown-comment-links,Untrustworthy,2026-10-13,yes,3,0.1.8,2026-10-13
+removed_list,2026-10-13,nnn706.ansible-runner,Impersonation,2026-10-13,yes,1,0.0.4,2026-10-13
+removed_list,2026-10-13,nulifyer.git-graph-modern,Impersonation,2026-10-13,yes,2,1.32.3,2026-10-13
