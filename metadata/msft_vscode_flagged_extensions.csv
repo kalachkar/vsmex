@@ -2409,3 +2409,8 @@ removed_list,2026-10-17,andrediogo92.nu-busted-test-explore,Impersonation,2026-1
 removed_list,2026-10-17,hxyou.commit-assist,Impersonation,2026-10-17,yes,2,1.1.0,2026-10-17
 removed_list,2026-10-17,hxyou.make-it,Impersonation,2026-10-17,yes,3,1.1.2,2026-10-17
 removed_list,2026-10-17,kairbros-dev.bomberman-procedural,Impersonation,2026-10-17,yes,3,0.1.3,2026-10-17
+removed_list,2026-10-19,bootcheck.bootcheck,Untrustworthy,2026-10-18,yes,1,0.0.2,2026-10-19
+removed_list,2026-10-19,changeradar.change-radar-devtools,Untrustworthy,2026-10-18,yes,2,0.0.2,2026-10-19
+removed_list,2026-10-19,dependenywatch.dependency-watch,Untrustworthy,2026-10-18,yes,1,0.1.0,2026-10-19
+removed_list,2026-10-19,errorcompass.error-compass,Untrustworthy,2026-10-18,yes,1,0.1.0,2026-10-19
+removed_list,2026-10-19,shipneck.shipcheck,Untrustworthy,2026-10-18,yes,1,0.1.0,2026-10-19
