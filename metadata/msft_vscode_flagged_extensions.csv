@@ -2435,3 +2435,11 @@ removed_list,2026-10-19,privatebadgeproof1018b.private-test-2,Malware,2026-10-19
 removed_list,2026-10-19,quickrunner.quickrunner,Untrustworthy,2026-10-19,yes,2,0.12.4,2026-10-19
 removed_list,2026-10-20,exegol.exegol-studio,Malware,2026-10-19,no,0,none,none
 removed_list,2026-10-21,smiletime.pandatask,Malware,2026-10-20,yes,2,1.0.1,2026-10-21
+removed_list,2026-10-21,ASethi77.borrowed-light,Impersonation,2026-10-21,no,0,none,none
+removed_list,2026-10-21,FreshWind.foam-unofficial,Impersonation,2026-10-21,yes,2,0.46.3,2026-10-21
+removed_list,2026-10-21,aimdev.GitEye,Impersonation,2026-10-21,yes,1,2.2.0,2026-10-21
+removed_list,2026-10-21,aimdev.GitPlot,Impersonation,2026-10-21,yes,1,2.2.0,2026-10-21
+removed_list,2026-10-21,aimdev.gitap,Impersonation,2026-10-21,yes,1,2.2.0,2026-10-21
+removed_list,2026-10-21,codesheen.ultra-smooth-ui,Impersonation,2026-10-21,yes,1,1.2.1,2026-10-21
+removed_list,2026-10-21,diegomontania.DeepSeekChatForVisualStudio,Impersonation,2026-10-21,no,0,none,none
+removed_list,2026-10-21,jinx.bg3-osiris-vscode,Impersonation,2026-10-21,yes,1,0.4.0,2026-10-21
