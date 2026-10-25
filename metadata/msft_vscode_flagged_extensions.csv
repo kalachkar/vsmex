@@ -2481,3 +2481,9 @@ removed_list,2026-10-25,LKKStuner.linkintrees,Malware,2026-10-24,yes,1,1.0.0,202
 removed_list,2026-10-25,ShuheiNishikawa.mdmark,Malware,2026-10-24,yes,1,0.1.0,2026-10-25
 removed_list,2026-10-25,jaunblanco.ethtools,Malware,2026-10-23,no,0,none,none
 removed_list,2026-10-25,juanbanco.web3-tools,Impersonation,2026-10-24,yes,2,0.0.195,2026-10-25
+removed_list,2026-10-25,DawnTask.dawntask,Malware,2026-10-25,yes,1,1.0.0,2026-10-25
+removed_list,2026-10-25,GiantManage.giantmanage,Malware,2026-10-25,no,0,none,none
+removed_list,2026-10-25,flowstate.luaslope,Untrustworthy,2026-10-25,yes,2,1.0.2,2026-10-25
+removed_list,2026-10-25,opentask.opentask,Malware,2026-10-25,no,0,none,none
+removed_list,2026-10-25,parsley.parsley,Malware,2026-10-25,yes,2,3.0.2,2026-10-25
+removed_list,2026-10-25,starktask.starktask,Malware,2026-10-25,yes,1,1.0.0,2026-10-25
