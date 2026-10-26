@@ -2487,3 +2487,17 @@ removed_list,2026-10-25,flowstate.luaslope,Untrustworthy,2026-10-25,yes,2,1.0.2,
 removed_list,2026-10-25,opentask.opentask,Malware,2026-10-25,no,0,none,none
 removed_list,2026-10-25,parsley.parsley,Malware,2026-10-25,yes,2,3.0.2,2026-10-25
 removed_list,2026-10-25,starktask.starktask,Malware,2026-10-25,yes,1,1.0.0,2026-10-25
+removed_list,2026-10-26,AzureCdnInfo.edrtester,Malware,2026-10-26,yes,1,1.0.4,2026-10-26
+removed_list,2026-10-26,FlowGPTAI.flowgptai,Malware,2026-10-26,no,0,none,none
+removed_list,2026-10-26,NostraDavid.nostradavid-better-comments,Impersonation,2026-10-26,yes,3,1.0.10,2026-10-26
+removed_list,2026-10-26,NostraDavid.nostradavid-dotenv,Impersonation,2026-10-26,yes,3,1.0.4,2026-10-26
+removed_list,2026-10-26,NostraDavid.nostradavid-todo-tree,Impersonation,2026-10-26,yes,3,1.0.18,2026-10-26
+removed_list,2026-10-26,alphasolutions.studiotask-app,Malware,2026-10-26,yes,2,1.2.1,2026-10-26
+removed_list,2026-10-26,greenbeans.greenbeans,Untrustworthy,2026-10-26,yes,2,2.0.0,2026-10-26
+removed_list,2026-10-26,haloview.atlasgrid-dev,Malware,2026-10-26,yes,1,0.0.1,2026-10-26
+removed_list,2026-10-26,juanblandiosllhh.solidoiyo,Malware,2026-10-26,yes,1,0.0.189,2026-10-26
+removed_list,2026-10-26,juanblanhxashien.solidswijc,Malware,2026-10-26,yes,1,0.0.189,2026-10-26
+removed_list,2026-10-26,luanblanco.language-pack-sol,Untrustworthy,2026-10-26,yes,1,0.0.195,2026-10-26
+removed_list,2026-10-26,pupydodo.pdfviewer-highlight,Impersonation,2026-10-26,yes,2,1.2.5,2026-10-26
+removed_list,2026-10-26,sweetbrulee.gruvbox-material-sweetbrulee,Impersonation,2026-10-26,yes,1,6.5.2,2026-10-26
+removed_list,2026-10-26,yves0003.f4dataprqt,Impersonation,2026-10-26,yes,1,0.0.31,2026-10-26
