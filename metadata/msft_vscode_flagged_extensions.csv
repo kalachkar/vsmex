@@ -2529,3 +2529,5 @@ removed_list,2026-10-31,1237410.pw-test-runner-suite,Spam,2026-10-30,yes,2,1.0.4
 removed_list,2026-10-31,ink-byte.sgf-preview,Untrustworthy,2026-10-30,yes,2,0.2.0,2026-10-31
 removed_list,2026-10-31,oewer-solutions.odoo-runner,Impersonation,2026-10-30,yes,3,0.3.1,2026-10-31
 removed_list,2026-10-31,se-nora.noras-lsl-fp,Impersonation,2026-10-30,yes,1,1.10.3,2026-10-31
+removed_list,2026-10-31,acro.pfc-charts,Spam,2026-10-31,yes,3,1.3.0,2026-10-31
+removed_list,2026-10-31,acro.physical-model-charts,Spam,2026-10-31,yes,4,1.3.1,2026-10-31
