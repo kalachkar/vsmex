@@ -2672,3 +2672,6 @@ removed_list,2026-11-03,zephyranalytics.loomcanvas-app,Malware,2026-11-03,yes,1,
 removed_list,2026-11-03,zephyrdata.swatchstudio-dev,Malware,2026-11-03,yes,1,0.0.1,2026-11-03
 removed_list,2026-11-04,Markers.markersboard,Malware,2026-11-03,yes,2,2.2.5,2026-11-04
 removed_list,2026-11-04,VeniceProductions.marker-board,Malware,2026-11-03,yes,1,0.2.0,2026-11-04
+removed_list,2026-11-04,DLS.vscode-stylelint-0-87-6,Impersonation,2026-11-04,yes,1,0.87.6,2026-11-04
+removed_list,2026-11-04,SanmaoZhao.vscode-stylelint-legacy,Impersonation,2026-11-04,yes,1,0.87.7,2026-11-04
+removed_list,2026-11-04,dileepar26.vscode-todoist,Impersonation,2026-11-04,yes,1,0.0.1,2026-11-04
