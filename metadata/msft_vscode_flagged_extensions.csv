@@ -2691,3 +2691,17 @@ removed_list,2026-11-05,drawdiags.drawuml,Spam,2026-11-05,yes,1,0.1.0,2026-11-05
 removed_list,2026-11-05,drawdiags.drawumlVS,Spam,2026-11-05,no,0,none,none
 removed_list,2026-11-05,msrc-xdm-lab-20261001.sep-chain-static-b-20261105,Malware,2026-11-05,no,0,none,none
 removed_list,2026-11-05,yuna1107.gcp-quick-connect,Impersonation,2026-11-05,yes,1,1.2.2,2026-11-05
+removed_list,2026-11-09,AzureLLC.clarity-boards,Untrustworthy,2026-11-06,yes,2,1.0.1,2026-11-09
+removed_list,2026-11-09,DoubleCLN.clarity-board,Untrustworthy,2026-11-06,no,0,none,none
+removed_list,2026-11-09,JohnBake.corklane,Untrustworthy,2026-11-06,yes,1,0.0.1,2026-11-09
+removed_list,2026-11-09,Johndev.vaelorapanelreimagined,Malware,2026-11-06,no,0,none,none
+removed_list,2026-11-09,LNFCreates.prism-board,Malware,2026-11-08,yes,1,1.0.1,2026-11-09
+removed_list,2026-11-09,MarkerLens.concepts-board,Untrustworthy,2026-11-06,yes,2,1.0.1,2026-11-09
+removed_list,2026-11-09,PaulTasko.TaskoBoard,Malware,2026-11-05,no,0,none,none
+removed_list,2026-11-09,TaskoDev.VaeloraStudio1,Malware,2026-11-05,no,0,none,none
+removed_list,2026-11-09,TaskoDev.vaelorapanel,Malware,2026-11-05,yes,1,1.0.0,2026-11-09
+removed_list,2026-11-09,VaeloraPanel.vaelora-studio-workspace,Malware,2026-11-05,no,0,none,none
+removed_list,2026-11-09,VenProduct.venro-board,Untrustworthy,2026-11-06,yes,1,0.0.1,2026-11-09
+removed_list,2026-11-09,opentidehq.opentide,Malware,2026-11-08,yes,2,0.1.1,2026-11-09
+removed_list,2026-11-09,vaeloralabs.vaelorastudio,Malware,2026-11-08,no,0,none,none
+removed_list,2026-11-09,verpublish.julia-board,Untrustworthy,2026-11-07,no,0,none,none
