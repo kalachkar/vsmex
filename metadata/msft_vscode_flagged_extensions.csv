@@ -2709,3 +2709,5 @@ removed_list,2026-11-10,DreamHelpersAI.dreamhelpersai-yuanmeng-mcp,Impersonation
 removed_list,2026-11-10,Keep-Flying.ShinyClaude,Untrustworthy,2026-11-10,no,0,none,none
 removed_list,2026-11-10,LanarLLC.prism-boards,Malware,2026-11-10,yes,1,1.0.2,2026-11-10
 removed_list,2026-11-11,seeed-studio.seeed-xiao-zephyr-assistant,Untrustworthy,2026-11-10,yes,10,0.5.8,2026-11-11
+removed_list,2026-11-11,CodeAIAssistant.CodeAIAssistant,Malware,2026-11-11,yes,1,1.1.1,2026-11-11
+removed_list,2026-11-11,kliklamala.nimala-raku-lsp-client,Impersonation,2026-11-11,yes,1,1.0.0,2026-11-11
