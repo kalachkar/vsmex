@@ -1,16 +1,16 @@
 {
   "marketplace": {
-    "total_number_of_extensions": 257524,
-    "total_size_gb": 2219.93,
-    "last_sync": "2026-11-11 08:08:20",
-    "total_vsix_files": 118866
+    "total_number_of_extensions": 257631,
+    "total_size_gb": 2225.96,
+    "last_sync": "2026-11-11 20:03:58",
+    "total_vsix_files": 119531
   },
   "dataset": {
-    "total_flagged": 2710,
-    "total_captured": 5439,
-    "total_vsix_files": 5439,
-    "unique_extensions": 2290,
+    "total_flagged": 2712,
+    "total_captured": 5441,
+    "total_vsix_files": 5441,
+    "unique_extensions": 2292,
     "total_size_gb": 54.96,
-    "last_sync": "2026-11-11 09:31:32"
+    "last_sync": "2026-11-11 21:31:25"
   }
 }
