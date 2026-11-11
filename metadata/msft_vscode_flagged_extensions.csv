@@ -2705,3 +2705,7 @@ removed_list,2026-11-09,VenProduct.venro-board,Untrustworthy,2026-11-06,yes,1,0.
 removed_list,2026-11-09,opentidehq.opentide,Malware,2026-11-08,yes,2,0.1.1,2026-11-09
 removed_list,2026-11-09,vaeloralabs.vaelorastudio,Malware,2026-11-08,no,0,none,none
 removed_list,2026-11-09,verpublish.julia-board,Untrustworthy,2026-11-07,no,0,none,none
+removed_list,2026-11-10,DreamHelpersAI.dreamhelpersai-yuanmeng-mcp,Impersonation,2026-11-10,yes,2,1.261110.16,2026-11-10
+removed_list,2026-11-10,Keep-Flying.ShinyClaude,Untrustworthy,2026-11-10,no,0,none,none
+removed_list,2026-11-10,LanarLLC.prism-boards,Malware,2026-11-10,yes,1,1.0.2,2026-11-10
+removed_list,2026-11-11,seeed-studio.seeed-xiao-zephyr-assistant,Untrustworthy,2026-11-10,yes,10,0.5.8,2026-11-11
