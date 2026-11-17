@@ -2744,3 +2744,9 @@ removed_list,2026-11-13,pypi.yoyoyo,Untrustworthy,2026-11-12,yes,1,0.0.1,2026-11
 removed_list,2026-11-13,rizkura96.compareanalyze,Untrustworthy,2026-11-12,yes,28,0.4.57,2026-11-13
 removed_list,2026-11-13,tagetdomainn.mdsecbackdoor,Untrustworthy,2026-11-12,yes,1,0.0.3,2026-11-13
 removed_list,2026-11-13,williamwetman.quackpilot,Malware,2026-11-12,no,0,none,none
+removed_list,2026-11-16,FNHCreates.canvas-cards,Malware,2026-11-16,yes,1,0.0.2,2026-11-16
+removed_list,2026-11-16,IhabRabaya.ihab-arabic-python-terminal,Impersonation,2026-11-15,yes,1,1.1.0,2026-11-16
+removed_list,2026-11-16,LazowskiAnton.CsvSmith,Untrustworthy,2026-11-16,no,0,none,none
+removed_list,2026-11-16,LazowskiAnton.ImageSmith,Untrustworthy,2026-11-16,no,0,none,none
+removed_list,2026-11-16,huntrole.assessment-tool,Impersonation,2026-11-16,yes,1,1.0.0,2026-11-16
+removed_list,2026-11-17,myh456.git-blame-lens-next,Impersonation,2026-11-17,yes,2,0.0.6,2026-11-17
