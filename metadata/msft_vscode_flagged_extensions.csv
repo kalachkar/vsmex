@@ -2754,3 +2754,6 @@ removed_list,2026-11-18,0x4fmr.ordova,Untrustworthy,2026-11-18,yes,1,0.1.0,2026-
 removed_list,2026-11-18,JavadEsmaeili.scanline,Untrustworthy,2026-11-18,yes,1,0.7.1,2026-11-18
 removed_list,2026-11-18,anwin.for-vscode,Untrustworthy,2026-11-18,yes,2,1.4.5,2026-11-18
 removed_list,2026-11-18,htmlhost.htmlhost,Untrustworthy,2026-11-18,yes,1,0.2.1,2026-11-18
+removed_list,2026-11-19,HMCTS.dtsse-jenkins,Impersonation,2026-11-19,yes,1,0.1.23,2026-11-19
+removed_list,2026-11-19,NoahBit.api-reactor,Malware,2026-11-19,yes,1,0.0.1,2026-11-19
+removed_list,2026-11-19,kibernet.KibernetSvn,Impersonation,2026-11-19,no,0,none,none
