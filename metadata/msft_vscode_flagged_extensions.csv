@@ -2757,3 +2757,5 @@ removed_list,2026-11-18,htmlhost.htmlhost,Untrustworthy,2026-11-18,yes,1,0.2.1,2
 removed_list,2026-11-19,HMCTS.dtsse-jenkins,Impersonation,2026-11-19,yes,1,0.1.23,2026-11-19
 removed_list,2026-11-19,NoahBit.api-reactor,Malware,2026-11-19,yes,1,0.0.1,2026-11-19
 removed_list,2026-11-19,kibernet.KibernetSvn,Impersonation,2026-11-19,no,0,none,none
+removed_list,2026-11-20,Wanwu.wanwu,Impersonation,2026-11-20,yes,1,0.0.3,2026-11-20
+removed_list,2026-11-20,codex-extension.codex-plugin,Impersonation,2026-11-20,yes,1,0.0.5,2026-11-20
