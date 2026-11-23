@@ -2759,3 +2759,8 @@ removed_list,2026-11-19,NoahBit.api-reactor,Malware,2026-11-19,yes,1,0.0.1,2026-
 removed_list,2026-11-19,kibernet.KibernetSvn,Impersonation,2026-11-19,no,0,none,none
 removed_list,2026-11-20,Wanwu.wanwu,Impersonation,2026-11-20,yes,1,0.0.3,2026-11-20
 removed_list,2026-11-20,codex-extension.codex-plugin,Impersonation,2026-11-20,yes,1,0.0.5,2026-11-20
+removed_list,2026-11-23,CoreXyte.corextrader-tdsl,Spam,2026-11-23,yes,1,0.1.0,2026-11-23
+removed_list,2026-11-23,quickdm.qdm-np-4103,Untrustworthy,2026-11-23,yes,1,0.0.1,2026-11-23
+removed_list,2026-11-23,quickdm.qdm-np-4105,Untrustworthy,2026-11-23,yes,1,0.0.1,2026-11-23
+removed_list,2026-11-23,quickdm.qdm-np-4108,Untrustworthy,2026-11-23,yes,1,0.0.1,2026-11-23
+removed_list,2026-11-23,quickdm.qdm-probe-7391,Untrustworthy,2026-11-23,yes,1,0.0.5,2026-11-23
