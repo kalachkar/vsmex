@@ -2764,3 +2764,7 @@ removed_list,2026-11-23,quickdm.qdm-np-4103,Untrustworthy,2026-11-23,yes,1,0.0.1
 removed_list,2026-11-23,quickdm.qdm-np-4105,Untrustworthy,2026-11-23,yes,1,0.0.1,2026-11-23
 removed_list,2026-11-23,quickdm.qdm-np-4108,Untrustworthy,2026-11-23,yes,1,0.0.1,2026-11-23
 removed_list,2026-11-23,quickdm.qdm-probe-7391,Untrustworthy,2026-11-23,yes,1,0.0.5,2026-11-23
+removed_list,2026-11-24,DevartSoftware.MCPServerForMySQL,Spam,2026-11-24,no,0,none,none
+removed_list,2026-11-24,SharifdotG.catppuccin-dark-pro,Impersonation,2026-11-24,yes,1,1.1.0,2026-11-24
+removed_list,2026-11-24,devartsoftware.MCPServerForOracle,Spam,2026-11-24,no,0,none,none
+removed_list,2026-11-24,weoptimize.wmark,Untrustworthy,2026-11-24,yes,258,4.27.56,2026-11-24
