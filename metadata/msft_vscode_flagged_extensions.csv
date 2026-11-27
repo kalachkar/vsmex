@@ -2768,3 +2768,15 @@ removed_list,2026-11-24,DevartSoftware.MCPServerForMySQL,Spam,2026-11-24,no,0,no
 removed_list,2026-11-24,SharifdotG.catppuccin-dark-pro,Impersonation,2026-11-24,yes,1,1.1.0,2026-11-24
 removed_list,2026-11-24,devartsoftware.MCPServerForOracle,Spam,2026-11-24,no,0,none,none
 removed_list,2026-11-24,weoptimize.wmark,Untrustworthy,2026-11-24,yes,258,4.27.56,2026-11-24
+removed_list,2026-11-27,ForgeGUI.forgegui-studio,Untrustworthy,2026-11-27,yes,1,0.0.2,2026-11-27
+removed_list,2026-11-27,alex09x.mitts,Malware,2026-11-25,yes,1,0.1.0,2026-11-27
+removed_list,2026-11-27,alex09x.rust-intelligence,Malware,2026-11-25,yes,3,0.2.0,2026-11-27
+removed_list,2026-11-27,devartsoftware.MCPServerForFirebird,Spam,2026-11-25,no,0,none,none
+removed_list,2026-11-27,devartsoftware.MCPServerForHubSpot,Spam,2026-11-25,no,0,none,none
+removed_list,2026-11-27,devartsoftware.MCPServerForNetSuite,Spam,2026-11-25,no,0,none,none
+removed_list,2026-11-27,devartsoftware.MCPServerForSalesforce,Spam,2026-11-25,no,0,none,none
+removed_list,2026-11-27,devartsoftware.MCPServerForSalesforceMarketingCloud,Spam,2026-11-25,no,0,none,none
+removed_list,2026-11-27,devartsoftware.MCPServerForXBase,Spam,2026-11-25,no,0,none,none
+removed_list,2026-11-27,devartsoftware.MCPServerForZohoCRM,Spam,2026-11-25,no,0,none,none
+removed_list,2026-11-27,devartsoftware.MCPServerUniversal,Spam,2026-11-25,no,0,none,none
+removed_list,2026-11-27,roberto-menezes.git-dock,Untrustworthy,2026-11-27,yes,4,1.13.25,2026-11-27
